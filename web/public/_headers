@@ -1,4 +1,0 @@
-# Cabeceras de Netlify para el Atlas publicado.
-# Fuera de buscadores mientras las citas no estén verificadas (también está el meta robots en index.html).
-/*
-  X-Robots-Tag: noindex, nofollow

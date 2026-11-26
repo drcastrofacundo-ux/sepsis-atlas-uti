@@ -5,8 +5,8 @@
 # Pasos:
 #   1. Ingesta las entregas del Radar Bibliografico y consulta PubMed (ultimos 35 dias).
 #   2. Regenera los datos, verifica los motores y arma el build (web\dist).
-#   3. Si estan configuradas las variables NETLIFY_AUTH_TOKEN y ATLAS_NETLIFY_SITE_ID,
-#      publica en Netlify. Si no, deja el build listo para subir a mano.
+#   3. Si hubo novedades, las commitea y hace push a main: el workflow de GitHub Pages
+#      compila y publica el sitio solo.
 #   4. Anota el resultado en actualizaciones.log (en la raiz del proyecto).
 #
 # Este archivo es ASCII a proposito: PowerShell 5.1 lee mal los .ps1 UTF-8 sin BOM.
@@ -18,7 +18,6 @@ $log = Join-Path $proyecto 'actualizaciones.log'
 # Python instalado para el usuario actual; si no esta ahi, se usa el del PATH.
 $python = Join-Path $env:LOCALAPPDATA 'Programs\Python\Python313\python.exe'
 if (-not (Test-Path $python)) { $python = (Get-Command python -ErrorAction Stop).Source }
-$netlifyCli = 'netlify-cli@27.16.1'
 
 function Write-Log([string]$texto) {
     $linea = "{0}  {1}" -f (Get-Date -Format 'yyyy-MM-dd HH:mm'), $texto
@@ -62,13 +61,28 @@ try {
     Invoke-Paso 'build' { npm run build } | Out-Null
     Write-Log 'Build OK (web\dist).'
 
-    if ($env:NETLIFY_AUTH_TOKEN -and $env:ATLAS_NETLIFY_SITE_ID) {
-        Invoke-Paso 'publicacion en Netlify' {
-            npx --yes $netlifyCli deploy --prod --dir dist --site $env:ATLAS_NETLIFY_SITE_ID --message ("Actualizacion mensual " + (Get-Date -Format 'yyyy-MM'))
-        } | Out-Null
-        Write-Log 'Publicado en Netlify.'
+    # Publicacion: el push a main dispara el workflow de GitHub Pages, que vuelve a
+    # compilar y publicar. Se suben solo los datos que regenera este script, no todo
+    # el arbol, para no arrastrar ediciones a medio hacer de los modulos.
+    Set-Location $proyecto
+    $datos = @(
+        'base-conocimiento\evidencia-viva.json',
+        'base-conocimiento\pendientes-revision.md',
+        'base-conocimiento\candidatos-pubmed-correo.md',
+        'base-conocimiento\candidatos-pubmed-correo.json',
+        'web\src\data\generated'
+    ) | Where-Object { Test-Path (Join-Path $proyecto $_) }
+
+    Invoke-Paso 'git add' { git add -- $datos } | Out-Null
+    $pendiente = Invoke-Paso 'git status' { git status --porcelain -- $datos }
+
+    if ($pendiente -and ($pendiente -join '').Trim()) {
+        $mensaje = 'Actualizacion mensual ' + (Get-Date -Format 'yyyy-MM')
+        Invoke-Paso 'git commit' { git commit -m $mensaje } | Out-Null
+        Invoke-Paso 'git push' { git push origin main } | Out-Null
+        Write-Log 'Publicado: push a main, GitHub Pages se actualiza solo en ~1 minuto.'
     } else {
-        Write-Log 'Sin publicar: faltan NETLIFY_AUTH_TOKEN o ATLAS_NETLIFY_SITE_ID. Subi web\dist a mano en app.netlify.com.'
+        Write-Log 'Sin novedades del mes: no hubo cambios para publicar.'
     }
 
     Write-Log '--- Fin OK ---'

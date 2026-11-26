@@ -55,7 +55,7 @@ Para que la herramienta nunca quede congelada en el tiempo y incorpore automáti
    - `base-conocimiento/evidencia-viva.json`: base estructurada ordenada del más reciente al más antiguo, filtrada por relevancia en sepsis/shock y etiquetada por módulo (`M01`–`M11`, `M14`–`M20`). La app web de Fase 2 la consume directamente para mostrar el timeline **"Radar de Evidencia Viva"** e insignias de **"Nuevo"** por módulo.
    - `base-conocimiento/pendientes-revision.md`: cola de curación humana agrupada por módulo, separando señales con posible impacto práctico de alertas metodológicas o resultados observacionales que requieren cautela (*"cómo NO sobreinterpretarlo"*).
 3. **Promoción a módulo maestro:** Cuando un estudio marca un cambio real de práctica o reemplaza evidencia previa, se promueve al cuerpo del módulo `MXX-*.md` y se registra en `base-conocimiento/00-matriz-fuentes.md`.
-4. **Actualización mensual automática:** la tarea de Windows `AtlasActualizacionMensual` corre el día 1 de cada mes a las 7:00 (o al prender la compu si estaba apagada) el script `scripts/actualizar_mensual.ps1`. Ingesta el Radar, consulta PubMed (últimos 35 días), verifica los motores, arma `web/dist` y, si existen las variables de entorno `NETLIFY_AUTH_TOKEN` y `ATLAS_NETLIFY_SITE_ID`, lo publica en Netlify. El resultado queda en `actualizaciones.log`. Los PMID nuevos de PubMed se registran pero no se publican: solo entra a la web lo que pasó por el Radar.
+4. **Actualización mensual automática:** la tarea de Windows `AtlasActualizacionMensual` corre el día 1 de cada mes a las 7:00 (o al prender la compu si estaba apagada) el script `scripts/actualizar_mensual.ps1`. Ingesta el Radar, consulta PubMed (últimos 35 días), verifica los motores, arma `web/dist` y, si hubo novedades, las commitea y hace push a `main`, con lo que GitHub Pages vuelve a publicar el sitio. Sube solo los datos que regenera (evidencia viva, pendientes, candidatos y `web/src/data/generated/`), para no arrastrar ediciones a medio hacer. El resultado queda en `actualizaciones.log`. Los PMID nuevos de PubMed se registran pero no se publican: solo entra a la web lo que pasó por el Radar.
 
 ## Barrido de PubMed y avisos de correo
 
@@ -63,8 +63,9 @@ Para que la herramienta nunca quede congelada en el tiempo y incorpore automáti
 
 ## Publicación
 
-- Sitio aparte en Netlify, fuera de buscadores (`noindex` en `index.html` y `web/public/_headers`). Es público para quien tenga el enlace.
-- `sync-data.mjs` limpia rutas locales antes del build y lo corta si queda alguna.
+- **GitHub Pages:** `https://drcastrofacundo-ux.github.io/sepsis-atlas-uti/`. El workflow `.github/workflows/pages.yml` compila y publica en cada push a `main`.
+- Fuera de buscadores: `noindex, nofollow` en el `<head>` de `index.html`, mientras las citas no estén verificadas a texto completo.
+- `sync-data.mjs` limpia rutas locales antes del build y lo corta si queda alguna. Es lo que permite que el repositorio sea público.
 - Mapa de lo que falta cubrir: `mapa-cobertura-sepsis.md`.
 
 ---
