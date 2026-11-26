@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
 import { simulateM05 } from '../src/engines/m05Engine.ts';
+import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -165,6 +166,74 @@ assert.ok(
   'M09 Cefepime valle > 20 mg/L debe disparar alerta de neurotoxicidad'
 );
 
+// ---- M05 panel C: diagrama de Guyton ----
+// Regresion: el punto de trabajo tiene que caer SOBRE las dos curvas y bajar de
+// flujo cuando sube la PVC. Antes flotaba entre ambas y se movia al reves.
+function distanciaAPolilinea(puntos, px, py) {
+  let min = Infinity;
+  for (let i = 1; i < puntos.length; i++) {
+    const [x1, y1] = puntos[i - 1];
+    const [x2, y2] = puntos[i];
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const largo2 = dx * dx + dy * dy;
+    const t = largo2 === 0 ? 0 : Math.max(0, Math.min(1, ((px - x1) * dx + (py - y1) * dy) / largo2));
+    min = Math.min(min, Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy)));
+  }
+  return min;
+}
+
+let flujoPrevio = Infinity;
+for (const pvc of [0, 2, 6, 9, 12, 16]) {
+  const enMeseta = pvc >= 12;
+  const g = construirGuyton(pvc, 8 + pvc * 0.45 + 0.24 * 7, enMeseta);
+  const e = crearEscalas(g.ejes);
+
+  const px = e.x(g.puntoTrabajo.rap);
+  const py = e.y(g.puntoTrabajo.flujo);
+
+  const rectaVr = g.retornoVenoso.map((p) => [e.x(p.rap), e.y(p.flujo)]);
+  const curvaCard = g.curvaCardiaca.map((p) => [e.x(p.rap), e.y(p.flujo)]);
+
+  const dVr = distanciaAPolilinea(rectaVr, px, py);
+  const dCard = distanciaAPolilinea(curvaCard, px, py);
+  assert.ok(dVr < 1, `M05 Guyton PVC ${pvc}: el punto debe caer sobre el retorno venoso (dist ${dVr.toFixed(2)})`);
+  assert.ok(dCard < 1.5, `M05 Guyton PVC ${pvc}: el punto debe caer sobre la curva cardiaca (dist ${dCard.toFixed(2)})`);
+
+  // Subir la RAP siempre baja el retorno venoso.
+  assert.ok(
+    g.puntoTrabajo.flujo < flujoPrevio,
+    `M05 Guyton: subir la PVC a ${pvc} debe bajar el flujo (${g.puntoTrabajo.flujo.toFixed(2)} vs ${flujoPrevio.toFixed(2)})`
+  );
+  flujoPrevio = g.puntoTrabajo.flujo;
+
+  // El retorno venoso corta flujo cero exactamente en la Pmsf.
+  assert.ok(
+    Math.abs(flujoRetornoVenoso(g.retornoVenoso[1].rap, g.retornoVenoso[1].rap)) < 1e-9,
+    'M05 Guyton: el retorno venoso debe valer 0 cuando la RAP iguala la Pmsf'
+  );
+}
+
+// Caso borde: si la RAP supera la Pmsf no hay gradiente, el flujo es 0 y el
+// punto tiene que seguir apoyado en la meseta de la curva de retorno venoso.
+const gSinGradiente = construirGuyton(18, 15.4, true);
+const eBorde = crearEscalas(gSinGradiente.ejes);
+assert.equal(gSinGradiente.puntoTrabajo.flujo, 0, 'M05 Guyton: RAP > Pmsf debe dar flujo 0');
+const dBorde = distanciaAPolilinea(
+  gSinGradiente.retornoVenoso.map((p) => [eBorde.x(p.rap), eBorde.y(p.flujo)]),
+  eBorde.x(gSinGradiente.puntoTrabajo.rap),
+  eBorde.y(gSinGradiente.puntoTrabajo.flujo)
+);
+assert.ok(dBorde < 1, `M05 Guyton RAP > Pmsf: el punto debe seguir sobre la curva (dist ${dBorde.toFixed(2)})`);
+
+// Un corazon en meseta casi no gana flujo si sigue subiendo la RAP.
+const gMeseta = construirGuyton(13, 16, true);
+const gReserva = construirGuyton(7, 13, false);
+const gananciaMeseta = gMeseta.curvaCardiaca.at(-1).flujo / gMeseta.puntoTrabajo.flujo;
+const gananciaReserva = gReserva.curvaCardiaca.at(-1).flujo / gReserva.puntoTrabajo.flujo;
+assert.ok(gananciaMeseta < 1.1, `M05 Guyton meseta: ganancia residual < 1.1 (got ${gananciaMeseta.toFixed(2)})`);
+assert.ok(gananciaReserva > 1.2, `M05 Guyton con reserva: ganancia > 1.2 (got ${gananciaReserva.toFixed(2)})`);
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L)`
 );

@@ -7,6 +7,7 @@ import {
   type M05Inputs,
   type NaFormulation,
 } from '../../engines/m05Engine';
+import { construirGuyton, crearEscalas } from '../../engines/m05Guyton';
 
 export const HemodynamicLab: React.FC = () => {
   const [inputs, setInputs] = useState<M05Inputs>(M05_PRESETS[0].inputs);
@@ -67,6 +68,26 @@ export const HemodynamicLab: React.FC = () => {
         ? 28 + Math.pow((6.7 - vneriClamped) / 6.7, 1.8) * 36
         : 28 + Math.pow((vneriClamped - 6.7) / 8.3, 1.5) * 18;
   const vneriMarkerY = 152 - ((vneriMarkerMort - 15) / 60) * 128;
+
+  // Panel C: un solo sistema de ejes (RAP en mmHg x flujo en L/min).
+  const guyton = useMemo(
+    () => construirGuyton(inputs.pvc, out.guytonPoints.pmsf, out.guytonPoints.overPlateau),
+    [inputs.pvc, out.guytonPoints.pmsf, out.guytonPoints.overPlateau],
+  );
+  const gEsc = useMemo(() => crearEscalas(guyton.ejes), [guyton.ejes]);
+  const guytonCardiacPath = useMemo(
+    () =>
+      guyton.curvaCardiaca
+        .map((p, i) => `${i === 0 ? 'M' : 'L'} ${gEsc.x(p.rap).toFixed(1)} ${gEsc.y(p.flujo).toFixed(1)}`)
+        .join(' '),
+    [guyton.curvaCardiaca, gEsc],
+  );
+  const guytonTicksRap = useMemo(() => {
+    const paso = guyton.ejes.rapMax > 24 ? 8 : 4;
+    const t: number[] = [];
+    for (let v = 0; v <= guyton.ejes.rapMax; v += paso) t.push(v);
+    return t;
+  }, [guyton.ejes.rapMax]);
 
   const ppColor =
     out.ppZona === 'segura' ? 'var(--ok)' : 'var(--prot)';
@@ -561,38 +582,86 @@ export const HemodynamicLab: React.FC = () => {
                 C · Retorno Venoso Guyton + Punto z Magder
               </div>
               <svg viewBox="0 0 380 180" style={{ width: '100%', height: 'auto' }}>
-                <line x1="35" y1="152" x2="355" y2="152" stroke="#2B4260" />
-                <line x1="35" y1="22" x2="35" y2="152" stroke="#2B4260" />
-                {/* Curva Frank-Starling */}
-                <path
-                  d="M 42 146 Q 115 48, 225 46 L 345 46"
+                {/* Ejes: X = RAP (mmHg), Y = flujo (L/min) */}
+                <line x1={gEsc.X0} y1={gEsc.Y0} x2={gEsc.X1} y2={gEsc.Y0} stroke="#2B4260" />
+                <line x1={gEsc.X0} y1={gEsc.Y1} x2={gEsc.X0} y2={gEsc.Y0} stroke="#2B4260" />
+                {guytonTicksRap.map((v) => (
+                  <g key={v}>
+                    <line x1={gEsc.x(v)} y1={gEsc.Y0} x2={gEsc.x(v)} y2={gEsc.Y0 + 4} stroke="#2B4260" />
+                    <text
+                      x={gEsc.x(v)}
+                      y={gEsc.Y0 + 14}
+                      fill="#6F8BA8"
+                      fontSize="9"
+                      fontFamily="IBM Plex Mono"
+                      textAnchor="middle"
+                    >
+                      {v}
+                    </text>
+                  </g>
+                ))}
+                <text x={gEsc.X1} y={gEsc.Y0 + 14} fill="#6F8BA8" fontSize="9" fontFamily="IBM Plex Mono" textAnchor="end">
+                  RAP mmHg
+                </text>
+                <text
+                  x={gEsc.X0 - 6}
+                  y={gEsc.Y1 + 4}
+                  fill="#6F8BA8"
+                  fontSize="9"
+                  fontFamily="IBM Plex Mono"
+                  textAnchor="end"
+                >
+                  L/min
+                </text>
+
+                {/* Curva de funcion cardiaca (Frank-Starling): pasa por el punto de trabajo */}
+                <path d={guytonCardiacPath} fill="none" stroke="#4FA9F7" strokeWidth="2.5" />
+
+                {/* Retorno venoso: rampa que corta flujo cero en la Pmsf, y meseta en cero */}
+                <polyline
+                  points={guyton.retornoVenoso
+                    .map((p) => `${gEsc.x(p.rap).toFixed(1)},${gEsc.y(p.flujo).toFixed(1)}`)
+                    .join(' ')}
                   fill="none"
-                  stroke="#4FA9F7"
-                  strokeWidth="2.5"
-                />
-                {/* Curva Retorno Venoso desplazada por Pmsf */}
-                <line
-                  x1="60"
-                  y1={out.guytonPoints.overPlateau ? 46 : 62}
-                  x2={170 + out.guytonPoints.pmsf * 7}
-                  y2="152"
                   stroke="#3FD8C8"
                   strokeWidth="2.3"
                 />
-                {/* Punto actual PVC / RAP */}
+                {/* Pmsf: donde el retorno venoso se hace cero */}
+                <text
+                  x={gEsc.x(guyton.retornoVenoso[1].rap)}
+                  y={gEsc.Y0 - 6}
+                  fill="#3FD8C8"
+                  fontSize="9"
+                  fontFamily="IBM Plex Mono"
+                  textAnchor="middle"
+                >
+                  Pmsf
+                </text>
+
+                {/* Punto de trabajo: interseccion de ambas curvas */}
                 <circle
-                  cx={45 + Math.min(24, inputs.pvc) * 11}
-                  cy={inputs.pvc >= 12 ? 46 : 146 - (inputs.pvc / 12) * 95}
+                  cx={gEsc.x(guyton.puntoTrabajo.rap)}
+                  cy={gEsc.y(guyton.puntoTrabajo.flujo)}
                   r="6"
                   fill={out.guytonPoints.overPlateau ? '#FF5C7A' : '#34D399'}
                   stroke="#FFF"
                   strokeWidth="2"
                 />
-                <text x="42" y="168" fill="#9DB1C8" fontSize="10" fontFamily="IBM Plex Mono">
+                <text
+                  x={Math.min(gEsc.x(guyton.puntoTrabajo.rap) + 9, 300)}
+                  y={Math.max(gEsc.y(guyton.puntoTrabajo.flujo) - 8, gEsc.Y1 + 8)}
+                  fill="#FFFFFF"
+                  fontSize="10"
+                  fontFamily="IBM Plex Mono"
+                >
+                  {guyton.puntoTrabajo.flujo.toFixed(1)} L/min
+                </text>
+
+                <text x={gEsc.X0} y="172" fill="#9DB1C8" fontSize="10" fontFamily="IBM Plex Mono">
                   PVC {inputs.pvc} mmHg · P_msf est. {out.guytonPoints.pmsf.toFixed(1)} mmHg
                 </text>
                 {out.guytonPoints.overPlateau && (
-                  <text x="210" y="34" fill="#FF5C7A" fontSize="10.5" fontFamily="IBM Plex Mono">
+                  <text x="200" y={gEsc.Y1 + 2} fill="#FF5C7A" fontSize="10.5" fontFamily="IBM Plex Mono">
                     Meseta / Punto z: STOP fluidos
                   </text>
                 )}
