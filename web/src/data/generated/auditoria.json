@@ -1,0 +1,156 @@
+[
+  {
+    "numero": 1,
+    "fuenteError": "Notas antiguas de antibióticos",
+    "afirmacionErronea": "**BLING III** citado como *NEJM 2023*",
+    "correccionVerificada": "**BLING III** es Dulhunty et al., ***JAMA* 2024;332(8):629–637** (`PMID 38864155`); **MERCY** es Monti et al., ***JAMA* 2023;330(2):141–151** (`PMID 37326473`).",
+    "modulos": [
+      "M09"
+    ]
+  },
+  {
+    "numero": 2,
+    "fuenteError": "Cuaderno NLM `LRA en Shock Séptico`",
+    "afirmacionErronea": "Recomienda PAM **70–80/85 mmHg en hipertensos crónicos** citando beneficio renal en OPTPRESS",
+    "correccionVerificada": "**OPTPRESS** (`PMID 40358717`, n≈514, ≥65 a) comparó PAM 80–85 vs 65–70 y fue **detenido por daño** (mort 90d **39,3% vs 28,6%**) **sin beneficio en ningún subgrupo, incluidos hipertensos crónicos**.",
+    "modulos": [
+      "M10",
+      "M05"
+    ]
+  },
+  {
+    "numero": 3,
+    "fuenteError": "Cuaderno NLM `LRA en Shock Séptico`",
+    "afirmacionErronea": "Presenta **TIGRIS** con ARR 17,4% sin detallar diseño ni sesgos",
+    "correccionVerificada": "**TIGRIS** (`Neyra 2026, Lancet Respir Med`, `PMID 41887242`) es **RCT abierto sin sham**, **2:1** (`n=151` evaluables, ~50 controles), **análisis bayesiano con prior informativo de EUPHRATES**. Mort 28d **38,7% vs 45,1% (ARR 6,4%)**; 90d **43,4% vs 60,8% (ARR 17,4%, NNT 8,1)**.",
+    "modulos": [
+      "M10",
+      "M02"
+    ]
+  },
+  {
+    "numero": 4,
+    "fuenteError": "Revisión antigua PK Midazolam",
+    "afirmacionErronea": "Cita **Neupane 2022 (`PMID 36036654`)** como evidencia adulta de AKI y midazolam",
+    "correccionVerificada": "**Neupane 2022 es estudio pediátrico**. Reemplazar en adultos por **Le Carpentier 2022** (`PMID 35776074`), **Smeets 2022** (`PMID 35397768`), **Smeets 2024** (`PMID 37926072`) y **Shudofsky 2026** (`PMID 42468972`).",
+    "modulos": [
+      "M11"
+    ]
+  },
+  {
+    "numero": 5,
+    "fuenteError": "`glicocalix-endotelial.html`, `Glicocalix endotelial en sepsis.md`, `MIRA-Research`",
+    "afirmacionErronea": "Afirma que SYN-1 predice FMO, supera a SOFA/APACHE II, que \"cada bolo lava glicocálix\" y recomienda albúmina >30 g/L por ALBIOS",
+    "correccionVerificada": "(a) **Daniyarova 2025** (`PMID 41195755`, n=4.529): SYN-1 predice mortalidad (OR 2,04) pero **NO MODS** (OR 2,35 NS) ni falla respiratoria (OR 1,05 NS); **Endocan** discrimina mejor (OR 5,06). (b) **Wang 2026** (`PMID 41593637`): la respuesta inmune precede al shedding (no lineal, $p=0,008$). (c) **CLOVERS 2025** (`PMID 40315385`): liberal vs restrictivo **no alteró HS ni SYN-1 a 24 h**. (d) **ARISS 2026** (`PMID 41712212`): albúmina 20% para $\\ge 3,0\\text{ g/dL}$ fue neutra a 90d (**43,3% vs 45,9%, RR 0,94, p=0,71**).",
+    "modulos": [
+      "M03",
+      "M05"
+    ]
+  },
+  {
+    "numero": 6,
+    "fuenteError": "Cuaderno NLM `Microcirculacion` + `Sepsis-PBR`",
+    "afirmacionErronea": "Marco de 2 dominios (Rovas 2026) con PBR como medidor directo de espesor/fuga; cortes fijos universales",
+    "correccionVerificada": "**Rovas 2026** admite que PBR **no mide grosor anatómico ni fuga**. En **EDGE 2026** (`PMID 41998704`) PBR no sobrevive multivariable ($p=0,1$) y en **Beltrán 2026** (`PMID 41645301`) PBR no difiere entre fenotipos ($p=0,753$). Además kits ELISA varían de 3 ng/mL (`Wang 2026`) a 150 ng/mL.",
+    "modulos": [
+      "M03"
+    ]
+  },
+  {
+    "numero": 7,
+    "fuenteError": "`Indice de Fuga Capilar en Sepsis.md` vs `indice de fuga capilar.pdf`",
+    "afirmacionErronea": "Fórmula `ALI = PCR (mg/L) / Alb (g/L)` vs `IFC = [PCR (mg/dL) / Alb (g/L)] × 100`",
+    "correccionVerificada": "**Trampa de escala ×10 / ×100**: Palacios 2018 (≥85,55) y Cordemans (>61) multiplican ×10 frente al cociente directo de García Uribe 2021 (≥7,41). La calculadora en M03 debe exigir selector explícito de unidades y mostrar ambas escalas.",
+    "modulos": [
+      "M03"
+    ]
+  },
+  {
+    "numero": 8,
+    "fuenteError": "`01-Clínica\\Sepsis y shock séptico.md`",
+    "afirmacionErronea": "(a) Lactato c/2h hasta aclaramiento >20%; (b) SIC con solo \"SOFA CV\"; (c) prohíbe albúmina en leak; (d) atribuye weaning VP tras NE a \"ESICM 2025\"; (e) alerta ΔSOFA c/48h ≥2",
+    "correccionVerificada": "(a) **Kattan 2020** (`PMID 32845407`) reanimar por lactato con CRT normal duplicó mortalidad (**40% vs 23%, aOR 3,3**); **Ahlstedt 2024** (`CLASSIC`). (b) SIC ISTH usa **4 órganos** (Resp+CV+Hep+Renal). (c) Matiz SSC 2026 / ARISS. (d) La cita real es **DOVSS (Jeon 2018) / Musallam 2018 / 2nd Swiss Vasopressin Consensus 2025**. (e) No hay corte ΔSOFA validado a 48 h.",
+    "modulos": [
+      "M01",
+      "M04",
+      "M05",
+      "M06",
+      "M08"
+    ]
+  },
+  {
+    "numero": 9,
+    "fuenteError": "`PAD MasterClass.md` (pre-auditoría)",
+    "afirmacionErronea": "Cifras docentes \"62% vs 28%\", \"PAD cae horas antes\", categorías rígidas DSI",
+    "correccionVerificada": "Retiradas en `PAD MasterClass - bibliografía auditada 2026.md`. Usar evidencia real: **Ospina-Tascón 2020** (DSI continuo), **Ko 2026** (`PMID 41593462`, PAD <50 mmHg aOR 0,48), **Sarkar 2026** (ΔDSI).",
+    "modulos": [
+      "M05"
+    ]
+  },
+  {
+    "numero": 10,
+    "fuenteError": "Cuaderno NLM `Microcirculacion - Bibliografia extensa`",
+    "afirmacionErronea": "Cita VNERi con cortes aproximados `<0,90 / 1,6-2,5 / >3,5` y autor `Sharma 2026` en lugar de `Sarkar`",
+    "correccionVerificada": "**Goury 2025** (`PMID 40133652`, ANDROMEDA-SHOCK `n=424`): $\\text{VNERi} = \\text{PAD}/(\\text{NA bitartrato }\\mu\\text{g/kg/min} \\times \\text{FC})$ tiene nadir **6,7** y cortes **2,6 y 10,8** (mort 56% / 28% / 39%). Primer autor de IJCCM 2026 (`Temporal Analysis of DSI`) verificado es **Soumya Sarkar** (2° Ashish K. Sharma). También en **Ko 2026**, la tabla de nota suma n=328 (273+55) vs fila PAD <50 n=215.",
+    "modulos": [
+      "M05"
+    ]
+  },
+  {
+    "numero": 11,
+    "fuenteError": "Notas previas de **SOFA-2** (`capítulo docente (síntesis).md`) y dosis de Noradrenalina",
+    "afirmacionErronea": "Atribuye AUROC 0,829 vs 0,796 a Ranzani; confunde sal vs base de NA",
+    "correccionVerificada": "**Ranzani *JAMA* 2025** tiene AUROC **0,79 vs 0,77** (0,829 vs 0,796 es la validación externa **Bai 2026** en MIMIC-IV). **SOFA-2 exige NE base** (`1 mg base = 2,00 mg bitartrato monohidrato = 1,89 mg bitartrato anhidro = 1,22 mg HCl`); además **Severino/Wendel-Garcia 2026** demostró sesgo de −14,5% a −26% al indexar por peso real en obesos.",
+    "modulos": [
+      "M01",
+      "M06"
+    ]
+  },
+  {
+    "numero": 12,
+    "fuenteError": "`Sedoanalgesia` / abstinencia opioide",
+    "afirmacionErronea": "Vigilar IWS desde \">5 días\" de infusión",
+    "correccionVerificada": "Umbral validado de riesgo IWS es **≥72 h** o **≥1.200 µg/día de fentanilo (~50 µg/h)** (`PMID 37151892`).",
+    "modulos": [
+      "M11"
+    ]
+  },
+  {
+    "numero": 13,
+    "fuenteError": "Metaanálisis de corticoides y quemados",
+    "afirmacionErronea": "Citar \"el metaanálisis\" como definitivo a favor de corticoides o permitir Vitamina C en quemados",
+    "correccionVerificada": "**Weibel 2026** (`PMID 43058869`): 90% de 42 RS tienen confianza AMSTAR-2 críticamente baja y >50% no comparte ensayos; **FluDReSS 2024** mostró absorción enteral errática de FC en 97%. **VICTORY 2026** (`PMID 42267875`, **HR/RR 1,96**) confirma daño por Vitamina C IV alta incluso en quemados.",
+    "modulos": [
+      "M06",
+      "M01"
+    ]
+  },
+  {
+    "numero": 14,
+    "fuenteError": "Notas antiguas de troponina y miocardiopatía séptica",
+    "afirmacionErronea": "\"Troponina elevada predice disfunción miocárdica séptica y mortalidad\"",
+    "correccionVerificada": "**Choi 2025** (n=2.141) y **COMTESS / Lörstad 2026** (`PMID 42393752`, + corrección `Crit Care 30:480`): hs-cTnT no correlaciona con IMR ($P=0,899$), MRR ($P=0,987$) ni FEVI; **GLS** (curva en U, óptimo −23% a −16%, Huespe 2026) supera a FEVI.",
+    "modulos": [
+      "M07"
+    ]
+  },
+  {
+    "numero": 15,
+    "fuenteError": "Notas stub o PDFs mal rotulados en vault",
+    "afirmacionErronea": "`vasopresina vs nora en sepsis.pdf` y `hidrocortisona 1.pdf`",
+    "correccionVerificada": "El primero es un UpToDate genérico de sepsis y el segundo un índice de *Medicina Intensiva* 2010; descartados como fuentes primarias.",
+    "modulos": [
+      "M06"
+    ]
+  },
+  {
+    "numero": 16,
+    "fuenteError": "`Sepsis > General` (NLM) sobre Ferritina/MALS y **Zonulina** (`Mühlhaus 2026`)",
+    "afirmacionErronea": "Presenta 4.420 ng/mL como corte biológico duro para anakinra y cita correlación de pTLR4 con zonulina ($r=0,24$)",
+    "correccionVerificada": "**Ouranos 2026** (`PMID 42317790`): 4.420 es **rampa continua sin quiebre** y real-world anakinra con ≥4.420 tuvo HR muerte 14d 1,83 (1,04–3,22), mientras **INSPIRE 2026** (`PMID 41552367`) fue positivo con mediana 305–398 ng/mL. **Schuster 2026** (`PMID 41224076`): mHLA-DR no difirió entre MALS y no-MALS. **Scheffler 2018** (`PMID 29459849`): ELISAs comerciales de \"zonulina\" miden properdina, no pre-haptoglobina 2.",
+    "modulos": [
+      "M02",
+      "M11"
+    ]
+  }
+]

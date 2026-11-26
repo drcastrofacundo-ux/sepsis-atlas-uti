@@ -1,0 +1,32 @@
+:root {
+  /* Paleta ICU Lab heredada de glicocalix-endotelial.html */
+  --bg: #070C14;
+  --bg-2: #0A1220;
+  --panel: #0D1725;
+  --panel-2: #111E30;
+  --panel-3: #15243A;
+  --line: #1B2C42;
+  --line-soft: #152438;
+  --ink: #DEE9F5;
+  --ink-2: #9DB1C8;
+  --muted: #6C819B;
+
+  --gag: #3FD8C8;     /* Cian endotelial / acción positiva */
+  --core: #9A87F5;    /* Violeta frontera / receptor */
+  --hyal: #4FA9F7;    /* Azul microcirculación / PK */
+  --prot: #E9B44C;    /* Ámbar precaución / albúmina */
+  --alert: #FF5C7A;   /* Rojo alerta crítica / shock / shedding */
+  --rbc: #C33B52;     /* Eritrocito */
+  --plt: #D8DCE6;     /* Plaqueta */
+  --memb: #2B4260;
+  --ok: #34D399;      /* Verde meta cumplida */
+
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 14px;
+  --r-xl: 18px;
+
+  --f-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+}

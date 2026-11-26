@@ -1,0 +1,1819 @@
+{
+  "ultima_actualizacion": "2026-11-25T22:14:38-03:00",
+  "radars_procesados": 17,
+  "rango_fechas": {
+    "desde": "2026-07-12",
+    "hasta": "2026-11-22"
+  },
+  "total_entradas": 68,
+  "omitidas_solo_cardiologia": 41,
+  "conteo_por_modulo": {
+    "M01": 21,
+    "M02": 6,
+    "M03": 3,
+    "M04": 24,
+    "M05": 19,
+    "M06": 23,
+    "M07": 5,
+    "M08": 5,
+    "M09": 12,
+    "M10": 12,
+    "M11": 10
+  },
+  "chequeo_pubmed": {
+    "ok": true,
+    "ventana_dias": 35,
+    "total_encontrados": 25,
+    "pmids_nuevos": [
+      "43084440",
+      "43084400",
+      "43084352",
+      "43084338",
+      "43084327",
+      "43084196",
+      "43083888",
+      "43083807",
+      "43083698",
+      "43083675",
+      "43083665",
+      "43082573",
+      "43082545",
+      "43082544",
+      "43082478"
+    ]
+  },
+  "entradas": [
+    {
+      "id": "pmid-43066603",
+      "fecha_radar": "2026-11-22",
+      "fechas_radar": [
+        "2026-11-22"
+      ],
+      "titulo": "Trayectorias de balance desde el día 3 en sepsis",
+      "cita": "Zhai Z, Jiang X, Gu W. *Association Between Daily Fluid Balance Trajectories and Dynamic Organ Failure Resolution (SOFA-2) in Sepsis: A Latent Class Growth Analysis of 16,262 Patients.* Journal of Intensive Care Medicine. 2026 Nov 21. PMID: 43066603. DOI: [10.1177/08850666261509926](https://doi.org/10.1177/08850666261509926).",
+      "pmid": "43066603",
+      "doi": "10.1177/08850666261509926",
+      "tipo_pregunta": "cohorte retrospectiva MIMIC-IV v3.1; si fenotipos longitudinales de balance neto entre días 3–7 se asocian con recuperación de falla orgánica y mortalidad.",
+      "poblacion": "16.262 adultos con sepsis que sobrevivieron al menos 72 h de UTI; trayectorias de balance neto diario en ml/kg/día, considerando diuréticos de asa y TRR.",
+      "resultado_clave": "mortalidad cruda 28 días de 20,8% en recuperación rápida. Frente a ella, respuesta tardía: aOR 1,30 (IC95% 1,14–1,49); falla persistente: aOR 1,27 (IC95% 1,09–1,48).",
+      "limitaciones": "base retrospectiva única, supervivencia hasta 72 h, confusión por indicación y por capacidad renal/endotelial; alta utilidad descriptiva, baja para inferir que diuréticos o restricción causen beneficio.",
+      "impacto_uti": "ayuda a pensar el balance como trayectoria tras la reanimación inicial, junto con perfusión, congestión, diuresis y soporte renal; no entrega una meta universal de balance.",
+      "no_sobreinterpretar": "no usar las tres clases para prescribir descongestión ni afirmar que el balance positivo sea la causa de la mortalidad.",
+      "archivo_origen": "2026-11-22-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M05",
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-43058869",
+      "fecha_radar": "2026-11-22",
+      "fechas_radar": [
+        "2026-11-22"
+      ],
+      "titulo": "Por qué las revisiones de corticoides en sepsis llegan a conclusiones distintas",
+      "cita": "Weibel S, Dungfelder H, Pscheidl T, et al. *Discordant evidence on corticosteroids in sepsis: a meta-research study.* Critical Care. 2026 Nov 19;30:602. PMID: 43058869. DOI: [10.1186/s13054-026-06471-2](https://doi.org/10.1186/s13054-026-06471-2).",
+      "pmid": "43058869",
+      "doi": "10.1186/s13054-026-06471-2",
+      "tipo_pregunta": "metainvestigación de revisiones sistemáticas publicadas 2015–2025; por qué difieren sus conclusiones sobre mortalidad con corticoides en sepsis.",
+      "poblacion": "42 revisiones sistemáticas que incluyeron 121 ECA; comparación de pools de ECA, PICO y conclusiones.",
+      "resultado_clave": "15/38 (39%) revisiones con metaanálisis de mortalidad a corto plazo reportaron beneficio y 23/38 (61%) ausencia de efecto; más de la mitad de los pares de revisiones no compartía ECA. Las conclusiones fueron consistentes para hidrocortisona + fludrocortisona (beneficio) y para hidrocortisona-ácido ascórbico-tiamina (sin evidencia de efecto).",
+      "limitaciones": "no es un ECA nuevo ni recalcula una recomendación clínica; estudia heterogeneidad entre síntesis. Confiabilidad alta para el problema metodológico, no para elegir una pauta individual.",
+      "impacto_uti": "al citar “el metaanálisis de corticoides”, verificar población, intervención exacta y ensayos incluidos antes de trasladarlo a shock séptico refractario.",
+      "no_sobreinterpretar": "no equivale a una nueva recomendación a favor o en contra de corticoides.",
+      "archivo_origen": "2026-11-22-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-43057195",
+      "fecha_radar": "2026-11-22",
+      "fechas_radar": [
+        "2026-11-22"
+      ],
+      "titulo": "PAM, perfusión y shock séptico refractario",
+      "cita": "Kattan E, Martin-Loeches I, Khanna AK, Leone M. *Redefining blood pressure targets in refractory septic shock.* Journal of Critical Care. 2026 Nov 19;97:155803. PMID: 43057195. DOI: [10.1016/j.jcrc.2026.155803](https://doi.org/10.1016/j.jcrc.2026.155803).",
+      "pmid": "43057195",
+      "doi": "10.1016/j.jcrc.2026.155803",
+      "tipo_pregunta": "revisión fisiológica/hipótesis sobre objetivos de presión en shock séptico refractario.",
+      "poblacion": null,
+      "resultado_clave": "plantea que, por encima de aproximadamente 60–65 mmHg, la perfusión medida por lactato y relleno capilar suele desacoplarse de la presión arterial y propone desafíos de PAM acotados en el tiempo con marcadores seriados de perfusión.",
+      "limitaciones": "no presenta ensayo ni valida una meta individual; el “aproximadamente 60–65” no debe leerse como umbral rígido para todos.",
+      "impacto_uti": "muy alineado con evaluar tendencia de relleno capilar/lactato, presión diastólica, flujo y congestión antes de escalar noradrenalina sólo para subir PAM.",
+      "no_sobreinterpretar": "no justificar tolerar hipotensión ni reducir vasopresores sin integrar perfusión, contexto neurológico/coronario/renal y ecografía.",
+      "archivo_origen": "2026-11-22-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-43055770",
+      "fecha_radar": "2026-11-22",
+      "fechas_radar": [
+        "2026-11-22"
+      ],
+      "titulo": "Fenotipo de shock e Impella: cohorte real",
+      "cita": "Chatzis G, Syntila S, Schuett H, et al. *Cardiogenic shock phenotypes and outcomes under percutaneous left ventricular support: results from a 9-year single-center real-world cohort.* Clinical Research in Cardiology. 2026 Nov 19. PMID: 43055770. DOI: [10.1007/s00392-026-03055-6](https://doi.org/10.1007/s00392-026-03055-6).",
+      "pmid": "43055770",
+      "doi": "10.1007/s00392-026-03055-6",
+      "tipo_pregunta": "cohorte retrospectiva unicéntrica de pacientes con shock refractario tratados con Impella 2.5/CP; desenlaces según fenotipo.",
+      "poblacion": "409 adultos; 36 con shock cardiogénico asociado a sepsis.",
+      "resultado_clave": "mortalidad intrahospitalaria global 48,9%; en fenotipo asociado a sepsis 80,6%. Asociación ajustada de sepsis con muerte intrahospitalaria: aOR 4,65 (IC95% 2,03–12,07). Sangrado mayor 14,9%, isquemia de miembro 11,7%.",
+      "limitaciones": "selección extrema, un centro, n=36 en fenotipo séptico, confusión residual y sin comparador sin Impella; no permite estimar beneficio o daño causal del dispositivo.",
+      "impacto_uti": "subraya que sepsis + disfunción cardíaca/hipoperfusión es un fenotipo de riesgo extremo que requiere discusión multidisciplinaria y fenotipado serio antes de escalamiento.",
+      "no_sobreinterpretar": "no concluir que Impella empeora pronóstico en sepsis ni usar el modelo para negar soporte a un individuo.",
+      "archivo_origen": "2026-11-22-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-43063354",
+      "fecha_radar": "2026-11-22",
+      "fechas_radar": [
+        "2026-11-22"
+      ],
+      "titulo": "Azul de metileno temprano en vasoplejía resistente a catecolaminas",
+      "cita": "Cohen D, Vaknin M, Suliman M, et al. *Earlier Application of Methylene Blue in Vasoplegic, Adrenergic Vasopressor-Resistant Patients is Associated with Better Clinical Outcomes. A Retrospective Analysis of 464 Patients.* Shock. 2026 Nov 20. PMID: 43063354. DOI: [10.1097/SHK.0000000000002952](https://doi.org/10.1097/SHK.0000000000002952).",
+      "pmid": "43063354",
+      "doi": "10.1097/SHK.0000000000002952",
+      "tipo_pregunta": "cohorte retrospectiva unicéntrica; asociación entre administración más temprana de azul de metileno (AM) y desenlaces en vasoplejía tratada con AM.",
+      "poblacion": "464 pacientes UTI (61% cardiotorácica) con vasoplejía resistente a vasopresores adrenérgicos; AM recibido a mediana de 11,2 h desde ingreso. El resumen no aporta el punto de corte de “temprano”.",
+      "resultado_clave": "mortalidad hospitalaria 41% vs 59% y HR ajustado 0,69 (IC95% 0,51–0,94); el análisis por tipo de UTI atenuó la asociación.",
+      "limitaciones": "observacional, un solo centro, población mezclada y probable sesgo de indicación/tiempo; no se puede separar el efecto del AM del fenotipo, la oportunidad de control etiológico ni la práctica concomitante. Confiabilidad baja para cambio terapéutico.",
+      "impacto_uti": "habilita lectura crítica para definir fenotipo y ventana de estudio prospectivo; no cambia la secuencia de vasopresores de guías.",
+      "no_sobreinterpretar": "no adoptar un umbral horario ni indicar AM “precoz” por estos resultados.",
+      "archivo_origen": "2026-11-22-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42805482",
+      "fecha_radar": "2026-11-15",
+      "fechas_radar": [
+        "2026-11-15"
+      ],
+      "titulo": "Fenotipos endoteliales y disfunción hepática asociada a sepsis",
+      "cita": "García-Concejo A, Vega-Harwood AW, Prieto-Utrera RD, et al. *Liver sinusoidal endothelial cells phenotypes as early predictors of sepsis-associated liver dysfunction.* Life Sciences. 2026;405:124715.",
+      "pmid": "42805482",
+      "doi": "10.1016/j.lfs.2026.124715",
+      "tipo_pregunta": "cohorte prospectiva, multicéntrica y observacional. Evalúa si fenotipos circulantes de células endoteliales sinusoidales identifican precozmente riesgo de disfunción hepática asociada a sepsis (SALD).",
+      "poblacion": "214 adultos posquirúrgicos de tres UTI españolas: controles críticos 77, sepsis 61 y shock séptico 76. Durante los primeros 7 días, 42 desarrollaron SALD (bilirrubina total >2 mg/dL e INR >1,5). proporción de dos subpoblaciones CD45−/CD31+/CD32b+ que difieren en HLA-DR, frente a posterior desarrollo o no de SALD.",
+      "resultado_clave": null,
+      "limitaciones": "muestra pequeña, evento limitado, población posquirúrgica específica y medición por citometría espectral no disponible rutinariamente; el desenlace incluye INR, vulnerable a confusión por anticoagulación, hepatopatía o contexto transfusional. Necesita validación externa y evaluación incremental frente a variables habituales. baja a moderada como señal pronóstica exploratoria; no causal.",
+      "impacto_uti": "aporta una línea de investigación sobre endotelio y disfunción hepática en sepsis, sin cambiar monitoreo ni tratamiento actual.",
+      "no_sobreinterpretar": "no pedir citometría ni usar esta razón para anticipar, diagnosticar o tratar SALD; tampoco prueba que el fenotipo endotelial sea el mecanismo causal.",
+      "archivo_origen": "2026-11-15-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M02",
+        "M03",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42969437",
+      "fecha_radar": "2026-11-08",
+      "fechas_radar": [
+        "2026-11-08"
+      ],
+      "titulo": "VASI en sepsis adulta: señal pronóstica, no guía terapéutica",
+      "cita": "Zhu P, Ou Q, Huang Q, et al. *Vasoactive-Adjusted Shock Index for Risk Stratification in Adult Sepsis.* Shock. Publicado online 02/11/2026.",
+      "pmid": "42969437",
+      "doi": "10.1097/SHK.0000000000002958",
+      "tipo_pregunta": "cohorte retrospectiva con modelado de trayectorias; evalúa VASI para estratificar riesgo y heterogeneidad de asociación con hidrocortisona/albúmina.",
+      "poblacion": "63.853 adultos con sepsis. trayectorias VASI alta versus baja; análisis ponderado de tratamientos observados.",
+      "resultado_clave": "- **Cita:** Zhu P, Ou Q, Huang Q, et al. *Vasoactive-Adjusted Shock Index for Risk Stratification in Adult Sepsis.* Shock. Publicado online 02/11/2026. - **Enlace:** [PMID 42969437](https://pubmed.ncbi.nlm.nih.gov/42969437/) · [DOI 10.1097/SHK.0000000000002958](https://doi.org/10.1097/SHK.0000000000002958) - **Tipo / pregunta:** cohorte retrospectiva con modelado de trayectorias; evalúa VASI para estratificar riesgo",
+      "limitaciones": "retrospectivo, definición/cálculo de VASI y momento de medición deben auditarse en texto completo; confusión por indicación y evolución dependiente del tratamiento. Las asociaciones de tratamiento no equivalen a efecto causal. baja para decisiones terapéuticas; potencialmente útil como hipótesis/estratificación.",
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-11-08-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42523186",
+      "fecha_radar": "2026-11-08",
+      "fechas_radar": [
+        "2026-11-08"
+      ],
+      "titulo": "Perfusión en shock séptico y la “vascular waterfall”",
+      "cita": "Pinsky MR, Gómez H, Hernández G. *Assessing tissue perfusion during septic shock resuscitation through the vascular waterfall lens.* American Journal of Respiratory and Critical Care Medicine. 01/11/2026;212:2731–2735.",
+      "pmid": "42523186",
+      "doi": "10.1093/ajrccm/aamag397",
+      "tipo_pregunta": "artículo fisiológico/de perspectiva: propone interpretar perfusión incorporando presión crítica de cierre y back-pressure venosa, más allá de una PAM aislada.",
+      "poblacion": "no corresponde: no es un ensayo clínico.",
+      "resultado_clave": "- **Cita:** Pinsky MR, Gómez H, Hernández G. *Assessing tissue perfusion during septic shock resuscitation through the vascular waterfall lens.* American Journal of Respiratory and Critical Care Medicine. 01/11/2026;212:2731–2735. - **Enlace:** [PMID 42523186](https://pubmed.ncbi.nlm.nih.gov/42523186/) · [DOI 10.1093/ajrccm/aamag397](https://doi.org/10.1093/ajrccm/aamag397) - **Tipo / pregunta:** artículo fisiológico",
+      "limitaciones": "no genera estimaciones de efecto ni recomendaciones graduadas; confiabilidad conceptual, no evidencia de intervención.",
+      "impacto_uti": null,
+      "no_sobreinterpretar": "no convierte una variable aislada (PAM, PVC, relleno capilar o delta PCO2) en objetivo universal ni valida un algoritmo de fluidos/vasopresores.",
+      "archivo_origen": "2026-11-08-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "doi-10-1097-shk-0000000000002956",
+      "fecha_radar": "2026-11-01",
+      "fechas_radar": [
+        "2026-11-01"
+      ],
+      "titulo": "HALP y coagulopatía inducida por sepsis",
+      "cita": "Dong X, Liu X, Ma X, et al. *Sepsis-induced coagulopathy attenuates the prognostic value of the hemoglobin–albumin–lymphocyte–platelet (HALP) score in sepsis.* **Shock.** Publicado online 29 oct 2026. DOI: [10.1097/SHK.0000000000002956](https://doi.org/10.1097/SHK.0000000000002956).",
+      "pmid": null,
+      "doi": "10.1097/SHK.0000000000002956",
+      "tipo_pregunta": "cohorte retrospectiva MIMIC-IV, 6.218 adultos con Sepsis-3.",
+      "poblacion": null,
+      "resultado_clave": "- **Cita:** Dong X, Liu X, Ma X, et al. *Sepsis-induced coagulopathy attenuates the prognostic value of the hemoglobin–albumin–lymphocyte–platelet (HALP) score in sepsis.* **Shock.** Publicado online 29 oct 2026. DOI: [10.1097/SHK.0000000000002956](https://doi.org/10.1097/SHK.0000000000002956). - **Tipo/población:** cohorte retrospectiva MIMIC-IV, 6.218 adultos con Sepsis-3. - **Hallazgo:** asociación entre HALP bajo",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-11-01-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M08"
+      ]
+    },
+    {
+      "id": "doi-10-1097-shk-0000000000002954",
+      "fecha_radar": "2026-11-01",
+      "fechas_radar": [
+        "2026-11-01"
+      ],
+      "titulo": "Fenotipos clínicos de sepsis consensuados en seis cohortes internacionales",
+      "cita": "Shen YY, Yi RQ, Chen W, et al. *Consensus-derived clinical sepsis profiles and mortality across six international cohorts.* **Shock.** Publicado online 29 oct 2026. DOI: [10.1097/SHK.0000000000002954](https://doi.org/10.1097/SHK.0000000000002954).",
+      "pmid": null,
+      "doi": "10.1097/SHK.0000000000002954",
+      "tipo_pregunta": "cohorte retrospectiva de derivación y validación externa; análisis de agrupamiento no supervisado. — ¿pueden identificarse perfiles clínicos reproducibles de sepsis con distinta mortalidad a través de bases de datos internacionales?",
+      "poblacion": "62.458 adultos de seis bases de datos de cuidados críticos en cuatro países; cohorte de derivación MIMIC-IV, n=28.733. tres perfiles derivados de 24 variables clínicas habituales; comparación de desenlaces entre perfiles. No evaluó una intervención terapéutica.",
+      "resultado_clave": "los perfiles 1, 2 y 3 representaron 32,6%, 20,0% y 47,4% de la cohorte de derivación; mortalidad hospitalaria 30,3%, 13,8% y 9,3%, respectivamente. Tras ajustar por edad y SOFA, el perfil 3 tuvo menor mortalidad a un año que el perfil 1 (HR 0,62; IC 95% 0,57–0,67).",
+      "limitaciones": "estudio observacional retrospectivo; los clusters dependen de variables, mediciones y momentos de captura; asociaciones tratamiento–outcome son exploratorias; falta validación prospectiva, impacto clínico y utilidad al lado de la cama. moderada para describir heterogeneidad pronóstica; baja para inferir causalidad o guiar tratamiento.",
+      "impacto_uti": "refuerza que “sepsis” no es un fenotipo hemodinámico único. Puede inspirar auditorías o investigación local con variables trazables (perfusión, disfunción orgánica, soporte ventilatorio), sin desplazar la evaluación fisiológica serial.",
+      "no_sobreinterpretar": "no asignar fluidos, vasopresores, inotrópicos o corticoides por pertenencia algorítmica a un perfil; no convertirlo en score ni en protocolo sin validación prospectiva y externa local.",
+      "archivo_origen": "2026-11-01-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04"
+      ]
+    },
+    {
+      "id": "pmid-42274006",
+      "fecha_radar": "2026-10-25",
+      "fechas_radar": [
+        "2026-10-25"
+      ],
+      "titulo": "Vasopressors or Fluids in Early Septic Shock",
+      "cita": "Confiabilidad:** ECA, potencialmente alta; requiere lectura completa.",
+      "pmid": "42274006",
+      "doi": null,
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": null,
+      "limitaciones": "ECA, potencialmente alta; requiere lectura completa.",
+      "impacto_uti": "relevante para el orden temporal fluidos–noradrenalina, pero no debe simplificarse a “menos fluidos para todos”. La fenotipificación (hipovolemia, vasoplejía, disfunción ventricular, congestión) y la respuesta dinámica siguen siendo centrales.",
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-10-25-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "doi-10-1001-jama-2026-21333",
+      "fecha_radar": "2026-10-18",
+      "fechas_radar": [
+        "2026-10-18"
+      ],
+      "titulo": "Vasopresina: iniciar a 0,1 versus 0,4 µg/kg/min de noradrenalina-equivalente no redujo mortalidad",
+      "cita": "Peltan ID, Groat D, Jacobs JR, et al. *Effect of Vasopressin Initiation Threshold on Septic Shock Mortality: The VASSPR Cluster Crossover Randomized Strategy Trial.* JAMA. Publicado online 14 oct 2026. doi: [10.1001/jama.2026.21333](https://doi.org/10.1001/jama.2026.21333). Registro: [NCT06217562](https://clinicaltrials.gov/study/NCT06217562).",
+      "pmid": null,
+      "doi": "10.1001/jama.2026.21333",
+      "tipo_pregunta": "ensayo pragmático, aleatorizado por conglomerados con cruce mensual, abierto, 13 hospitales de Idaho y Utah; alta relevancia y confiabilidad moderada-alta para una estrategia institucional real, menor para el efecto farmacológico individual estricto. — ¿una estrategia hospitalaria que recomienda iniciar vasopresina con menor dosis de otros vasopresores mejora los resultados del shock séptico?",
+      "poblacion": "3959 adultos con shock séptico que recibían vasopresores; mediana de edad 68 años.",
+      "resultado_clave": null,
+      "limitaciones": "intervención a nivel de hospital con discreción clínica y adherencia incompleta; un único sistema integrado de EE. UU.; compara esos umbrales, no todas las formas posibles de “temprano”; no integra trayectoria de shock, perfusión, ecocardiografía o fenotipos.",
+      "impacto_uti": "no aporta sostén para imponer como regla institucional que la vasopresina deba iniciarse sistemáticamente a 0,1 µg/kg/min en vez de esperar 0,4. Refuerza individualizar según carga catecolaminérgica, vasoplejía, perfusión, función ventricular y disponibilidad, sin retrasar la reevaluación fisiológica.",
+      "no_sobreinterpretar": "no demuestra que la vasopresina sea inútil, ni que haya que esperar siempre 0,4 µg/kg/min; tampoco invalida indicaciones contextualizadas por un paciente concreto.",
+      "archivo_origen": "2026-10-18-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M06"
+      ]
+    },
+    {
+      "id": "doi-10-1001-jama-2026-21322",
+      "fecha_radar": "2026-10-18",
+      "fechas_radar": [
+        "2026-10-18"
+      ],
+      "titulo": "Dobutamina intraoperatoria durante control quirúrgico de foco: menos AKI, sin beneficio demostrado en mortalidad",
+      "cita": "Chinese Perioperative Septic Shock Investigators for the Chinese Peri-Operative Organ Protection Group. *Intraoperative Dobutamine Plus Norepinephrine to Prevent Postoperative Acute Kidney Injury in Septic Shock: A Randomized Clinical Trial.* JAMA. Publicado online 14 oct 2026. doi: [10.1001/jama.2026.21322](https://doi.org/10.1001/jama.2026.21322). Registro: [NCT06462313](https://clinicaltrials.gov/study/NCT06462313).",
+      "pmid": null,
+      "doi": "10.1001/jama.2026.21322",
+      "tipo_pregunta": "ECA multicéntrico, abierto, 39 hospitales terciarios de China; outcome primario renal objetivo, con evaluación y análisis cegados. Confiabilidad moderada-alta para el contexto evaluado. — en shock séptico que requiere control quirúrgico de foco, ¿sumar dobutamina intraoperatoria a noradrenalina disminuye AKI posoperatoria?",
+      "poblacion": "584 adultos con shock séptico sometidos a control quirúrgico de foco; mediana de edad 67,5 años. Incluyó pacientes con AKI preoperatoria o enfermedad renal crónica.",
+      "resultado_clave": null,
+      "limitaciones": "diseño abierto; sólo en el período intraoperatorio y en un fenotipo de shock séptico con fuente quirúrgica; monitorización hemodinámica avanzada no uniforme; China; no diseñado para comparar inotrópicos ni demostrar beneficio en mortalidad.",
+      "impacto_uti": "es señal fuerte para lectura completa y para discutir con anestesia/cirugía en shock séptico que va a control de foco, especialmente si hay hipoperfusión y sospecha de bajo gasto. No justifica usar dobutamina “renal” en todo shock séptico ni extrapolar a sepsis médica.",
+      "no_sobreinterpretar": "la reducción de AKI no equivale a demostrar mejor supervivencia; no sustituye evaluar gasto cardíaco, perfusión, congestión, respuesta a fluidos ni riesgo arrítmico.",
+      "archivo_origen": "2026-10-18-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06",
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42828523",
+      "fecha_radar": "2026-10-04",
+      "fechas_radar": [
+        "2026-10-04"
+      ],
+      "titulo": "Taquicardia mediada por marcapasos simulando shock septico refractario",
+      "cita": "Abrol A et al. Algorithm-Facilitated Pacemaker-Mediated Tachycardia Mimicking Refractory Septic Shock. JACC Case Reports. 2026 Oct 3. PMID: 42828523. DOI: 10.1016/j.jaccas.2026.110616.",
+      "pmid": "42828523",
+      "doi": "10.1016/j.jaccas.2026.110616",
+      "tipo_pregunta": "reporte de caso. — si una taquicardia mediada por marcapasos lenta/fija puede simular shock septico refractario y llevar a escalada de vasopresores.",
+      "poblacion": "mujer de 62 anos con marcapasos bicameral, insuficiencia respiratoria e hipotension.",
+      "resultado_clave": "frecuencia estimulada fija alrededor de 109-110/min; PVARP 225 ms y conduccion VA 360 ms; circuito de 550 ms.",
+      "limitaciones": "caso unico; no estima frecuencia ni rendimiento diagnostico. alta como senal diagnostica puntual, baja para generalizacion epidemiologica.",
+      "impacto_uti": "en shock presuntamente septico con marcapasos y FC fija 100-110/min, pedir interrogacion del dispositivo y revisar PMT lenta antes de seguir subiendo noradrenalina sin explicacion fisiologica.",
+      "no_sobreinterpretar": "no todo shock con marcapasos es PMT; primero sostener ABC, infeccion, eco, ECG, lactato/perfusion y causas mecanicas.",
+      "archivo_origen": "2026-10-04-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42822214",
+      "fecha_radar": "2026-10-04",
+      "fechas_radar": [
+        "2026-10-04"
+      ],
+      "titulo": "Sepsis guidelines, exceso de confianza y humildad clinica",
+      "cita": "Shorr AF, Solano T, Paiva JA. The clinical side of Icarus - hubris, overconfidence, and sepsis guidelines. Journal of Critical Care. 2026 Oct 1. PMID: 42822214. DOI: 10.1016/j.jcrc.2026.155758.",
+      "pmid": "42822214",
+      "doi": "10.1016/j.jcrc.2026.155758",
+      "tipo_pregunta": "comentario/editorial; abstract no disponible en PubMed al momento de la busqueda. — como interpretar guias de sepsis sin convertir recomendaciones poblacionales en automatismos rigidos.",
+      "poblacion": "no aplica por tipo de articulo.",
+      "resultado_clave": "no disponible en abstract/metadatos PubMed.",
+      "limitaciones": "opinion experta; requiere lectura completa para saber argumento y evidencia usada. baja para cambiar conducta por si solo; potencialmente util como lectura metodologica.",
+      "impacto_uti": "buen disparador docente para no confundir bundle con fisiologia del paciente concreto: perfusion, vasoplejia, PAD, lactato, delta PCO2, piel, diuresis, eco y respuesta al tratamiento.",
+      "no_sobreinterpretar": "no usarlo como excusa para ignorar guias ni bundles; usarlo para mejorar juicio clinico y trazabilidad de excepciones.",
+      "archivo_origen": "2026-10-04-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42825208",
+      "fecha_radar": "2026-10-04",
+      "fechas_radar": [
+        "2026-10-04"
+      ],
+      "titulo": "BUN/cistatina C y mortalidad intrahospitalaria en sepsis",
+      "cita": "Chen BW et al. Predictive performance of blood urea nitrogen, cystatin C, and their ratio for in-hospital mortality in sepsis: a Chinese two-center analysis. Open Medicine. 2026 Oct 1. PMID: 42825208. DOI: 10.1515/med-2026-1522.",
+      "pmid": "42825208",
+      "doi": "10.1515/med-2026-1522",
+      "tipo_pregunta": "cohorte retrospectiva bicentrica con validacion externa. — si BUN, cistatina C y su ratio mejoran la estratificacion pronostica en sepsis.",
+      "poblacion": "1.039 pacientes con sepsis en dos hospitales de China.",
+      "resultado_clave": "BCR OR ajustado 1,247 (IC95% 1,165-1,335; p menor a 0,001); BUN OR ajustado 1,047 (IC95% 1,029-1,065; p menor a 0,001). BCR+SOFA AUC 0,717.",
+      "limitaciones": "retrospectivo, contexto sanitario especifico, performance solo moderada, riesgo de confusores nutricionales/renales/catabolicos. moderada-baja para decision individual; util como senal pronostica, no como score nuevo.",
+      "impacto_uti": "BUN alto puede integrarse al fenotipo de hipoperfusion/catabolismo/renal, pero no reemplaza SOFA ni juicio clinico.",
+      "no_sobreinterpretar": "no tratar el ratio como gatillo terapeutico ni usarlo aislado para limitar soporte.",
+      "archivo_origen": "2026-10-04-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42790104",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "Shock septico: no quedarse solo con PAM/ScvO2 si la dosis de vasopresor sube",
+      "cita": "Effects of vasopressor dose on microcirculation despite preserved macrohemodynamic targets in septic shock: a prospective observational study. J Crit Care. 2026. PMID: 42790104. DOI: 10.1016/j.jcrc.2026.155762.",
+      "pmid": "42790104",
+      "doi": "10.1016/j.jcrc.2026.155762",
+      "tipo_pregunta": "prospectivo observacional, 30 adultos ventilados con shock septico bajo vasopresores. — en shock septico ya reanimado hasta PAM >=65 mmHg, la dosis equivalente de noradrenalina se asocia con peor reserva microvascular aunque la macrocirculacion parezca aceptable?",
+      "poblacion": "adultos en ARM con shock septico, luego de reanimacion inicial, con PAM >=65 mmHg sostenida con vasopresores.",
+      "resultado_clave": "la dosis equivalente de noradrenalina se asocio inversamente con la pendiente de recuperacion de StO2 (rho -0,728; p ajustada <0,001). ScvO2 no se asocio con indices dinamicos derivados de VOT tras correccion por comparaciones multiples.",
+      "limitaciones": "n=30; observacional; NIRS/VOT no es estandar universal; mortalidad solo exploratoria; no prueba que bajar vasopresor mejore microcirculacion.",
+      "impacto_uti": "si el paciente mantiene PAM pero cada vez necesita mas noradrenalina, no asumir perfusion adecuada por PAM/ScvO2. Reintegrar piel, relleno capilar, lactato, delta PCO2, diuresis, eco funcional, VExUS si corresponde y busqueda de foco/mixto. Muy alineado con la idea de que la PAM puede mentir.",
+      "no_sobreinterpretar": "no indica un objetivo de noradrenalina ni una estrategia de reduccion; no reemplaza lactato, CRT ni evaluacion clinica; no valida NIRS como obligatorio.",
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05",
+        "M06",
+        "M07"
+      ]
+    },
+    {
+      "id": "pmid-42786551",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "Presion arterial diastolica en SSC 2026: pieza muy relevante para tu linea de vasoplejia",
+      "cita": "Revisiting diastolic arterial pressure in the 2026 Surviving Sepsis Campaign Guidelines. Am J Respir Crit Care Med. 2026. PMID: 42786551. DOI: 10.1093/ajrccm/aamag511.",
+      "pmid": "42786551",
+      "doi": "10.1093/ajrccm/aamag511",
+      "tipo_pregunta": "articulo/comentario; PubMed no muestra abstract accesible. — cual es el rol de la presion arterial diastolica en el enfoque hemodinamico del shock septico dentro de la discusion de SSC 2026?",
+      "poblacion": "no disponibles en abstract PubMed; requiere lectura completa.",
+      "resultado_clave": "no disponible en metadata PubMed.",
+      "limitaciones": "sin abstract accesible desde PubMed en esta corrida; probablemente pieza interpretativa, no ensayo.",
+      "impacto_uti": "prioridad alta para leer completo porque dialoga directo con tu hipotesis de PAD baja como senal temprana de vasoplejia y con la limitacion de usar PAM aislada.",
+      "no_sobreinterpretar": "no tomar el titulo como recomendacion formal; hasta leer el texto no asignar umbrales ni algoritmos.",
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42779856",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "MANTRA angiotensina II vs noradrenalina en shock septico: protocolo, no resultados",
+      "cita": "Mechanistic Assessment of Norepinephrine Therapy versus Angiotensin-II in Septic Shock (MANTRA): Study Protocol for a multicenter randomized trial. medRxiv. 2026. PMID: 42779856. DOI: 10.64898/2026.09.12.26362906.",
+      "pmid": "42779856",
+      "doi": "10.64898/2026.09.12.26362906",
+      "tipo_pregunta": "preprint, protocolo de ensayo mecanistico multicentrico, abierto, n previsto 78; enrolamiento 2026-2030. — Ang-II temprana vs noradrenalina como estrategia primaria en shock septico con NED 0,10-0,50 mcg/kg/min, midiendo trayectoria de renina y biomarcadores RAAS/inmunes.",
+      "poblacion": null,
+      "resultado_clave": "Cita: Mechanistic Assessment of Norepinephrine Therapy versus Angiotensin-II in Septic Shock (MANTRA): Study Protocol for a multicenter randomized trial. medRxiv. 2026. PMID: 42779856. DOI: 10.64898/2026.09.12.26362906. Tipo de estudio: preprint, protocolo de ensayo mecanistico multicentrico, abierto, n previsto 78; enrolamiento 2026-2030. Pregunta: Ang-II temprana vs noradrenalina como estrategia primaria en shock s",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42779867",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "CETP/SAA en SDRA asociado a sepsis: biomarcadores en preprint",
+      "cita": "Preserved CETP Activity and Early Serum Amyloid A are Associated with Improved Outcomes in Sepsis-Associated ARDS. bioRxiv. 2026. PMID: 42779867. DOI: 10.64898/2026.09.14.751535.",
+      "pmid": "42779867",
+      "doi": "10.64898/2026.09.14.751535",
+      "tipo_pregunta": "preprint, analisis secundario de muestras de ARDSNet-SAILS.",
+      "poblacion": null,
+      "resultado_clave": "mayor actividad CETP se asocio a menor mortalidad; asociaciones variables con SAA y rosuvastatina.",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42787356",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "Bacteriemia por Pseudomonas: el control de foco sigue siendo una intervencion critica, no un detalle quirurgico",
+      "cita": "Source Control in Pseudomonas aeruginosa Bloodstream Infections: An Overlooked Pillar in Reducing 30-Day All-Cause Mortality. Open Forum Infect Dis. 2026. PMID: 42787356. DOI: 10.1093/ofid/ofag488.",
+      "pmid": "42787356",
+      "doi": "10.1093/ofid/ofag488",
+      "tipo_pregunta": "cohorte retrospectiva multicentrica, 14 hospitales italianos. — en bacteriemia por Pseudomonas aeruginosa, el control temprano y adecuado del foco se asocia con menor mortalidad a 30 dias?",
+      "poblacion": "639 episodios hospitalarios de bacteriemia por Pseudomonas aeruginosa, 2021-2022.",
+      "resultado_clave": "mortalidad 30 dias 6,5% con control temprano adecuado vs 23,6% sin control temprano adecuado y 28,4% cuando se considero no necesario. En analisis con propensity score, control temprano adecuado se asocio con menor mortalidad: HR ajustado 0,15; p=0,0024.",
+      "limitaciones": "retrospectivo; riesgo de confundimiento por indicacion y seleccion; no todos los focos son igualmente controlables; no es exclusivamente shock septico.",
+      "impacto_uti": "en sepsis por Pseudomonas o bacteriemia GNR, no alcanza con antibiotico correcto; documentar foco, factibilidad de drenaje/retiro de cateter/procedimiento y tiempo al control.",
+      "no_sobreinterpretar": "no justifica procedimientos inseguros ni reemplaza criterio quirurgico/intervencionista; asociacion no es causalidad demostrada.",
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42783423",
+      "fecha_radar": "2026-09-27",
+      "fechas_radar": [
+        "2026-09-27"
+      ],
+      "titulo": "Albumina hiperoncotica 20% en sepsis/shock: metaanalisis interesante, certeza baja",
+      "cita": "Hyperoncotic Albumin (20%) Versus Crystalloids for Mortality in Adults with Sepsis and Septic Shock: An Updated Systematic Review and Meta-Analysis. Med Sci (Basel). 2026. PMID: 42783423. DOI: 10.3390/medsci14050550.",
+      "pmid": "42783423",
+      "doi": "10.3390/medsci14050550",
+      "tipo_pregunta": "revision sistematica y metaanalisis; 8 RCT, n=3707.",
+      "poblacion": null,
+      "resultado_clave": "mortalidad global RR 0,94; no robusto segun metodos. En subgrupo shock septico: RR 0,90 (IC95% 0,82-0,99; p=0,03). Certeza GRADE baja.",
+      "limitaciones": null,
+      "impacto_uti": "no usar como argumento para albumina rutinaria. Si se usa, debe ser caso por caso: grandes volumenes de cristaloides, hipoalbuminemia/cirrosis/congestion y disponibilidad/costo, alineado a SSC 2026.",
+      "no_sobreinterpretar": "el subgrupo de shock es sugerente, no definitivo; evitar transformar una senal de metaanalisis en protocolo.",
+      "archivo_origen": "2026-09-27-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M05"
+      ]
+    },
+    {
+      "id": "pmid-42760619",
+      "fecha_radar": "2026-09-20",
+      "fechas_radar": [
+        "2026-09-20"
+      ],
+      "titulo": "Necrosis distal/gangrena simetrica en shock con vasopresores: ojo con culpar solo a la noradrenalina",
+      "cita": "Levy JH, Shaw JR, Connors JM, Draxler DF, Maier CL, Iba T, Warkentin TE. *Ischemic Limb Necrosis and Symmetrical Peripheral Gangrene During Vasopressor Support in Severe Shock States: Thromboinflammatory Microvascular Injury as the Pathogenic Mechanism*. Eur Heart J Cardiovasc Pharmacother. 2026 Sep 19:pvag078. DOI: [10.1093/ehjcvp/pvag078](https://doi.org/10.1093/ehjcvp/pvag078). PMID: [42760619](https://pubmed.ncbi.nlm.nih.gov/42760619/).",
+      "pmid": "42760619",
+      "doi": "10.1093/ehjcvp/pvag078",
+      "tipo_pregunta": "editorial/revision invitada, revisada por pares; no es ensayo ni guideline. — cuando un paciente en shock severo desarrolla isquemia acral o gangrena periferica simetrica, cuanto explica el vasopresor y cuanto explica la microtrombosis/tromboinflamacion del shock?",
+      "poblacion": "pacientes criticos con shock severo, especialmente shock septico, que requieren soporte vasopresor y pueden desarrollar isquemia distal.",
+      "resultado_clave": "no aporta efecto numerico aplicable; es sintesis fisiopatologica.",
+      "limitaciones": "narrativa/editorial; susceptible a sesgo de seleccion de literatura; no define una conducta terapeutica validada ni umbrales de anticoagulacion. moderada para marco fisiopatologico y alerta conceptual; baja para cambiar tratamiento por si sola.",
+      "impacto_uti": "ante dedos frios/cianosis/acros isquemicos en shock con noradrenalina, mirar de entrada plaquetas, TP/TTPa, fibrinogeno, D-dimero, hepatograma, lactato, piel, relleno, perfusion regional y evolucion de dosis; no asumir automaticamente \"toxicidad por vasopresor\" ni retirar soporte hemodinamico necesario sin resolver hipoperfusion y coagulopatia.",
+      "no_sobreinterpretar": "no justifica subir o bajar vasopresores por protocolo, ni anticoagular empiricamente a todos, ni negar que dosis altas/prolongadas de vasopresores puedan contribuir al problema. Sirve para ampliar el diagnostico causal y documentar mejor el fenotipo.",
+      "archivo_origen": "2026-09-20-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M06",
+        "M08",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42725818",
+      "fecha_radar": "2026-09-20",
+      "fechas_radar": [
+        "2026-09-20"
+      ],
+      "titulo": "Meta-analisis de resucitacion guiada por perfusion periferica en shock vasodilatado/septico - fuera de ventana estricta, pero de alto valor para lectura",
+      "cita": "Mendes H, Correia JVS, Salles MMM, Kattan E, Hernandez G, Melo RH. *Mortality Effect of Peripheral Perfusion-Guided Resuscitation in Vasodilatory Shock: A Systematic Review and Dual Frequentist-Bayesian Meta-Analysis of Randomized Trials*. Crit Care Med. 2026 Sep 11. DOI: [10.1097/CCM.0000000000007364](https://doi.org/10.1097/CCM.0000000000007364). PMID: [42725818](https://pubmed.ncbi.nlm.nih.gov/42725818/).",
+      "pmid": "42725818",
+      "doi": "10.1097/CCM.0000000000007364",
+      "tipo_pregunta": "revision sistematica y metaanalisis de RCTs, con analisis frecuentista y bayesiano. — en adultos con shock vasodilatado/septico, guiar la resucitacion por perfusion periferica reduce mortalidad a 28 dias comparado con cuidado estandar o lactato?",
+      "poblacion": "7 RCTs, n=2408; todos con shock septico.",
+      "resultado_clave": "RR 0,87; IC95% 0,76-1,01; p=0,06; I2=0%; evidencia moderada. Analisis bayesiano: 97,2% de probabilidad posterior de RR <1.",
+      "limitaciones": "senal compatible con beneficio pero no concluyente en analisis primario; depende de calidad/ejecucion del relleno capilar y de protocolos heterogeneos. moderada; de lo mas util de la semana para hemodinamia de shock, pero no suficiente para venderlo como reduccion definitiva de mortalidad.",
+      "impacto_uti": "refuerza medir perfusion periferica en serio y en forma serial, no solo lactato/PAM. Muy alineado con no tratar un numero aislado.",
+      "no_sobreinterpretar": "no reemplaza lactato, ecografia, diuresis ni juicio clinico; no demuestra que \"relleno capilar gana\" en todos los escenarios.",
+      "archivo_origen": "2026-09-20-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "pmid-42722591",
+      "fecha_radar": "2026-09-13",
+      "fechas_radar": [
+        "2026-09-13"
+      ],
+      "titulo": "Fenotipos MAP/NEQ y albumina en shock septico",
+      "cita": null,
+      "pmid": "42722591",
+      "doi": null,
+      "tipo_pregunta": "cohorte retrospectiva con MIMIC-IV y validacion externa en eICU-CRD. — si las trayectorias tempranas de PAM y dosis equivalente de noradrenalina (MAP/NEQ) durante las primeras 72 h de vasopresor separan fenotipos pronosticos y modifican la asociacion exploratoria entre exposicion a albumina y mortalidad en UCI.",
+      "poblacion": "adultos con shock septico dentro de las 24 h del ingreso a UCI, con al menos cuatro mediciones MAP/NEQ luego de iniciar vasopresor. n = 3152.",
+      "resultado_clave": "cuatro fenotipos: A estable bajo 29,8%, B ascendente 26,1%, C descendente 24,0%, D estable alto 20,1%. El fenotipo A tuvo mayor riesgo de mortalidad en UCI; comparado con A, OR para mortalidad: B 0,303 (IC95% 0,225-0,408), C 0,606 (0,458-0,801), D 0,547 (0,391-0,766). Para albumina, la asociacion aparente fue distinta por fenotipo; en A no hubo senal significativa: RR 0,89 (0,72-1,07).",
+      "limitaciones": null,
+      "impacto_uti": "buen paper para pensar que la \"PAM aislada\" no alcanza; la pendiente PAM/dosis vasopresora puede ser mas informativa que un corte estatico. Puede alimentar una nota Obsidian sobre shock septico dinamico: PAM, PAD, NEQ, lactato, delta PCO2, diuresis y piel.",
+      "no_sobreinterpretar": "no demuestra beneficio de albumina; no define a quien darle albumina; MIMIC/eICU tienen sesgo de indicacion, calidad variable de mediciones y confusores residuales. Sirve para generar hipotesis y disenar dashboard, no para protocolo terapeutico.",
+      "archivo_origen": "2026-09-13-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42693658",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "Vasopresina lista para usar en shock septico: mejora tiempos, no mortalidad",
+      "cita": "Effect of a Ready-To-Use Vasopressin Product Availability in Automatic Dispensing Cabinets on Outcomes in Septic Shock. J Pharm Pract. 2026 Sep 3. PMID: 42693658. DOI: 10.1177/08971900261486608.",
+      "pmid": "42693658",
+      "doi": "10.1177/08971900261486608",
+      "tipo_pregunta": "estudio cuasi experimental pre-post con ponderacion por propensity score. — si disponer vasopresina lista para usar en dispensadores automaticos de UTI acelera su administracion y mejora objetivos hemodinamicos.",
+      "poblacion": "1104 adultos con shock septico que recibieron vasopresina como segundo vasopresor tras noradrenalina.",
+      "resultado_clave": "tiempo orden-administracion 17 vs 41 min; tiempo a PAM objetivo mejoro (HR 1,29; IC95% 1,14-1,47); estadia UTI mas corta (HR 1,23; IC95% 1,06-1,43); sin diferencia significativa en mortalidad.",
+      "limitaciones": "moderada para proceso/tiempos; baja-moderada para outcomes clinicos duros.",
+      "impacto_uti": "si el cuello de botella real es preparacion/dispensacion, puede valer mas redisenar proceso que discutir solo dosis. Relevante para protocolos de shock con segunda droga temprana.",
+      "no_sobreinterpretar": "no prueba que vasopresina temprana reduzca mortalidad; diseno no aleatorizado y posible confusion residual.",
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42695367",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "Trayectorias de sodio y diuresis en sepsis",
+      "cita": "Dynamic trajectories of serum sodium and urine output and their association with prognosis in sepsis. J Glob Health. 2026 Sep 4. PMID: 42695367. DOI: 10.7189/jogh.16.04308.",
+      "pmid": "42695367",
+      "doi": "10.7189/jogh.16.04308",
+      "tipo_pregunta": "cohorte retrospectiva MIMIC-IV con modelado de trayectorias.",
+      "poblacion": "7127 pacientes con sepsis.",
+      "resultado_clave": "cinco subtipos de trayectoria durante 96 h. Mayor riesgo con sodio levemente creciente y diuresis decreciente (HR 1,85; IC95% 1,56-2,19) y con sodio decreciente mas diuresis que sube y luego se aplana (HR 1,53; IC95% 1,29-1,82).",
+      "limitaciones": null,
+      "impacto_uti": "refuerza mirar tendencia combinada sodio/diuresis como senal de perfusion renal, balance, ADH/estres y pronostico.",
+      "no_sobreinterpretar": "MIMIC-IV, retrospectivo; no causal ni indicacion automatica de fluidos/diureticos.",
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42695753",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "TELUS agregado a TEE en shock ventilado: senal util, todavia no outcome",
+      "cita": "Feasibility and Operator-Reported Utility of Transesophageal Lung Ultrasound As an Adjunct to Resuscitative Transesophageal Echocardiography in the Evaluation of Shock. Crit Care Med. 2026 Sep 4. PMID: 42695753. DOI: 10.1097/CCM.0000000000007337.",
+      "pmid": "42695753",
+      "doi": "10.1097/CCM.0000000000007337",
+      "tipo_pregunta": "cohorte observacional multicentrica, datos prospectivos de registro rTEECoRe.",
+      "poblacion": "adultos ventilados mecanicamente evaluados por shock o monitoreo hemodinamico; 379 examenes incluidos, 96 con TELUS. ecografia pulmonar transesofagica integrada a TEE de resucitacion.",
+      "resultado_clave": "mayor identificacion reportada por operador de etiologia de shock (86,5% vs 75,3%; OR 1,95; IC95% 1,02-3,72), sin diferencia significativa en cambios globales de manejo; duracion mediana 21,5 vs 19,0 min; complicaciones raras.",
+      "limitaciones": "moderada para factibilidad; baja-moderada para impacto clinico.",
+      "impacto_uti": "para pacientes ventilados donde el transthoracico es malo, integrar pulmon y corazon por via transesofagica puede mejorar fenotipado: edema, consolidacion, derrame, patron A/B, VD/VI y volemia/congestion.",
+      "no_sobreinterpretar": "utilidad reportada por operador no es mortalidad, ventilator-free days ni menor lactato; falta adjudicacion independiente.",
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M07"
+      ]
+    },
+    {
+      "id": "pmid-42700459",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "SOFA-2: modernizacion, no adopcion automatica",
+      "cita": "Why a new Sequential Organ Failure Assessment score: rationale and development of Sequential Organ Failure Assessment-2. Curr Opin Crit Care. 2026 Oct 1. PMID: 42700459. DOI: 10.1097/MCC.0000000000001417.",
+      "pmid": "42700459",
+      "doi": "10.1097/MCC.0000000000001417",
+      "tipo_pregunta": "revision/metodologia.",
+      "poblacion": null,
+      "resultado_clave": "SOFA-2 conserva seis organos, actualiza definiciones, terapias contemporaneas, datos faltantes y disfuncion aguda sobre cronica; gastrointestinal e inmune fueron evaluados pero no incluidos por falta de soporte suficiente en datasets.",
+      "limitaciones": null,
+      "impacto_uti": "importante para investigacion, dashboards y definiciones de sepsis; todavia requiere validacion real antes de migrar herramientas locales.",
+      "no_sobreinterpretar": "no asumir que reemplaza SOFA-1 en todos los protocolos o definiciones Sepsis-3 sin validacion local.",
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42693505",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "SA-AKI y machine learning para respuesta a RRT",
+      "cita": "Machine Learning-Based Subtype Classification of Sepsis-Associated Acute Kidney Injury and Differential Responses to Renal Replacement Therapy. J Intensive Care Med. 2026 Sep 3. PMID: 42693505. DOI: 10.1177/08850666261483582.",
+      "pmid": "42693505",
+      "doi": "10.1177/08850666261483582",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "21.359 pacientes MIMIC-IV, tres subtipos; C2 tuvo mayor mortalidad 28 dias 30,8% y mayor uso de RRT 19,2%; LightGBM test AUC 0,814; RRT asociada a menor mortalidad global OR 0,810, pero heterogeneidad de efecto no significativa.",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42695977",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "Items con abstract ausente o insuficiente en PubMed",
+      "cita": null,
+      "pmid": "42695977",
+      "doi": "10.1093/ndt/gfag205",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "- Biomarker-guided polymyxin B haemoadsorption in endotoxic septic shock. NDT. PMID: 42695977. DOI: 10.1093/ndt/gfag205. Pendiente: sin abstract en PubMed; no sacar conclusion sobre hemoadsorcion. - Non-Invasive Prediction of Fluid Responsiveness in Septic Shock: Transcutaneous PO2 and Aortic Valve Velocity. J Intensive Care Med. PMID: 42693504. DOI: 10.1177/08850666261477711. Pendiente: sin abstract; potencialmente",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42690846",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "Hepatitis hipoxica en criticos: marcador de gravedad",
+      "cita": "Hypoxic Hepatitis in Critically Ill Patients: Incidence, Clinical Characteristics, and Outcomes - A Systematic Review and Meta-Analysis. J Intensive Care Med. 2026 Sep 3. PMID: 42690846. DOI: 10.1177/08850666261475587.",
+      "pmid": "42690846",
+      "doi": "10.1177/08850666261475587",
+      "tipo_pregunta": "revision sistematica y metaanalisis; PROSPERO CRD420251088120.",
+      "poblacion": "25 estudios, 150.928 pacientes criticos adultos.",
+      "resultado_clave": "prevalencia agrupada de hepatitis hipoxica en UTI 8,3%; mortalidad 64,0%; asociacion con mortalidad vs no-HH RR 2,94. Principales precipitantes reportados: shock cardiogenico, paro cardiaco y sepsis.",
+      "limitaciones": null,
+      "impacto_uti": "AST/ALT masivas en shock no son \"hepatograma alterado\" aislado; documentan hipoperfusion/hipoxia sistemica y alto riesgo.",
+      "no_sobreinterpretar": "heterogeneidad alta; probablemente marcador pronostico mas que causa tratable independiente.",
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42697475",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "Biomarcador de peroxidacion lipidica para diferenciar sepsis posoperatoria",
+      "cita": "Plasma lipid peroxidation as a non-invasive biomarker for distinguishing septic from non-septic postoperative critically ill patients. Transl Res. 2026 Sep 4. PMID: 42697475. DOI: 10.1016/j.trsl.2026.09.001.",
+      "pmid": "42697475",
+      "doi": "10.1016/j.trsl.2026.09.001",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "en 279 pacientes posoperatorios criticos, LPO fue menor en septicos; combinado con CRP/PCT alcanzo AUC 0,902.",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42691061",
+      "fecha_radar": "2026-09-06",
+      "fechas_radar": [
+        "2026-09-06"
+      ],
+      "titulo": "AUROC alto puede ocultar falla de decision en clasificadores transcriptomicos de sepsis",
+      "cita": "High AUROC can mask decision failure in sepsis transcriptomic classifiers. PLoS One. 2026. PMID: 42691061. DOI: 10.1371/journal.pone.0357585.",
+      "pmid": "42691061",
+      "doi": "10.1371/journal.pone.0357585",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "algunos modelos mantienen AUROC alto pero colapsan en umbrales fijos al transferirse entre cohortes/plataformas; en una validacion externa, balanced accuracy 0,50 pese a AUROC alto.",
+      "limitaciones": null,
+      "impacto_uti": "excelente recordatorio para MIRA/IA clinica: reportar AUROC no alcanza; hacen falta calibracion, umbrales, validacion externa y comportamiento con decision concreta.",
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-09-06-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M02"
+      ]
+    },
+    {
+      "id": "pmid-42628456",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "Sepsis despues de trauma severo",
+      "cita": "Journal of Critical Care. 2026 Aug 21. PMID: 42628456. DOI: 10.1016/j.jcrc.2026.155719.",
+      "pmid": "42628456",
+      "doi": "10.1016/j.jcrc.2026.155719",
+      "tipo_pregunta": "cohorte retrospectiva grande, TraumaRegister DGU, 2020-2024. — que factores y focos se asocian a sepsis, MOF y mortalidad en trauma severo?",
+      "poblacion": "61.399 pacientes >=16 anos, AIS >=3, ingreso a UTI. sepsis documentada por criterios Sepsis-3 en registro.",
+      "resultado_clave": "sepsis 5,7% (3486 pacientes). Estadia UTI mediana 19 vs 3 dias. MOF 68,7% en septicos vs 14,7% no septicos. Mortalidad asociada a sepsis 31,5%; foco pulmonar 63,6%, abdominal 8,7%; fatalidad abdominal 38,0% y pulmonar 32,3%. Ventilacion temprana al ingreso UTI fue el factor mas asociado (OR 2,85; IC95% 2,62-3,09).",
+      "limitaciones": "registro, definicion dependiente de documentacion, no prueba que la ventilacion cause sepsis; poblacion de trauma no extrapolable a toda UTI. moderada-alta para epidemiologia y senales de riesgo; baja para intervenciones especificas.",
+      "impacto_uti": "en politrauma ventilado, sostener vigilancia activa de foco pulmonar/abdominal, MOF y deterioro perfusional.",
+      "no_sobreinterpretar": "no asumir que todo ventilado necesita antibiotico precoz por el OR; usarlo para vigilancia, no para sobrediagnostico.",
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04"
+      ]
+    },
+    {
+      "id": "pmid-42631849",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "Revisiones/protocolos con abstract no disponible en PubMed",
+      "cita": null,
+      "pmid": "42631849",
+      "doi": "10.1007/s10456-026-10084-2",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "- Evaluating the endothelial glycocalyx from bench to bedside: a translational framework for microvascular assessment. Angiogenesis. 2026 Aug 22. PMID: 42631849. DOI: 10.1007/s10456-026-10084-2. - Current Methods, Quality Control, and Translational Perspectives for Bedside Sublingual Microcirculation Monitoring in Critical Illness. J Vis Exp. 2026 Aug 21. PMID: 42631629. DOI: 10.3791/71498. - Quadriceps muscle behavi",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "doi-10-64898-2026-08-20-26360343",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "Preprint sobre discordancia de revisiones de corticoides en sepsis",
+      "cita": null,
+      "pmid": null,
+      "doi": "10.64898/2026.08.20.26360343",
+      "tipo_pregunta": "meta-research preprint, no revisado por pares.",
+      "poblacion": null,
+      "resultado_clave": "- Fuente: medRxiv, publicado 2026-08-21. DOI: 10.64898/2026.08.20.26360343. - Tipo: meta-research preprint, no revisado por pares. - Hallazgo declarado: 42 revisiones sistematicas y 121 RCTs; mas de la mitad de pares de revisiones no compartian ningun RCT; entre 38 revisiones con mortalidad a corto plazo, 15 reportaron beneficio y 23 no evidencia de efecto. - Utilidad: buena alerta para no leer \"corticoides en sepsis",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": "al ser preprint, no cambia conducta ni reemplaza guias. Sirve para afinar lectura critica.",
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42622665",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "Monitorizacion continua de glucosa en sepsis critica",
+      "cita": "Journal of International Medical Research. 2026 Aug. PMID: 42622665. DOI: 10.1177/03000605261477581.",
+      "pmid": "42622665",
+      "doi": "10.1177/03000605261477581",
+      "tipo_pregunta": "ensayo prospectivo aleatorizado, unicentrico. — CGM mejora precision/flujo de trabajo frente al monitoreo convencional en sepsis critica?",
+      "poblacion": "60 pacientes con sepsis en UTI.",
+      "resultado_clave": "correlacion r=0,986; MARD 11,44%; 100% de lecturas en zonas A/B del error grid. Adherencia 73,91% vs 48,16%; tiempo 41,33 vs 63,67 s; mas hipoglucemias detectadas 2,46% vs 0,28%.",
+      "limitaciones": "n muy chico, centro unico, no demuestra mortalidad ni seguridad en shock severo con mala perfusion periferica. baja-moderada para factibilidad; baja para outcome clinico.",
+      "impacto_uti": "interesante para pensar flujo de enfermeria y deteccion de disglucemia, especialmente si se valida localmente.",
+      "no_sobreinterpretar": "no reemplaza control arterial/venoso en shock profundo, vasopresores altos o discordancia clinica.",
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42623141",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "Critical Care Medicine: microcirculacion y nucleosomas H3.1",
+      "cita": null,
+      "pmid": "42623141",
+      "doi": "10.1097/CCM.0000000000007324",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "- Beyond Supportive Care: Targeting the Microcirculation in Septic Shock. Crit Care Med. 2026 Aug 20. PMID: 42623141. DOI: 10.1097/CCM.0000000000007324. - H3.1 Nucleosomes in Sepsis: A Biomarker, a Mechanism, or Both? Crit Care Med. 2026 Aug 20. PMID: 42622496. DOI: 10.1097/CCM.0000000000007321. - PubMed no muestra abstract accesible. Los dejo como lectura completa pendiente, no como evidencia resumida. - Como NO sob",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": "no transformar microcirculacion/H3.1 en dianas terapeuticas bedside hasta leer texto completo y estudio fuente asociado.",
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M02",
+        "M04"
+      ]
+    },
+    {
+      "id": "pmid-42618952",
+      "fecha_radar": "2026-08-23",
+      "fechas_radar": [
+        "2026-08-23"
+      ],
+      "titulo": "AKD despues de AKI asociada a sepsis: cinetica renal vs biomarcadores",
+      "cita": "Journal of Intensive Care. 2026 Aug 19. PMID: 42618952. DOI: 10.1186/s40560-026-00926-y.",
+      "pmid": "42618952",
+      "doi": "10.1186/s40560-026-00926-y",
+      "tipo_pregunta": "analisis secundario del ensayo multicentrico SISPCT. — MR-proADM, nucleosomas H3.1 y kinetic eGFR predicen progresion a acute kidney disease (AKD) en sepsis?",
+      "poblacion": "690 pacientes con sepsis, excluyendo RRT previa o datos insuficientes de AKI. MR-proADM, H3.1 nucleosomes y kinetic eGFR en basal, dia 2 y dia 7.",
+      "resultado_clave": "AKD en 196/690 (28,4%). MR-proADM basal asociado a AKD (OR ajustado 1,17; IC95% 1,08-1,28). AUC del modelo combinado: 0,65 basal, 0,70 dia 2, 0,76 dia 7. AKD se asocio con mortalidad 90 dias 55% vs 24% (RR 2,3; IC95% 1,9-2,9). H3.1 agrego poco valor clinico sobre kinetic eGFR.",
+      "limitaciones": "analisis secundario; utilidad incremental modesta; biomarcadores no necesariamente disponibles en guardia/UTI local. moderada para el mensaje de trayectoria renal dinamica; baja para incorporar biomarcadores como decision bedside.",
+      "impacto_uti": "refuerza seguir creatinina/diuresis/tendencia y contexto hemodinamico en vez de un biomarcador aislado.",
+      "no_sobreinterpretar": "no convertir MR-proADM o H3.1 en indicacion de dialisis, volumen o vasopresores. Sirven como hipotesis/riesgo, no como orden terapeutica.",
+      "archivo_origen": "2026-08-23-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M02",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42568095",
+      "fecha_radar": "2026-08-09",
+      "fechas_radar": [
+        "2026-08-09"
+      ],
+      "titulo": "Telemedicina intensiva y destete de ventilacion invasiva",
+      "cita": "The impact of an intensive care telemedicine program on weaning from invasive ventilation: a secondary analysis of the ERIC trial. *Critical Care*. PMID: 42568095. DOI: 10.1186/s13054-026-06234-z.",
+      "pmid": "42568095",
+      "doi": "10.1186/s13054-026-06234-z",
+      "tipo_pregunta": "analisis secundario de ensayo cluster stepped-wedge randomizado. — si una intervencion compleja de telemedicina UTI mejora el proceso de destete.",
+      "poblacion": "308 pacientes ventilados al menos 2 dias y con al menos una prueba de respiracion espontanea dentro del ERIC trial, 10 clusters UTI en Berlin.",
+      "resultado_clave": "mas SBTs con intervencion, 51% vs 27% de dias-paciente, p<0,001. Sin diferencia en exito de destete: 28% vs 36%, p=0,32. En destetados, menor duracion de ventilacion invasiva: mediana 7 vs 9 dias, p=0,031.",
+      "limitaciones": "analisis secundario, grupo control chico (55), intervencion compleja no atribuible a un componente unico, entorno aleman con recursos especificos. moderada para proceso; baja-moderada para outcomes duros.",
+      "impacto_uti": "valor de checklist/ronda estructurada de destete y SBT diario. Esto es trasladable a protocolos locales aunque no haya telemedicina formal.",
+      "no_sobreinterpretar": "no demuestra que tele-UTI aumente supervivencia ni exito de destete por si sola. La senial es de adherencia a proceso y deteccion de oportunidad.",
+      "archivo_origen": "2026-08-09-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42566422",
+      "fecha_radar": "2026-08-09",
+      "fechas_radar": [
+        "2026-08-09"
+      ],
+      "titulo": "SOFA-2 y mortalidad a 90/365 dias en sepsis",
+      "cita": "Association Between the Sequential Organ Failure Assessment-2 (SOFA-2) Score and 90-Day and 365-Day Mortality in Patients With Sepsis: A Retrospective Cohort Study Based on the MIMIC-IV Database. *Shock*. PMID: 42566422. DOI: 10.1097/SHK.0000000000002918.",
+      "pmid": "42566422",
+      "doi": "10.1097/SHK.0000000000002918",
+      "tipo_pregunta": "cohorte retrospectiva MIMIC-IV v3.1 con modelos predictivos. — asociacion de SOFA-2 al ingreso UTI con mortalidad a 90 y 365 dias.",
+      "poblacion": "8.779 adultos con sepsis en UTI. SOFA-2 de ingreso.",
+      "resultado_clave": "por cada punto SOFA-2, OR ajustado 1,17 para mortalidad a 90 dias y 1,16 para 365 dias. Discriminacion individual modesta: AUC 0,65 y 0,64; random forest subio a 0,68 y 0,67.",
+      "limitaciones": "base retrospectiva unica; depende de definicion y captura de variables; AUC modesta; requiere validacion externa. moderada para asociacion; baja para uso clinico individual sin validacion local.",
+      "impacto_uti": "SOFA-2 puede servir para estratificar cohorte/investigacion y auditoria, no para reemplazar juicio clinico ni trayectoria.",
+      "no_sobreinterpretar": "un AUC 0,65 no alcanza para decisiones individuales duras. En sepsis real pesa la tendencia: lactato, diuresis, vasopresores, perfusion, foco, comorbilidad y respuesta inicial.",
+      "archivo_origen": "2026-08-09-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42571495",
+      "fecha_radar": "2026-08-09",
+      "fechas_radar": [
+        "2026-08-09"
+      ],
+      "titulo": "Lesion ventricular derecha en SDRA",
+      "cita": "Prevalence and prognosis impact of right ventricular injury in patients with acute respiratory distress syndrome: a systematic review and meta-analysis. *Annals of Intensive Care*. PMID: 42571495. DOI: 10.1016/j.aicoj.2026.100117.",
+      "pmid": "42571495",
+      "doi": "10.1016/j.aicoj.2026.100117",
+      "tipo_pregunta": "revision sistematica y metaanalisis. — prevalencia e impacto pronostico de lesion de ventriculo derecho en SDRA.",
+      "poblacion": "23 estudios, 3.977 adultos con SDRA por definicion de Berlin. presencia vs ausencia de lesion de VD, con definiciones variables.",
+      "resultado_clave": "prevalencia agrupada 30% (IC95% 23-38%). Asociacion con mortalidad UTI: OR no ajustado 2,49 (IC95% 1,81-3,42); aOR 2,37 (IC95% 1,24-4,51); aHR 2,64 (IC95% 1,60-4,37).",
+      "limitaciones": "heterogeneidad de definiciones, timing de ecocardiografia y poblaciones COVID/no COVID; no prueba causalidad. moderada para asociacion pronostica; baja para estrategia terapeutica especifica.",
+      "impacto_uti": "en SDRA grave, incluir VD en la recorrida: TAPSE/S', dilatacion VD/VI, septum, presion pulmonar estimada si posible, VTI, VCI, VExUS y efectos de PEEP/driving pressure/prono.",
+      "no_sobreinterpretar": "no todo VD lesionado exige bajar PEEP o agregar inotropico. Integrar oxigenacion, reclutabilidad, driving pressure, CO2, perfusion y congestion venosa.",
+      "archivo_origen": "2026-08-09-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M07",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42570531",
+      "fecha_radar": "2026-08-09",
+      "fechas_radar": [
+        "2026-08-09"
+      ],
+      "titulo": "Hipoxemia/hipercapnia temprana y mortalidad en ventilados invasivos",
+      "cita": "Early hypoxemia and hypercapnia within 24 hours of intensive care unit admission and 30-day mortality in adult ICU admissions with invasive mechanical ventilation during the ICU stay: a multicenter retrospective cohort study in Taiwan. *Heart & Lung*. PMID: 42570531. DOI: 10.1016/j.hrtlng.2026.102905.",
+      "pmid": "42570531",
+      "doi": "10.1016/j.hrtlng.2026.102905",
+      "tipo_pregunta": "cohorte multicentrica retrospectiva. — valor pronostico de PaO2/FiO2 y PaCO2 del primer dia en adultos que requieren ventilacion invasiva durante la UTI.",
+      "poblacion": "4.960 admisiones adultas con gases completos e informacion vital a 30 dias, de un registro critico de Taiwan; universo inicial 11.912. hipoxemia PAFI <200 mmHg, hipercapnia PaCO2 >45 mmHg, aisladas o combinadas.",
+      "resultado_clave": "mortalidad global 23,0%. Hipoxemia aislada aOR 1,63 (IC95% 1,33-2,00); hipoxemia + hipercapnia aOR 1,67 (IC95% 1,21-2,32); hipercapnia aislada no se asocio a mayor mortalidad, aOR 0,86 (IC95% 0,54-1,39).",
+      "limitaciones": "solo pacientes con datos completos; definiciones simples; no reemplaza fenotipado de SDRA, mecanica respiratoria ni causa de hipercapnia. moderada para pronostico observacional.",
+      "impacto_uti": "la PAFI temprana sigue pesando mas que la hipercapnia leve aislada. Interpretar PaCO2 con pH, ventilacion protectora, espacio muerto, EPOC/obesidad y objetivos permissive hypercapnia.",
+      "no_sobreinterpretar": "no perseguir normocapnia a costa de driving pressure/volutrauma. La hipercapnia aislada leve no equivale automaticamente a peor pronostico.",
+      "archivo_origen": "2026-08-09-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M04",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42565679",
+      "fecha_radar": "2026-08-09",
+      "fechas_radar": [
+        "2026-08-09"
+      ],
+      "titulo": "Azul de metileno vs hidroxocobalamina en shock septico",
+      "cita": "Methylene blue versus hydroxocobalamin for septic shock: a real-world comparative effectiveness study using TriNetX. *Proceedings (Baylor University Medical Center)*. PMID: 42565679. DOI: 10.1080/08998280.2026.2697704.",
+      "pmid": "42565679",
+      "doi": "10.1080/08998280.2026.2697704",
+      "tipo_pregunta": "cohorte retrospectiva de efectividad comparativa con propensity score matching. — en shock septico con terapias vasopresoras de rescate, comparar azul de metileno vs hidroxocobalamina.",
+      "poblacion": "adultos hospitalizados con sepsis/sepsis severa/shock septico en red TriNetX US, 2016-2025; 732 pacientes apareados, 366 por grupo.",
+      "resultado_clave": "mortalidad y AKI similares. Hidroxocobalamina se asocio con mas inicio de CRRT a 3-7 dias y 7 dias, y mas stroke/vasopresores prolongados en dias 3-7; el abstract no da medidas de efecto numericas para esos secundarios.",
+      "limitaciones": "observacional, alto riesgo de confounding by indication; dependiente de codificacion EHR; no hay dosis, timing, indicacion exacta ni perfil hemodinamico fino en el abstract. baja-moderada; util como alerta, no como cambio de practica.",
+      "impacto_uti": "si se usa rescate vasoplejico, documentar indicacion, dosis, momento respecto a noradrenalina/vasopresina/corticoides, lactato, PAD, ecocardio, perfusion y funcion renal. Conecta con la advertencia SSC 2026: evidencia insuficiente para recomendar azul de metileno.",
+      "no_sobreinterpretar": "no habilita a elegir azul de metileno como estandar ni a descartar hidroxocobalamina. Requiere ensayo prospectivo y seleccion fisiologica de pacientes.",
+      "archivo_origen": "2026-08-09-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M05",
+        "M06",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42541958",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Vasopresina como vasopresor primario perioperatorio: fisiologia interesante, poblacion no septica",
+      "cita": "Arginine vasopressin as the primary vasopressor in high-risk patients undergoing major non-cardiac surgery: A propensity-matched hemodynamic analysis.* Heart & Lung. Publicado online 2026-08-01. DOI: [10.1016/j.hrtlng.2026.102899](https://doi.org/10.1016/j.hrtlng.2026.102899). PMID: [42541958](https://pubmed.ncbi.nlm.nih.gov/42541958/).",
+      "pmid": "42541958",
+      "doi": "10.1016/j.hrtlng.2026.102899",
+      "tipo_pregunta": "analisis fisiologico con propensity matching. — AVP como agente principal intraoperatorio mantiene dinamica circulatoria y reduce exposicion a fluidos?",
+      "poblacion": "15 pacientes con AVP vs 13 controles catecolaminergicos en cirugia mayor no cardiaca de alto riesgo.",
+      "resultado_clave": "PAM mantenida 72-78 vs 70-76 mmHg; indice cardiaco preservado 2,2-2,5 vs 2,1-2,4 L/min/m2; menor fluidos y balance positivo con AVP.",
+      "limitaciones": "n muy chico, perioperatorio, no sepsis/shock septico, outcomes fisiologicos. baja-moderada como fisiologia; baja para conducta general.",
+      "impacto_uti": "refuerza que vasopresina puede modificar retorno venoso/volumen estresado y carga de fluidos. Interesante para pensar vasoplejia, pero no reemplaza evidencia de shock septico.",
+      "no_sobreinterpretar": "no es argumento para iniciar vasopresina como primer vasopresor universal en shock septico ni para evitar noradrenalina.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M05",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42527161",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Sindrome cardiorrenal agudo en UTI: POCUS, congestion venosa y objetivos dinamicos",
+      "cita": "Acute cardio-renal and Reno-Cardiac syndromes in critical care.* European Journal of Internal Medicine. Publicado online 2026-07-30. DOI: [10.1016/j.ejim.2026.107087](https://doi.org/10.1016/j.ejim.2026.107087). PMID: [42527161](https://pubmed.ncbi.nlm.nih.gov/42527161/).",
+      "pmid": "42527161",
+      "doi": "10.1016/j.ejim.2026.107087",
+      "tipo_pregunta": "revision narrativa. — como integrar fisiopatologia, biomarcadores, POCUS, hemodinamia y TRR en sindromes cardiorrenales/renocardiacos agudos de UTI?",
+      "poblacion": "literatura humana y animal 2000-2025; foco en CRS tipos 1 y 3.",
+      "resultado_clave": "los autores remarcan mortalidad >50% cuando CRS critico requiere TRR; biomarcadores tubulares pueden detectar IRA 12-24 h antes que creatinina.",
+      "limitaciones": "narrativa, seleccion de literatura por autores, no genera recomendacion GRADE. buena para marco fisiologico; baja para estimar efecto de intervenciones.",
+      "impacto_uti": "muy alineado con lectura de congestion/perfusion: eco pulmonar, VCI, VExUS, VD/VI, diuresis, lactato, delta PCO2, creatinina y respuesta a diuretico/vasopresor.",
+      "no_sobreinterpretar": "no transforma biomarcadores ni POCUS en algoritmo automatico; la congestion venosa no excluye hipoperfusion concomitante.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M04",
+        "M06",
+        "M07",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42542312",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "SOFA-2 en guardia para infeccion sospechada: valida riesgo, no define conducta por si solo",
+      "cita": "Predictive validity of SOFA-2 score for In-Hospital Mortality Among Patients With Suspected Infection Presenting to the Emergency Department.* International Journal of Infectious Diseases. Publicado online 2026-08-01. DOI: [10.1016/j.ijid.2026.109030](https://doi.org/10.1016/j.ijid.2026.109030). PMID: [42542312](https://pubmed.ncbi.nlm.nih.gov/42542312/).",
+      "pmid": "42542312",
+      "doi": "10.1016/j.ijid.2026.109030",
+      "tipo_pregunta": "cohorte retrospectiva multi-institucional. — SOFA-2 predice mortalidad intrahospitalaria en pacientes adultos con infeccion sospechada en guardia y como compara contra SOFA-1, qSOFA y SIRS?",
+      "poblacion": "173.079 encuentros de guardia en 6 hospitales de Taiwan, 2010-2021; mortalidad intrahospitalaria 9,3%.",
+      "resultado_clave": "AUROC SOFA-2 0,78 (IC95% 0,78-0,78), similar a SOFA-1 0,78, superior a qSOFA 0,72 y SIRS 0,63. SOFA-2 asigno menor score en 62,3% y mayor score en 1,5%; los reclasificados hacia arriba tuvieron mortalidad 25,2%.",
+      "limitaciones": "retrospectivo, Taiwan, periodo largo con cambios de practica; no prueba que usar SOFA-2 mejore outcomes. moderada para estratificacion pronostica; baja para decisiones terapeuticas directas.",
+      "impacto_uti": "refuerza que qSOFA no debe ser el filtro central. SOFA-2 puede servir para dashboard/riesgo temprano, siempre integrado con lactato, perfusion, foco, PAD/PAM, diuresis, piel y trayectoria.",
+      "no_sobreinterpretar": "no es una definicion operativa de sepsis por si sola, no reemplaza juicio clinico y no autoriza demorar antibioticos o reanimacion esperando completar el score.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "pmid-42540072",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Modelos y biomarcadores de sepsis: utiles para investigacion, no para implementar sin validacion local",
+      "cita": null,
+      "pmid": "42540072",
+      "doi": "10.3389/fcvm.2026.1788162",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "- **SICM prediction model:** *Development and validation of a clinical prediction model for sepsis-induced cardiomyopathy.* Frontiers in Cardiovascular Medicine. DOI: [10.3389/fcvm.2026.1788162](https://doi.org/10.3389/fcvm.2026.1788162). PMID: [42540072](https://pubmed.ncbi.nlm.nih.gov/42540072/). Modelo retrospectivo MIMIC-IV, 956 derivacion y 104 validacion externa; C-statistic 0,80 derivacion, 0,79 validacion int",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42536586",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Items con abstract no accesible en PubMed durante la corrida",
+      "cita": null,
+      "pmid": "42536586",
+      "doi": "10.1097/MD.0000000000049961",
+      "tipo_pregunta": null,
+      "poblacion": null,
+      "resultado_clave": "- *Anion gap trajectory patterns and prognosis in sepsis patients: A multicenter retrospective study.* Medicine. DOI: [10.1097/MD.0000000000049961](https://doi.org/10.1097/MD.0000000000049961). PMID: [42536586](https://pubmed.ncbi.nlm.nih.gov/42536586/). No sobreinterpretar sin abstract/texto completo; podria ser util para seguimiento acidobase, pero no hay numeros extraidos. - *Secondary Atrial Fibrillation in Criti",
+      "limitaciones": null,
+      "impacto_uti": null,
+      "no_sobreinterpretar": null,
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "alerta",
+      "senal_practica": false,
+      "es_alerta_metodologica": true,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42538732",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Inmunoglobulina enriquecida con IgM en sepsis/shock: senal favorable, evidencia insuficiente para uso rutinario",
+      "cita": "IgM-Enriched Immunoglobulin As Adjunctive Therapy in Adult Sepsis and Septic Shock: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.* Critical Care Explorations. Publicado online 2026-08-01. DOI: [10.1097/CCE.0000000000001451](https://doi.org/10.1097/CCE.0000000000001451). PMID: [42538732](https://pubmed.ncbi.nlm.nih.gov/42538732/).",
+      "pmid": "42538732",
+      "doi": "10.1097/CCE.0000000000001451",
+      "tipo_pregunta": "revision sistematica y metaanalisis de ensayos aleatorizados. — IgM enriquecida como adyuvante reduce mortalidad en adultos con sepsis/sepsis severa/shock septico?",
+      "poblacion": "sintesis principal de 6 ensayos Pentaglobin en ingles, 411 pacientes.",
+      "resultado_clave": "sintesis principal no concluyente: OR 0,65 (IC95% 0,39-1,07; I2 9%). Mortalidad exacta a 28 dias tambien no concluyente: OR 0,84 (IC95% 0,50-1,43). Analisis significativos aparecieron en extensiones post hoc/exploratorias.",
+      "limitaciones": "pocos pacientes, ensayos antiguos/heterogeneos, seguridad incompleta, resultados positivos solo al expandir post hoc. moderada para decir \"no uso rutinario\"; baja para identificar subgrupo beneficiado.",
+      "impacto_uti": "util para frenar extrapolaciones. Si se considera IgM, deberia ser caso excepcional, fenotipo definido, discusion documentada y no sustituto de foco, antibioticos, reanimacion y soporte.",
+      "no_sobreinterpretar": "una direccion de efecto no es eficacia probada. No convertirlo en recomendacion general para shock septico.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M05",
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42526359",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Inhibicion terminal del complemento en shock septico: poblacion rara, riesgo clinico relevante",
+      "cita": "Terminal complement inhibition is associated with renal, hematologic, and thrombotic complications during septic shock: A global propensity score-matched cohort study.* Journal of Critical Care. Publicado online 2026-07-29, ingresado en ventana. DOI: [10.1016/j.jcrc.2026.155700](https://doi.org/10.1016/j.jcrc.2026.155700). PMID: [42526359](https://pubmed.ncbi.nlm.nih.gov/42526359/).",
+      "pmid": "42526359",
+      "doi": "10.1016/j.jcrc.2026.155700",
+      "tipo_pregunta": "cohorte retrospectiva global TriNetX con propensity matching. — en shock septico, recibir eculizumab/ravulizumab por indicacion previa se asocia a complicaciones renales, hematologicas o tromboticas?",
+      "poblacion": "adultos con shock septico e indicacion de inhibicion C5; 638 expuestos vs 638 controles emparejados.",
+      "resultado_clave": "mas trombocitopenia 20,3% vs 8,9%, IRA 25,0% vs 13,3%, eventos tromboticos 7,8% vs 4,7%, TRR 8,3% vs 5,1% y MACE 13,7% vs 9,2%. Mortalidad a 30 dias sin diferencia significativa.",
+      "limitaciones": "EHR federado, exposicion poco frecuente, confounding residual, severidad inferida por proxies. moderada para alerta de riesgo; baja para causalidad.",
+      "impacto_uti": "si aparece un paciente con inhibidor C5, no es \"un sepsis comun\": anticipar riesgo infeccioso, renal, hematologico y trombotico; revisar vacunacion/profilaxis y discutir temprano con infectologia/hematologia.",
+      "no_sobreinterpretar": "no indica suspender o continuar automaticamente inhibidor C5 durante shock; eso depende de indicacion, infeccion, riesgo trombotico y equipo tratante.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M08",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42526287",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Dispositivos medicos y MDRO en sepsis de guardia",
+      "cita": "Medical devices and multidrug-resistant infections in emergency department patients with sepsis: A prospective observational study.* American Journal of Emergency Medicine. Publicado online 2026-07-22, ingresado en ventana. DOI: [10.1016/j.ajem.2026.07.032](https://doi.org/10.1016/j.ajem.2026.07.032). PMID: [42526287](https://pubmed.ncbi.nlm.nih.gov/42526287/).",
+      "pmid": "42526287",
+      "doi": "10.1016/j.ajem.2026.07.032",
+      "tipo_pregunta": "observacional prospectivo. — portar dispositivos medicos se asocia a infecciones por microorganismos multirresistentes en sepsis de guardia?",
+      "poblacion": "244 pacientes adultos con sepsis en guardia; 122 con dispositivos y 122 sin dispositivos.",
+      "resultado_clave": "MDRO en 32,4%. Dispositivos asociados a MDRO: OR 2,33 (IC95% 1,28-4,33); shock septico OR 3,53. Dispositivos no se asociaron independientemente a mortalidad: OR 1,19 (IC95% 0,55-2,58). Shock septico fue fuerte predictor de mortalidad: OR 15,83.",
+      "limitaciones": "n chico, definicion y tipo de dispositivo importan, epidemiologia local manda. moderada para alerta microbiologica; baja para elegir esquema empirico especifico.",
+      "impacto_uti": "util como variable de riesgo antimicrobiano en admision, separada de gravedad hemodinamica. Ayuda a no confundir \"alto riesgo MDRO\" con \"mayor mortalidad por dispositivo\" sin ajustar.",
+      "no_sobreinterpretar": "no autoriza cobertura amplia automatica; debe cruzarse con colonizacion previa, internaciones, antibioticos recientes, foco, mapa local y gravedad.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42537430",
+      "fecha_radar": "2026-08-02",
+      "fechas_radar": [
+        "2026-08-02"
+      ],
+      "titulo": "Dapagliflozina iniciada en criticos con IRA: factibilidad, no prueba de beneficio",
+      "cita": "Safety and outcomes of dapagliflozin initiation in critically ill patients with acute kidney injury: A post-hoc analysis of the DEFENDER trial.* Journal of Critical Care. Publicado online 2026-07-31. DOI: [10.1016/j.jcrc.2026.155701](https://doi.org/10.1016/j.jcrc.2026.155701). PMID: [42537430](https://pubmed.ncbi.nlm.nih.gov/42537430/).",
+      "pmid": "42537430",
+      "doi": "10.1016/j.jcrc.2026.155701",
+      "tipo_pregunta": "analisis post hoc de ensayo DEFENDER. — iniciar dapagliflozina en pacientes criticos con IRA se asocia a dano hemodinamico/metabolico o outcomes renales peores?",
+      "poblacion": "212 pacientes criticos con IRA al ingreso al ensayo; dapagliflozina n=100, control n=112.",
+      "resultado_clave": "mortalidad 38% vs 40%; TRR 12% vs 18%; compuesto 41% vs 42%. Diferencia ajustada de riesgo para muerte -1,9% (IC95% -14,5 a 10,7), TRR -7,4% (-16,2 a 1,5). Sin divergencias fisiologicas sugestivas de inestabilidad.",
+      "limitaciones": "post hoc, n chico, IC amplios; no excluye dano ni beneficio moderado. baja-moderada para seguridad exploratoria; baja para eficacia.",
+      "impacto_uti": "interesante para investigacion y transicion post fase aguda, no para iniciar SGLT2i en shock activo.",
+      "no_sobreinterpretar": "\"no se vio dano\" no es \"beneficia al rinon\"; evitar aplicarlo en hipoperfusion, ayuno, cetoacidosis, sepsis no controlada o inestabilidad.",
+      "archivo_origen": "2026-08-02-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42498136",
+      "fecha_radar": "2026-07-26",
+      "fechas_radar": [
+        "2026-07-26"
+      ],
+      "titulo": "SIC-2: criterio simplificado de coagulopatia inducida por sepsis",
+      "cita": "Iba T, Tanigawa T, Kondo Y, Okada A, Wada H, Helms J, Levy JH, Levi M. *Proposal of simplified sepsis-induced coagulopathy criteria (SIC-2) for the detection of early-phase disseminated intravascular coagulation in sepsis.* Journal of Thrombosis and Haemostasis. Publicado online 2026-07-24. DOI: [10.1016/j.jtha.2026.07.013](https://doi.org/10.1016/j.jtha.2026.07.013). PMID: [42498136](https://pubmed.ncbi.nlm.nih.gov/42498136/).",
+      "pmid": "42498136",
+      "doi": "10.1016/j.jtha.2026.07.013",
+      "tipo_pregunta": "cohorte retrospectiva MIMIC-IV, marco de no inferioridad. — sacar SOFA del SIC preserva deteccion de DIC temprana y mejora claridad conceptual?",
+      "poblacion": "18.086 pacientes con sepsis.",
+      "resultado_clave": "AUC para DIC 0,850 vs 0,854 (p = 0,37); mortalidad 28 dias AUC 0,621 vs 0,614, diferencia absoluta 0,007.",
+      "limitaciones": "base retrospectiva, MIMIC-IV, necesita validacion externa y saber exactamente que variables/cortes usa SIC-2 antes de implementarlo. moderada como senal metodologica; insuficiente para cambiar protocolo local sin validacion.",
+      "impacto_uti": "interesante para separar \"coagulopatia\" de \"gravedad global\". Puede servir para tablero o alerta Auxillian si se valida.",
+      "no_sobreinterpretar": "no es indicacion automatica de anticoagulacion, plasma, plaquetas ni trombomodulina; tampoco reemplaza juicio clinico de sangrado/trombosis.",
+      "archivo_origen": "2026-07-26-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M08"
+      ]
+    },
+    {
+      "id": "pmid-42489962",
+      "fecha_radar": "2026-07-26",
+      "fechas_radar": [
+        "2026-07-26"
+      ],
+      "titulo": "Profilaxis anticoagulante temprana en sepsis con trombocitopenia severa",
+      "cita": "Chen M, Xu J, Guo Y, Shen Y, Chen Q, Wang X, Jiang H, Dai L. *Early prophylactic anticoagulation in patients with severe sepsis-associated thrombocytopenia: a target trial emulation.* Journal of Thrombosis and Thrombolysis. Publicado online 2026-07-23. DOI: [10.1007/s11239-026-03361-w](https://doi.org/10.1007/s11239-026-03361-w). PMID: [42489962](https://pubmed.ncbi.nlm.nih.gov/42489962/).",
+      "pmid": "42489962",
+      "doi": "10.1007/s11239-026-03361-w",
+      "tipo_pregunta": "emulacion de ensayo objetivo, MIMIC-IV, observacional. — en sepsis con plaquetas 30.000-50.000/uL, la profilaxis farmacologica temprana reduce VTE sin aumentar sangrado mayor?",
+      "poblacion": "938 adultos con sepsis en UCI; 189 estrategia profilaxis, 749 control.",
+      "resultado_clave": "VTE 14 vs 86 eventos; HR ajustado 0,51 (IC95% 0,28-0,92; p = 0,025). Sangrado mayor 22 vs 95; HR 0,74 (IC95% 0,46-1,20; p = 0,220). La senal se atenuo en algunos analisis de sensibilidad.",
+      "limitaciones": "endpoint de sangrado por EHR, confounding residual, no randomizado, estrategia mayormente HNF. baja-moderada; buena pregunta clinica, evidencia aun generadora de hipotesis.",
+      "impacto_uti": "vale leerlo porque toca una zona gris real: sepsis, plaquetas 30-50 mil y riesgo trombotico. Puede ayudar a discutir protocolo, pero no a automatizar.",
+      "no_sobreinterpretar": "no significa anticoagular toda plaquetopenia septica; hay que mirar sangrado activo, procedimientos, coagulopatia, fibrinogeno, DIC y causa de plaquetopenia.",
+      "archivo_origen": "2026-07-26-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M08"
+      ]
+    },
+    {
+      "id": "pmid-42492620",
+      "fecha_radar": "2026-07-26",
+      "fechas_radar": [
+        "2026-07-26"
+      ],
+      "titulo": "Monitoreo hemodinamico avanzado post-paro extrahospitalario",
+      "cita": "Advanced Hemodynamic Monitoring During Post-Resuscitation Care After Out-of-Hospital Cardiac Arrest: A Scoping Review.* Resuscitation. Publicado online 2026-07-23. DOI: [10.1016/j.resuscitation.2026.111218](https://doi.org/10.1016/j.resuscitation.2026.111218). PMID: [42492620](https://pubmed.ncbi.nlm.nih.gov/42492620/).",
+      "pmid": "42492620",
+      "doi": "10.1016/j.resuscitation.2026.111218",
+      "tipo_pregunta": "scoping review PRISMA-ScR. — que variables avanzadas se usan tras RCE por paro extrahospitalario y con que asociacion pronostica?",
+      "poblacion": "adultos hospitalizados post-OHCA; 28 estudios incluidos.",
+      "resultado_clave": "variables mas reportadas: gasto cardiaco 27/28, PAM 25/28, PVC 17/28, SvO2 14/28. Asociaciones pronosticas heterogeneas; bajo SvO2 y presion pulmonar elevada se asociaron a peores outcomes en algunos estudios.",
+      "limitaciones": "scoping review, heterogeneidad alta, no define targets terapeuticos. moderada para mapear brechas; baja para conducta directa.",
+      "impacto_uti": "refuerza que tras RCE no alcanza con PAM. Considerar perfil integrado: gasto, ScvO2/SvO2, lactato, eco, VD/VI y congestion.",
+      "no_sobreinterpretar": "no valida un objetivo universal de GC, PVC, PAM o SvO2 post-paro.",
+      "archivo_origen": "2026-07-26-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "pmid-42467247",
+      "fecha_radar": "2026-07-19",
+      "fechas_radar": [
+        "2026-07-19"
+      ],
+      "titulo": "Shock septico aparentemente refractario: no alcanza mirar la dosis de noradrenalina",
+      "cita": "Persistent tissue hypoperfusion improves risk stratification beyond vasopressor dose in refractory septic shock: a secondary analysis of the ANDROMEDA-SHOCK-2 trial.** Intensive Care Med. 2026. PMID: 42467247. DOI: 10.1007/s00134-026-08551-x.",
+      "pmid": "42467247",
+      "doi": "10.1007/s00134-026-08551-x",
+      "tipo_pregunta": "analisis secundario exploratorio de ANDROMEDA-SHOCK-2. — si combinar dosis de vasopresor con hipoperfusion persistente mejora la estratificacion de riesgo en shock septico refractario.",
+      "poblacion": "1363 pacientes con shock septico y datos completos tras 6 h de resucitacion hemodinamica protocolizada.",
+      "resultado_clave": "188/1363 (13,8%) tenian equivalente de noradrenalina >0,5 mcg/kg/min a las 6 h, con mortalidad 47,9%. Con dos criterios de hipoperfusion, 53 pacientes (3,9%) tuvieron mortalidad 73,6% vs 23,7% en no refractarios; aHR 4,68 (IC95% 3,31-6,64). El LR+ fue 8,12 con vasopresor + dos criterios de hipoperfusion vs 2,71 con vasopresor solo.",
+      "limitaciones": "post hoc/secundario, hipotesis-generador, no define una intervencion terapeutica nueva ni valida solo decisiones de escalamiento. moderada para estratificacion fisiologica; no es ensayo de estrategia terapeutica.",
+      "impacto_uti": "refuerza una idea muy util para recorrida: la etiqueta de \"refractario\" deberia exigir vasopresor alto y perfusion mala persistente, no solo numero de noradrenalina. Calza con mirar piel, relleno, lactato y perfusion real cuando la PAM parece aceptable.",
+      "no_sobreinterpretar": "no usar >0,5 mcg/kg/min como gatillo automatico de terapias heroicas; obliga a re-chequear foco, volumen util/tolerado, ventriculo, vasoplejia, acidosis, sedacion y drogas antes de declarar fracaso.",
+      "archivo_origen": "2026-07-19-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M05",
+        "M06"
+      ]
+    },
+    {
+      "id": "pmid-42469837",
+      "fecha_radar": "2026-07-19",
+      "fechas_radar": [
+        "2026-07-19"
+      ],
+      "titulo": "Refractariedad en shock septico como proceso de re-evaluacion",
+      "cita": "The usual suspects: a pragmatic framework to identify and address reversible contributors in apparent refractory septic shock.** Critical Care. 2026. PMID: 42469837. DOI: 10.1186/s13054-026-06197-1.",
+      "pmid": "42469837",
+      "doi": "10.1186/s13054-026-06197-1",
+      "tipo_pregunta": "perspectiva/revision pragmatica. — como ordenar la busqueda de contribuyentes reversibles antes de declarar shock septico refractario establecido.",
+      "poblacion": "no aplica; marco conceptual para adultos con shock septico aparente-refractario.",
+      "resultado_clave": null,
+      "limitaciones": "opinion experta; no validado como protocolo. buena como marco bedside, baja como evidencia de outcome.",
+      "impacto_uti": "buen candidato para convertir en checklist local de \"shock que no responde\".",
+      "no_sobreinterpretar": "no es una guia ni algoritmo obligatorio; es una forma ordenada de no saltear causas corregibles.",
+      "archivo_origen": "2026-07-19-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01"
+      ]
+    },
+    {
+      "id": "pmid-42469213",
+      "fecha_radar": "2026-07-19",
+      "fechas_radar": [
+        "2026-07-19"
+      ],
+      "titulo": "PAM guiada por indice resistivo renal: mejora hemodinamia renal, no mortalidad",
+      "cita": "Renal resistive index-guided mean arterial pressure titration in sepsis: a prospective single-center, single-blind, parallel-group randomized controlled trial.** Nature Communications. 2026. PMID: 42469213. DOI: 10.1038/s41467-026-75398-7.",
+      "pmid": "42469213",
+      "doi": "10.1038/s41467-026-75398-7",
+      "tipo_pregunta": "ensayo randomizado prospectivo, un centro, simple ciego. — si titular la PAM guiado por indice resistivo renal reduce mortalidad a 28 dias frente a tratamiento convencional.",
+      "poblacion": "274 pacientes con sepsis.",
+      "resultado_clave": "el RRI post-titulacion fue menor en el grupo guiado por RRI (0,61 vs 0,67; p<0,001), pero la mortalidad a 28 dias no difirio: 25/138 vs 36/136; RR 0,69 (IC95% 0,44-1,08), p=0,11.",
+      "limitaciones": "un solo centro; abstract sin detalle suficiente sobre targets exactos de PAM, subgrupos y seguridad; outcome primario negativo. interesante por ser RCT, pero insuficiente para cambiar target de PAM institucional.",
+      "impacto_uti": "sostiene la idea de individualizar presion segun organo/perfusion y no por una PAM magica unica, pero hoy es mas una pista para investigacion y ecografia Doppler que una orden diaria.",
+      "no_sobreinterpretar": "no subir ni bajar PAM solo por RRI fuera de protocolo; el resultado duro fue negativo.",
+      "archivo_origen": "2026-07-19-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M05",
+        "M07",
+        "M10"
+      ]
+    },
+    {
+      "id": "pmid-42468648",
+      "fecha_radar": "2026-07-19",
+      "fechas_radar": [
+        "2026-07-19"
+      ],
+      "titulo": "Diagnosticos rapidos en sepsis: mejoran tiempos, no mortalidad demostrada",
+      "cita": "Evaluating Rapid Diagnostics for Severe Infections and Sepsis: A Systematic Review and Meta-analysis.** Int J Antimicrob Agents. 2026. PMID: 42468648. DOI: 10.1016/j.ijantimicag.2026.107937.",
+      "pmid": "42468648",
+      "doi": "10.1016/j.ijantimicag.2026.107937",
+      "tipo_pregunta": "revision sistematica y metaanalisis, PROSPERO CRD420251044218. — rendimiento diagnostico e impacto clinico de metodos moleculares rapidos en sangre para patogeno/sensibilidad.",
+      "poblacion": "estudios randomizados, no controlados y observacionales en infecciones graves/sepsis.",
+      "resultado_clave": "49 registros microbiologicos y 33 clinicos. Sensibilidad agrupada 0,97-0,98; especificidad 0,99-1,00. Tiempo a identificacion -21,43 h; tiempo a tratamiento optimo/ajustado/apropiado -13,78 h. Mortalidad a 30 dias sin diferencia: OR 0,97 (IC95% 0,88-1,07).",
+      "limitaciones": "heterogeneidad muy alta en tiempos (I2 97-99%), mezcla de plataformas y disenios; el beneficio depende de stewardship real. moderada para acortar tiempos microbiologicos; baja para prometer mortalidad.",
+      "impacto_uti": "si se implementa, tiene que ir unido a respuesta clinica/farmacia/infectologia, no solo comprar tecnologia.",
+      "no_sobreinterpretar": "test rapido sin circuito de accion no salva tiempo clinico.",
+      "archivo_origen": "2026-07-19-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42430347",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Transferencia interhospitalaria rural y bundle de sepsis",
+      "cita": "The association between interhospital transfer and sepsis guideline adherence among rural emergency department patients.** PLoS One. 2026. PMID: 42430347. DOI: 10.1371/journal.pone.0351133.",
+      "pmid": "42430347",
+      "doi": "10.1371/journal.pone.0351133",
+      "tipo_pregunta": "cohorte multicentrica en red de telemedicina de guardias rurales. — si la transferencia interhospitalaria demora completar el bundle SSC de 3 horas.",
+      "poblacion": "1191 adultos con sepsis en 23 hospitales rurales; 359 transferidos.",
+      "resultado_clave": "adherencia al bundle similar, diferencia 2,2% (IC95% -2,2 a 6,5). Transferencia se asocio con mayor estadia en guardia: 3,1 h vs 2,6 h, diferencia 0,6 h (IC95% 0,4-0,7).",
+      "limitaciones": "datos 2016-2019, red especifica, no necesariamente extrapolable a nuestro sistema. moderada para organizacion de redes; no cambia terapia.",
+      "impacto_uti": "buen recordatorio para no suspender antibiotico, lactato, cultivos y fluidos/vasopresores por estar \"esperando derivacion\".",
+      "no_sobreinterpretar": "que la transferencia no haya reducido adherencia en esa red no implica que toda transferencia sea segura; depende de telemedicina, protocolos y tiempos reales.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M04",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42420745",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Test transcriptomico rapido en guardia para sepsis/infeccion",
+      "cita": "Real-world clinical evaluation of the Inflammatix TriVerity test for sepsis at the emergency department: an Acutelines study.** Intern Emerg Med. 2026. PMID: 42420745. DOI: 10.1007/s11739-026-04457-0.",
+      "pmid": "42420745",
+      "doi": "10.1007/s11739-026-04457-0",
+      "tipo_pregunta": "evaluacion prospectiva real-world de test diagnostico/prognostico. — rendimiento de un test point-of-care de mRNA para probabilidad de infeccion bacteriana, viral y severidad.",
+      "poblacion": "467 adultos en guardia con sospecha de infeccion y SIRS >=2 o qSOFA >=2.",
+      "resultado_clave": "bacteriana: especificidad rule-in 89-94%, sensibilidad rule-out 87-92%; viral: especificidad 92-95%, sensibilidad 76-92%; severidad: especificidad 83-86%, sensibilidad 85-87%.",
+      "limitaciones": "adjudicacion post hoc, posible espectro de pacientes seleccionado, test no disponible en la mayoria de guardias, impacto en decisiones no demostrado. moderada como validacion diagnostica; baja para cambiar algoritmos sin ensayo de implementacion.",
+      "impacto_uti": "interesante para diferenciar inflamacion/infeccion y estimar severidad; va en la linea de no llamar \"sepsis\" por leucocitosis sola.",
+      "no_sobreinterpretar": "no reemplaza foco, cultivos, antibiotico precoz cuando corresponde ni reevaluacion de perfusion.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M02"
+      ]
+    },
+    {
+      "id": "pmid-42434889",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Lactato a 6 horas + PAFI en SDRA asociado a sepsis",
+      "cita": "Development and Temporal External Validation of a 6-Hour Lactate Clearance-PaO2/FiO2 Model for Predicting 28-Day Mortality in Sepsis-Associated ARDS.** J Intensive Care Med. 2026. PMID: 42434889. DOI: 10.1177/08850666261466237.",
+      "pmid": "42434889",
+      "doi": "10.1177/08850666261466237",
+      "tipo_pregunta": "modelo pronostico retrospectivo con validacion temporal externa. — si el clearance de lactato a 6 horas y la PAFI ayudan a predecir mortalidad a 28 dias en SDRA asociado a sepsis.",
+      "poblacion": "MIMIC-IV adultos con Sepsis-3 dentro de 24 h y SDRA Berlin dentro de 72 h; derivacion n=1089, validacion interna n=467, validacion externa temporal n=312 en UTI china 2022-2025.",
+      "resultado_clave": "mortalidad 34,5%; AUC 0,82 derivacion, 0,80 validacion interna, 0,73 validacion externa; calibracion reportada como adecuada.",
+      "limitaciones": "retrospectivo, derivado de bases de datos, necesita validacion prospectiva/multinacional antes de uso clinico. buena como senal pronostica, baja para decisiones terapeuticas automaticas.",
+      "impacto_uti": "refuerza una lectura dinamica: no alcanza con lactato aislado ni PAFI aislada; la trayectoria temprana importa.",
+      "no_sobreinterpretar": "no usar la formula como \"score de corte\" para limitar tratamiento o indicar conductas; usarlo como marco de riesgo pendiente de validacion.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M04",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42426650",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Infecciones por Klebsiella pneumoniae resistente a carbapenemes en UTI",
+      "cita": "Determinants of mortality in carbapenem-resistant Klebsiella pneumoniae ICU Infections: a multivariable clinical and predictive modeling analysis.** BMC Infect Dis. 2026. PMID: 42426650. DOI: 10.1186/s12879-026-13929-9.",
+      "pmid": "42426650",
+      "doi": "10.1186/s12879-026-13929-9",
+      "tipo_pregunta": "cohorte retrospectiva. — predictores de mortalidad en infeccion por CRKP en UTI.",
+      "poblacion": "180 adultos con CRKP microbiologicamente confirmada, 2020-2024.",
+      "resultado_clave": "mortalidad 75% (135/180). Predictores independientes: edad OR 1,04; vasopresores OR 13,42; ventilacion mecanica OR 14,19. No se encontro asociacion independiente entre combinaciones antimicrobianas especificas y supervivencia, con subgrupos limitados.",
+      "limitaciones": "retrospectivo, centro/cohorte especifica, confounding by severity, subgrupos antibioticos chicos. moderada para gravedad pronostica; baja para seleccionar antibiotico.",
+      "impacto_uti": "refuerza que en CRKP la severidad fisiologica domina el pronostico; no alcanza con \"combinacion antibiotica\" si el paciente esta en shock/ARM sin control de foco y soporte adecuado.",
+      "no_sobreinterpretar": "no concluir que el antibiotico no importa; el estudio no tiene potencia ni diseno para comparar estrategias terapeuticas finas.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "cardio_sepsis",
+      "modulos": [
+        "M06",
+        "M09",
+        "M11"
+      ]
+    },
+    {
+      "id": "pmid-42433622",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Impact of intravenous push antibiotics on sepsis management at a Veterans Affairs medical center emergency department",
+      "cita": "Impact of intravenous push antibiotics on sepsis management at a Veterans Affairs medical center emergency department.** Antimicrob Steward Healthc Epidemiol. 2026. PMID: 42433622. DOI: 10.1017/ash.2026.10761.",
+      "pmid": "42433622",
+      "doi": "10.1017/ash.2026.10761",
+      "tipo_pregunta": "revision retrospectiva antes/despues en un hospital urbano de Veterans Affairs. — si pasar de antibioticos IV piggyback a IV push reduce el tiempo desde identificacion de sepsis hasta inicio de antibiotico.",
+      "poblacion": "394 pacientes en fase IVPB y 421 en fase IVP, identificados por codigos ICD-10, criterios SIRS y otros indicadores clinicos.",
+      "resultado_clave": "mediana 132 min a 99 min; antibiotico dentro de 60 min 20,3% a 28,0%; dentro de 180 min 70,8% a 79,8%; estadia en guardia 397 a 369 min.",
+      "limitaciones": "antes/despues, un solo centro, outcome de proceso, no demuestra beneficio en mortalidad ni seguridad universal para todos los antibioticos. moderada para mejora de flujo local; baja para cambiar outcome clinico.",
+      "impacto_uti": "puede servir como idea de mejora de proceso si farmacia/enfermeria tienen protocolos seguros por droga, concentracion y via.",
+      "no_sobreinterpretar": "no significa \"todo antibiotico en sepsis debe ser IV push\"; significa que la logistica de administracion puede ser un cuello de botella medible.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "practica",
+      "senal_practica": true,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M09"
+      ]
+    },
+    {
+      "id": "pmid-42435583",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Fenotipado inmune-endotelial en sepsis postoperatoria",
+      "cita": "Integrated immune and endothelial profiling predicts 90-day mortality in postoperative sepsis and septic shock.** EBioMedicine. 2026. PMID: 42435583. DOI: 10.1016/j.ebiom.2026.106372.",
+      "pmid": "42435583",
+      "doi": "10.1016/j.ebiom.2026.106372",
+      "tipo_pregunta": "prospectivo multicentrico, biomarcadores celulares, validacion transcriptomica externa. — si el perfil inmune y endotelial estratifica mejor el riesgo de muerte a 90 dias en sepsis/shock septico postoperatorio.",
+      "poblacion": "219 pacientes postoperatorios: UTI no septica, sepsis y shock septico.",
+      "resultado_clave": "dos subpoblaciones B y un cluster endotelial CD36/CD16 se asociaron independientemente con mortalidad; el score integrado tuvo AUC 0,935 vs SOFA/APACHE II 0,751-0,804.",
+      "limitaciones": "n chico-moderado, poblacion postoperatoria, tecnologia no disponible bedside, riesgo de sobreajuste aunque usaron LASSO y validacion transcriptomica. interesante para investigacion translacional; no listo para conducta clinica.",
+      "impacto_uti": "conecta inmunoparalisis/endotelio con pronostico; util para pensar sepsis como falla de barrera microvascular e inmunidad, no solo lactato/PAM.",
+      "no_sobreinterpretar": "no reemplaza SOFA, perfusion ni juicio clinico; no define tratamiento inmunomodulador por ahora.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M02",
+        "M03",
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "pmid-42425738",
+      "fecha_radar": "2026-07-12",
+      "fechas_radar": [
+        "2026-07-12"
+      ],
+      "titulo": "Corticoides en infeccion pulmonar grave",
+      "cita": "Low-dose corticosteroids in severe pulmonary infection: a meta-analysis of randomised controlled trials.** BMJ Open Respir Res. 2026. PMID: 42425738. DOI: 10.1136/bmjresp-2025-003934.",
+      "pmid": "42425738",
+      "doi": "10.1136/bmjresp-2025-003934",
+      "tipo_pregunta": "revision sistematica y metaanalisis de RCTs. — si los corticoides a baja dosis reducen mortalidad y otros outcomes en infecciones pulmonares graves.",
+      "poblacion": "adultos con infeccion pulmonar grave; incluyo COVID-19, neumonia adquirida en la comunidad, pneumocystis, sepsis, shock septico y SDRA.",
+      "resultado_clave": "12 RCTs, 4622 pacientes, 1203 eventos. OR de mortalidad de corto plazo 0,83 (IC95% 0,70-0,98), p=0,029, I2 2,0%, NNT 37,84, certeza GRADE baja. En NAC: OR 0,72 (IC95% 0,54-0,98), NNT 28,10. Cursos >7 dias mostraron diferencia; cursos <=7 dias no.",
+      "limitaciones": "poblaciones mezcladas, certeza baja, el beneficio parece mas consistente en NAC que en \"toda sepsis respiratoria\". moderada-baja; vale lectura completa.",
+      "impacto_uti": "refuerza que en infeccion pulmonar grave seleccionada los corticoides pueden tener rol, pero no reemplaza criterios de shock septico, SDRA o NAC grave ya establecidos.",
+      "no_sobreinterpretar": "no usarlo como licencia para corticoides universales en toda sepsis o toda neumonia; mirar fenotipo, shock, oxigenacion, riesgo de infeccion secundaria/hiperglucemia y duracion.",
+      "archivo_origen": "2026-07-12-radar-sepsis-shock-cardio.md",
+      "seccion_radar": "lectura",
+      "senal_practica": false,
+      "es_alerta_metodologica": false,
+      "relevancia_sepsis": "directa",
+      "modulos": [
+        "M01",
+        "M06",
+        "M11"
+      ]
+    }
+  ]
+}

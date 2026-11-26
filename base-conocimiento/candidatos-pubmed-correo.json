@@ -1,0 +1,4168 @@
+{
+  "generado": "2026-11-25",
+  "rango": [
+    "2025-11-25",
+    "2026-11-25"
+  ],
+  "consulta": "(sepsis[tiab] OR septic[tiab] OR bacteremia[tiab] OR bacteraemia[tiab] OR \"Sepsis\"[mh] OR \"Shock, Septic\"[mh]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt] OR practice guideline[pt] OR guideline[pt] OR consensus development conference[pt]) AND (\"2025/11/25\"[dp] : \"2026/11/25\"[dp]) AND humans[mh]",
+  "encontrados": 670,
+  "ya_estaban": 65,
+  "descartados": {
+    "pediatrico": 70,
+    "no_humano": 1,
+    "titulo_no_pertinente": 238
+  },
+  "candidatos": [
+    {
+      "pmid": "42371750",
+      "doi": "10.1093/ajrccm/aamag302",
+      "titulo": "Noninvasive respiratory support for adult patients with acute respiratory failure: an official American Thoracic Society Clinical Practice Guideline.",
+      "revista": "Am J Respir Crit Care Med",
+      "fecha": "2026 Sep 1",
+      "diseno": "guía",
+      "tier": 2,
+      "prioridad": 7,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "41534914",
+      "doi": "10.1136/bmj-2025-085535",
+      "titulo": "The impact of skin tone on performance of pulse oximeters used by NHS England COVID Oximetry @home scheme: measurement and diagnostic accuracy study.",
+      "revista": "BMJ",
+      "fecha": "2026 Jan 14",
+      "diseno": "otro",
+      "tier": 1,
+      "prioridad": 6,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "41419448",
+      "doi": "10.1093/cid/ciaf462",
+      "titulo": "Clinical Practice Guidelines by Infectious Diseases Society of America (IDSA): 2025 Guidelines on Management and Treatment of Complicated Urinary Tract Infections--Duration of Antibiotics for Complicated UTI.",
+      "revista": "Clin Infect Dis",
+      "fecha": "2026 Aug 24",
+      "diseno": "guía",
+      "tier": 2,
+      "prioridad": 5,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41419213",
+      "doi": "10.1093/cid/ciaf460",
+      "titulo": "Clinical Practice Guidelines by Infectious Diseases Society of America: 2025 Guideline on Management and Treatment of Complicated Urinary Tract Infections-Selection of Antibiotic Therapy for Complicated Urinary Tract Infections.",
+      "revista": "Clin Infect Dis",
+      "fecha": "2026 Aug 24",
+      "diseno": "guía",
+      "tier": 2,
+      "prioridad": 5,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41414903",
+      "doi": "10.1093/cid/ciaf461",
+      "titulo": "Clinical Practice Guidelines by Infectious Diseases Society of America: 2025 Guidelines on Management and Treatment of Complicated Urinary Tract Infections - Timing of Intravenous to Oral Antibiotics Transition for Complicated Urinary Tract Infections.",
+      "revista": "Clin Infect Dis",
+      "fecha": "2026 Aug 24",
+      "diseno": "guía",
+      "tier": 2,
+      "prioridad": 5,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41109794",
+      "doi": "10.1016/j.bja.2025.08.060",
+      "titulo": "The effects of balanced crystalloid versus plasma on endothelial injury, systemic inflammation, and coagulation in experimental endotoxaemia: a randomised human volunteer study.",
+      "revista": "Br J Anaesth",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42313397",
+      "doi": "10.1093/cid/ciag345",
+      "titulo": "Fosfomycin as Oral Transition Therapy Versus Continued Intravenous β-Lactams for Complicated Urinary Tract Infections Caused by Extended-Spectrum β-Lactamase-Producing Enterobacterales: A Multicenter, Open-Label, Randomized Controlled Trial.",
+      "revista": "Clin Infect Dis",
+      "fecha": "2026 Oct 7",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42365340",
+      "doi": "10.1186/s13054-026-06154-y",
+      "titulo": "Multidisciplinary telemedicine intervention for ICU recovery: the TelePORT feasibility randomized trial.",
+      "revista": "Crit Care",
+      "fecha": "2026 Jun 27",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41736143",
+      "doi": "10.1186/s13054-026-05885-2",
+      "titulo": "The effect of plasma versus crystalloids on intravascular volume, tissue perfusion and tissue oxygenation: a randomized controlled trial in a human endotoxemia model.",
+      "revista": "Crit Care",
+      "fecha": "2026 Feb 24",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M04"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42456111",
+      "doi": "10.1097/ccm.0000000000007269",
+      "titulo": "Effect of Early Administration of Shenfu Injection on Hemodynamics in Septic Patients: A Multicenter, Randomized, Controlled Trial.",
+      "revista": "Crit Care Med",
+      "fecha": "2026 Nov 1",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41677407",
+      "doi": "10.1097/ccm.0000000000007051",
+      "titulo": "Effect of Neostigmine on Attenuation of Proinflammatory Cytokines When Given as an Adjuvant Therapy in Septic Shock: A Randomized Control Trial.",
+      "revista": "Crit Care Med",
+      "fecha": "2026 Apr 1",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41532812",
+      "doi": "10.1097/ccm.0000000000007034",
+      "titulo": "Predictive and Prognostic Performance of the Phoenix Sepsis Criteria and Phoenix Sepsis Score in PICU Patients With Suspected Infection: A Multicenter Prospective Study.",
+      "revista": "Crit Care Med",
+      "fecha": "2026 Jun 1",
+      "diseno": "otro",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "42348212",
+      "doi": "10.1001/jamanetworkopen.2026.11885",
+      "titulo": "Medical Record Abstraction for Quality Improvement in Sepsis Care Using Artificial Intelligence: A Cluster Randomized Trial.",
+      "revista": "JAMA Netw Open",
+      "fecha": "2026 Jun 1",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41999282",
+      "doi": "10.1001/jamanetworkopen.2026.11652",
+      "titulo": "Pharmacokinetics of Dalbavancin in Complicated Staphylococcus aureus Bacteremia: A Secondary Analysis of the DOTS Randomized Clinical Trial.",
+      "revista": "JAMA Netw Open",
+      "fecha": "2026 Apr 1",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41619753",
+      "doi": "10.1016/s1473-3099(25)00747-9",
+      "titulo": "Immediate or high-dose antituberculosis therapy for HIV-related sepsis in Tanzania and Uganda (ATLAS): a phase 3, open-label, randomised, controlled, 2 × 2 factorial, superiority trial.",
+      "revista": "Lancet Infect Dis",
+      "fecha": "2026 Jun",
+      "diseno": "ECA",
+      "tier": 2,
+      "prioridad": 4,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42044523",
+      "doi": "10.20344/amp.24178",
+      "titulo": "[Management of the Patient with Suspected Sepsis or Septic Shock: Clinical Recommendations for the Portuguese Prehospital Setting].",
+      "revista": "Acta Med Port",
+      "fecha": "2026 Jun 1",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42517322",
+      "doi": "10.1002/14651858.cd014636.pub2",
+      "titulo": "Albumin for people with liver cirrhosis and bacterial infections.",
+      "revista": "Cochrane Database Syst Rev",
+      "fecha": "2026 Jul 28",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42092974",
+      "doi": "10.1186/s13054-026-06049-y",
+      "titulo": "Prevalence and representation of comorbidities and multimorbidity in randomised controlled trials in sepsis or septic shock: a systematic review.",
+      "revista": "Crit Care",
+      "fecha": "2026 May 6",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41430733",
+      "doi": "10.1186/s13054-025-05758-0",
+      "titulo": "Systematic review and meta-analysis of humoral immunity proteins and mortality in sepsis.",
+      "revista": "Crit Care",
+      "fecha": "2025 Dec 22",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42827248",
+      "doi": "10.1186/s13054-026-06160-0",
+      "titulo": "Targeting capillary leak in experimental sepsis and endotoxemia: a systematic review of therapeutic agents, methods and models in animal studies.",
+      "revista": "Crit Care",
+      "fecha": "2026 Aug 14",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42138515",
+      "doi": "10.1097/ccm.0000000000007147",
+      "titulo": "Prognostic Factors Associated With Mortality Among Patients With Necrotizing Soft-Tissue Infection: A Systematic Review and Meta-Analysis.",
+      "revista": "Crit Care Med",
+      "fecha": "2026 Jul 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41860316",
+      "doi": "10.1097/ccm.0000000000007053",
+      "titulo": "The Association Between Socioeconomic Position and Mortality in Patients With Sepsis and Septic Shock-A Systematic Review and Meta-Analysis.",
+      "revista": "Crit Care Med",
+      "fecha": "2026 Apr 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41575427",
+      "doi": "10.55633/s3me/005.2026",
+      "titulo": "Recommendations of the GT-LATINFURG for the identification and initial management of patients with severe infection and sepsis in emergency departments.",
+      "revista": "Emergencias",
+      "fecha": "2026 Feb",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42138670",
+      "doi": "10.1053/j.gastro.2026.03.008",
+      "titulo": "AGA Clinical Practice Update on Management of Clostridioides difficile Infection in Inflammatory Bowel Disease: Expert Review.",
+      "revista": "Gastroenterology",
+      "fecha": "2026 Jul",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41887234",
+      "doi": "10.1016/s1473-3099(26)00058-7",
+      "titulo": "Methodological quality assessment tool for observational studies comparing treatment effectiveness in infectious diseases: a Delphi consensus and application to studies on bloodstream infections due to carbapenem-resistant Enterobacterales.",
+      "revista": "Lancet Infect Dis",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 2,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40824313",
+      "doi": "10.1007/s00063-025-01317-1",
+      "titulo": "[S3 guideline on sepsis-prevention, diagnosis, therapy, and follow-up care-update 2025].",
+      "revista": "Med Klin Intensivmed Notfmed",
+      "fecha": "2025 Dec",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41028542",
+      "doi": "10.1038/s41591-025-03964-5",
+      "titulo": "A consensus blood transcriptomic framework for sepsis.",
+      "revista": "Nat Med",
+      "fecha": "2025 Dec",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M02"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41028543",
+      "doi": "10.1038/s41591-025-03956-5",
+      "titulo": "A consensus immune dysregulation framework for sepsis and critical illnesses.",
+      "revista": "Nat Med",
+      "fecha": "2025 Dec",
+      "diseno": "guía",
+      "tier": 3,
+      "prioridad": 3,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42674465",
+      "doi": "10.1111/aas.70324",
+      "titulo": "Empirical Meropenem Versus Piperacillin/Tazobactam for Critically Ill Adults With Sepsis: Feasibility of a Randomised Trial.",
+      "revista": "Acta Anaesthesiol Scand",
+      "fecha": "2026 Oct",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41321198",
+      "doi": "10.1111/aas.70156",
+      "titulo": "Restrictive Versus Standard Intravenous Fluid Therapy and Endothelial Glycocalyx Shedding in ICU Patients With Septic Shock-A Preplanned Sub-Study of the Randomized CLASSIC Trial.",
+      "revista": "Acta Anaesthesiol Scand",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M03"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42386249",
+      "doi": "10.1016/j.ajcnut.2026.101323",
+      "titulo": "High postprandial endotoxemia is associated with recurrence of cardiovascular events in patients with coronary heart disease: from the CORDIOPREV randomized clinical trial.",
+      "revista": "Am J Clin Nutr",
+      "fecha": "2026 Jul",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42971102",
+      "doi": "10.1016/j.ajem.2026.10.031",
+      "titulo": "Diagnostic accuracy of serum procalcitonin for pneumonia in patients with acute dyspnea: a systematic review and meta-analysis.",
+      "revista": "Am J Emerg Med",
+      "fecha": "2026 Oct 26",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "41033063",
+      "doi": "10.1016/j.ajem.2025.09.024",
+      "titulo": "Peripheral Perfusion vs Standard Management in Sepsis/Septic Shock: A Prospective Randomized ED Study.",
+      "revista": "Am J Emerg Med",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M04"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41448106",
+      "doi": "10.1016/j.ajem.2025.12.017",
+      "titulo": "Validation of the phoenix sepsis score in the pediatric emergency department.",
+      "revista": "Am J Emerg Med",
+      "fecha": "2026 Mar",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "42747466",
+      "doi": "10.1007/s00101-026-01739-2",
+      "titulo": "[Vasopressors or fluids in early septic shock].",
+      "revista": "Anaesthesiologie",
+      "fecha": "2026 Oct",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "40138463",
+      "doi": "10.1080/07853890.2025.2484464",
+      "titulo": "Effects of adjunctive milrinone versus placebo on hemodynamics in patients with septic shock: a randomized controlled trial.",
+      "revista": "Ann Med",
+      "fecha": "2025 Dec",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41083041",
+      "doi": "10.1016/j.apmr.2025.09.027",
+      "titulo": "Discriminatory Characteristics of Responders and Nonresponders of Patients With Sepsis to Neuromuscular Electrical Stimulation: A Subanalysis of a Randomized Controlled Double-Blinded Trial.",
+      "revista": "Arch Phys Med Rehabil",
+      "fecha": "2026 May",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42139834",
+      "doi": "10.1016/j.aucc.2026.101607",
+      "titulo": "The association between a sepsis diagnosis, demographic factors, and health-related quality of life in survivors at 180 days following critical illness.",
+      "revista": "Aust Crit Care",
+      "fecha": "2026 Jun",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41654755",
+      "doi": "10.1186/s12871-026-03682-6",
+      "titulo": "Comparing the efficacy of fospropofol with propofol and midazolam for goal-directed sedation in critically ill patients: a prospective, open-label, pilot, randomized controlled trial.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2026 Feb 7",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M11"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41965525",
+      "doi": "10.1186/s12871-026-03783-2",
+      "titulo": "Preemptive noradrenaline infusion: a game-changer against post-induction hypotension in surgical sepsis: a randomized double blind trial.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2026 Apr 11",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41987014",
+      "doi": "10.1186/s12871-026-03836-6",
+      "titulo": "Restrictive versus standard intravenous fluid therapy and NTproBNP in ICU patients with septic shock - a sub-study of the randomised CLASSIC trial.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2026 Apr 15",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42020133",
+      "doi": "10.1136/bmjopen-2026-117846",
+      "titulo": "Midodrine for Sepsis Treatment and Early Vasopressor Weaning (MID-STEP): protocol for a pragmatic randomised clinical trial.",
+      "revista": "BMJ Open",
+      "fecha": "2026 Apr 22",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M11",
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41556075",
+      "doi": "10.18097/pbmcr1599",
+      "titulo": "Metabolomic profiling of patients with sepsis-associated encephalopathy.",
+      "revista": "Biomed Khim",
+      "fecha": "2025 Dec",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42678921",
+      "doi": "10.1182/bloodadvances.2026020806",
+      "titulo": "Thrombin-antithrombin complex and fibrinogen predict microangiopathic acute kidney injury in patients with traumatic injuries.",
+      "revista": "Blood Adv",
+      "fecha": "2026 Nov 24",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42392443",
+      "doi": "10.1016/j.brs.2026.103154",
+      "titulo": "Transcutaneous auricular vagus nerve stimulation is associated with higher gastric antral motility in septic patients with acute gastrointestinal injury: A randomized, sham-controlled pilot trial with blinded outcome assessment.",
+      "revista": "Brain Stimul",
+      "fecha": "2026 Jul-Aug",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41870792",
+      "doi": "10.1007/s11655-026-4158-0",
+      "titulo": "Efficacy and Safety of Shenfu Injection in Patients with Septic Shock: A Randomized Controlled Open-Label Trial with Network Pharmacology-Based Mechanistic Insights.",
+      "revista": "Chin J Integr Med",
+      "fecha": "2026 Jul",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41974351",
+      "doi": "10.1016/j.cmi.2026.04.006",
+      "titulo": "Association between β-lactam exposure and clearance of bacteraemia and acute kidney injury in patients with methicillin-resistant Staphylococcus aureus bloodstream infections-a post hoc analysis of the CAMERA2 trial.",
+      "revista": "Clin Microbiol Infect",
+      "fecha": "2026 Oct",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41525115",
+      "doi": "10.7417/ct.2026.1976",
+      "titulo": "Effect of vitamin D as Nutrition Supplement on Patients with Prolonged Ventilation due to Ventilator Associated Pneumonia and Sepsis Followed Severe Traumatic Lung Contusion: A Randomized Controlled Trial.",
+      "revista": "Clin Ter",
+      "fecha": "2026 Jan-Feb",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41477182",
+      "doi": "10.2147/dddt.s561592",
+      "titulo": "The Effect of Methylene Blue on Sublingual Microcirculation in Patients with Septic Shock: A Randomized Controlled Trial.",
+      "revista": "Drug Des Devel Ther",
+      "fecha": "2025",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M04",
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41825095",
+      "doi": "10.1016/j.drup.2026.101389",
+      "titulo": "Selenium nanoparticles as adjunctive therapy in sepsis: A pilot randomized clinical trial.",
+      "revista": "Drug Resist Updat",
+      "fecha": "2026 May",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41191281",
+      "doi": "10.1007/s40268-025-00524-7",
+      "titulo": "Efficacy and Safety of Ulinastatin in Post-traumatic Sepsis: A Randomized Controlled Trial.",
+      "revista": "Drugs R D",
+      "fecha": "2025 Dec",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41934919",
+      "doi": "10.1016/j.ebiom.2026.106240",
+      "titulo": "Molecular pathways driving clarithromycin benefit in community-acquired pneumonia: analysis of the ACCESS randomised trial.",
+      "revista": "EBioMedicine",
+      "fecha": "2026 May",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41482452",
+      "doi": "10.1136/emermed-2025-215345",
+      "titulo": "Presepsin for sepsis diagnosis in emergency departments: a multicentre study.",
+      "revista": "Emerg Med J",
+      "fecha": "2026 May 20",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "41532670",
+      "doi": "10.1097/eja.0000000000002350",
+      "titulo": "Impaired endotoxin inactivation, rather than gut translocation, is associated with organ injury in cardiac surgery with cardiopulmonary bypass: An ancilliary analysis of a randomised control trial.",
+      "revista": "Eur J Anaesthesiol",
+      "fecha": "2026 Sep 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41922827",
+      "doi": "10.1007/s13318-026-00994-3",
+      "titulo": "Pharmacokinetics of Landiolol and Its Metabolite M1 During Renal Replacement Therapy in Septic Shock Patients: A Sub-Study of the Landi-SEP Trial.",
+      "revista": "Eur J Drug Metab Pharmacokinet",
+      "fecha": "2026 May",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41804125",
+      "doi": "",
+      "titulo": "EFFICACY ANALYSIS OF SHENFU INJECTION COMBINED WITH DAPAGLIFLOZIN IN THE TREATMENT OF SEPTIC HEART FAILURE.",
+      "revista": "Georgian Med News",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40447978",
+      "doi": "10.1007/s15010-025-02569-x",
+      "titulo": "Clinical value of circulating bioactive adrenomedullin for prediction of outcome and hydrocortisone response in sepsis patients-a post-hoc analysis of the HYPRESS trial.",
+      "revista": "Infection",
+      "fecha": "2025 Dec",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42624437",
+      "doi": "10.1016/j.ijantimicag.2026.107979",
+      "titulo": "Development of antibiotic-associated diarrhoea in sepsis patients is associated with dysbiosis at baseline: Data from the PROGRESS controlled trial.",
+      "revista": "Int J Antimicrob Agents",
+      "fecha": "2026 Nov",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41527950",
+      "doi": "10.1002/ijgo.70777",
+      "titulo": "Intrapartum oral azithromycin for maternal infection prophylaxis and the risk of postpartum hemorrhage: A secondary analysis of the A-PLUS trial.",
+      "revista": "Int J Gynaecol Obstet",
+      "fecha": "2026 Jun",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41873106",
+      "doi": "10.31083/ijvnr38770",
+      "titulo": "The Protective Effect of Vitamin C Targeting Oxidative Stress on Renal Function in Patients with Septic Acute Kidney Injury: A Prospective, Randomized Controlled, Pilot Study.",
+      "revista": "Int J Vitam Nutr Res",
+      "fecha": "2026 Feb 4",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40796678",
+      "doi": "10.1007/s11255-025-04678-w",
+      "titulo": "Comparison of augmented prophylaxis using intra-prostatic antibiotic injection with standard oral prophylaxis in preventing the infectious complications following trans-rectal ultrasound (TRUS)-guided prostatic biopsy: a randomized controlled study.",
+      "revista": "Int Urol Nephrol",
+      "fecha": "2026 Mar",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41423963",
+      "doi": "10.1111/imj.70279",
+      "titulo": "Haemodialysis catheter utilisation and factors associated with catheter-related bloodstream infection in Aotearoa New Zealand: Report from the binational, prospective, cluster-randomised trial.",
+      "revista": "Intern Med J",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42175687",
+      "doi": "10.1111/jgs.70480",
+      "titulo": "Antibiotics for Delirium in Older Adults With No Clear Urinary Tract Infection: A Multicentre, Pragmatic, Randomized Trial-Vanguard Results.",
+      "revista": "J Am Geriatr Soc",
+      "fecha": "2026 Jul",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09",
+        "M11",
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42944623",
+      "doi": "10.1111/jgs.70814",
+      "titulo": "Low-Use vs. High-Use Physical Restraint in Older Adults With Sepsis Receiving Mechanical Ventilation: A Multicenter Randomized Clinical Trial.",
+      "revista": "J Am Geriatr Soc",
+      "fecha": "2026 Oct 27",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "42036089",
+      "doi": "10.1016/j.arth.2026.04.064",
+      "titulo": "The One-Year Infection Rates After Vancomycin Powder and Dilute Povidone-Iodine Lavage in High-Risk Primary Total Joint Arthroplasty: A Multicenter Randomized Controlled Trial.",
+      "revista": "J Arthroplasty",
+      "fecha": "2026 Oct",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41329523",
+      "doi": "10.1172/jci196290",
+      "titulo": "Longitudinal multiomic signatures of ARDS and sepsis inflammatory phenotypes identify pathways associated with mortality.",
+      "revista": "J Clin Invest",
+      "fecha": "2026 Feb 2",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41632536",
+      "doi": "10.1172/jci202480",
+      "titulo": "Plasma chondroitin sulfate predicts the effectiveness of fluid resuscitation strategies in patients with sepsis.",
+      "revista": "J Clin Invest",
+      "fecha": "2026 Apr 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42023876",
+      "doi": "10.1128/jcm.01500-25",
+      "titulo": "Diagnostic performance of β-(1→3)-D-glucan, two Candida antigen, and five anti-Candida antibody assays in ICU patients with sepsis and high risk for invasive candidiasis: a secondary endpoint of the CandiSep randomized clinical trial.",
+      "revista": "J Clin Microbiol",
+      "fecha": "2026 May 13",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40972499",
+      "doi": "10.1016/j.jcrc.2025.155265",
+      "titulo": "Early energy delivery and 28-day mortality in critically ill patients with sepsis: Post hoc analysis of a multicenter cluster-randomised controlled trial.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Feb",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40845766",
+      "doi": "10.1016/j.jcrc.2025.155225",
+      "titulo": "The clinical outcome of Montelukast versus co-enzyme Q10 in adult patients with sepsis: A randomized controlled clinical trial.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Feb",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41533748",
+      "doi": "10.1093/infdis/jiaf649",
+      "titulo": "Cytomegalovirus DNAemia in Hospitalized Adults With SARS-CoV-2 Infection Requiring Supplemental Oxygen: Virologic and Clinical Characteristics and Association With Outcomes.",
+      "revista": "J Infect Dis",
+      "fecha": "2026 May 15",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41159886",
+      "doi": "10.1093/infdis/jiaf544",
+      "titulo": "Efficacy of Praziquantel for Treatment of Plasmodium falciparum Infection in Asymptomatic Gabonese Adults: A Double-Blind Placebo-Controlled Randomized Trial.",
+      "revista": "J Infect Dis",
+      "fecha": "2026 Mar 17",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42348490",
+      "doi": "10.1159/000553231",
+      "titulo": "In vivo Cytokine Adsorption Reveals Distinct Neutrophil Mobilization Pathways during Experimental Human Endotoxemia.",
+      "revista": "J Innate Immun",
+      "fecha": "2026",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42172925",
+      "doi": "10.1016/j.jss.2026.04.030",
+      "titulo": "Endothelium Protective Effect of 5% Human Albumin-Based Fluid Therapy in Perforation Peritonitis Patients Undergoing Emergency Laparotomy: A Randomized Controlled Trial.",
+      "revista": "J Surg Res",
+      "fecha": "2026 Aug",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41206374",
+      "doi": "10.1007/s11239-025-03201-3",
+      "titulo": "Effects of Xuebijing combined with levosimendan on immune function and coagulation function in sepsis patients with myocardial injury.",
+      "revista": "J Thromb Thrombolysis",
+      "fecha": "2026 Apr",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41804824",
+      "doi": "10.1002/jum.70219",
+      "titulo": "Deresuscitation Informed by Ultrasound in Patients With Septic Shock Trial: A Pilot Randomized Controlled Study.",
+      "revista": "J Ultrasound Med",
+      "fecha": "2026 Aug",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42152336",
+      "doi": "10.1097/md.0000000000048830",
+      "titulo": "The effect of povidone-iodine-enhanced rectal enema on procedure-related infectious complications before transrectal ultrasound-guided prostate biopsy: A prospective randomized study.",
+      "revista": "Medicine (Baltimore)",
+      "fecha": "2026 May 15",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41705840",
+      "doi": "10.1128/spectrum.03361-25",
+      "titulo": "Preclinical and clinical evaluation of vancomycin plus delpazolid combination therapy for MRSA bacteremia: a multicenter, double-blinded, randomized, parallel design, phase IIa clinical trial.",
+      "revista": "Microbiol Spectr",
+      "fecha": "2026 Apr 7",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42749736",
+      "doi": "10.1038/s41467-026-76767-y",
+      "titulo": "Diagnostic performance and antibiotic impact of droplet digital PCR in suspected sepsis: the PROGRESS trial.",
+      "revista": "Nat Commun",
+      "fecha": "2026 Aug 20",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41703293",
+      "doi": "10.1038/s41591-026-04222-y",
+      "titulo": "Effects of a comprehensive antibiotic stewardship program on antibiotic prescribing for acute respiratory infections in rural facilities: a cluster randomized trial.",
+      "revista": "Nat Med",
+      "fecha": "2026 Mar",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40820063",
+      "doi": "10.1007/s00210-025-04526-9",
+      "titulo": "A pilot double-blind, placebo-controlled, randomized clinical trial of MitoQ in the treatment of septic shock: evaluating its effects on clinical outcomes and oxidative stress biomarker.",
+      "revista": "Naunyn Schmiedebergs Arch Pharmacol",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41978077",
+      "doi": "10.3390/nu18071025",
+      "titulo": "Modulation of Glucose Homeostasis, Metabolic Endotoxemia and Circulating Short-Chain Fatty Acids Following Multi-Species Probiotic Supplementation: Findings from a 12-Week Randomised Placebo-Controlled Trial.",
+      "revista": "Nutrients",
+      "fecha": "2026 Mar 24",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41747400",
+      "doi": "10.1016/j.nut.2026.113119",
+      "titulo": "Effects of the ketogenic-caloric restricted diet on metabolic endotoxemia and metabolic health in adults with prediabetes: A randomized controlled trial.",
+      "revista": "Nutrition",
+      "fecha": "2026 Jun",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41563955",
+      "doi": "10.1371/journal.pone.0340669",
+      "titulo": "Effect of fluoxetine on organ dysfunction and mortality in severe sepsis.",
+      "revista": "PLoS One",
+      "fecha": "2026",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41482786",
+      "doi": "10.36721/pjps.2026.39.1.reg.14162.1",
+      "titulo": "Prognostic value of T-lymphocyte subsets, lymphocyte-to-high-density lipoprotein ratio, interleukin 6, C-reactive protein and procalcitonin in patients with septic shock and effects of vitamin C on patients with septic shock.",
+      "revista": "Pak J Pharm Sci",
+      "fecha": "2026 Jan",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41620916",
+      "doi": "10.36721/pjps.2026.39.3.reg.12881.1",
+      "titulo": "Protective effect of pituitrin combined with norepinephrine on cardiopulmonary injury in patients with septic shock diagnosed by critical care ultrasound evaluation.",
+      "revista": "Pak J Pharm Sci",
+      "fecha": "2026 Mar",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43073633",
+      "doi": "10.1007/s11095-026-04239-5",
+      "titulo": "Renal Safety of Antistaphylococcal Penicillins Versus Cefazolin in Methicillin-Susceptible Staphylococcus aureus Bacteremia: A Causal Machine Learning Target Trial Emulation.",
+      "revista": "Pharm Res",
+      "fecha": "2026 Nov 23",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "correo (EvidenceAlerts) + PubMed"
+    },
+    {
+      "pmid": "41570945",
+      "doi": "10.1016/j.rmed.2026.108658",
+      "titulo": "Risk factors of sepsis-associated encephalopathy in sepsis patients with pulmonary infection: from the secondary analysis of a cluster-randomized controlled trial.",
+      "revista": "Respir Med",
+      "fecha": "2026 Feb",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42309277",
+      "doi": "10.1016/j.redare.2026.502165",
+      "titulo": "Therapeutic monitoring of beta-lactams in critically ill patients with sepsis: Clinical trial protocol.",
+      "revista": "Rev Esp Anestesiol Reanim (Engl Ed)",
+      "fecha": "2026 Aug-Sep",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42790208",
+      "doi": "10.1016/j.ric.2026.100057",
+      "titulo": "Biomarker-guided immunotherapy vs. standard care in ICU sepsis: A prospective study.",
+      "revista": "Rev Invest Clin",
+      "fecha": "2026 Sep-Oct",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41922445",
+      "doi": "10.1038/s41598-026-46536-4",
+      "titulo": "Effects of a program to reduce fatigue among sepsis survivors: a randomized controlled trial.",
+      "revista": "Sci Rep",
+      "fecha": "2026 Apr 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42209656",
+      "doi": "10.1038/s41598-026-54938-7",
+      "titulo": "Effects of pneumatic tube systems on next-generation viscoelastic coagulation test devices in septic patients and healthy individuals: Results of the randomized controlled VETaPT trial.",
+      "revista": "Sci Rep",
+      "fecha": "2026 May 28",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42585292",
+      "doi": "10.1126/scitranslmed.aeb4113",
+      "titulo": "A randomized, placebo-controlled trial of 13-valent pneumococcal conjugate vaccination to accelerate immune recovery after sepsis.",
+      "revista": "Sci Transl Med",
+      "fecha": "2026 Aug 12",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41670614",
+      "doi": "10.1097/shk.0000000000002802",
+      "titulo": "Clinical and Immunologic Effects of Extracorporeal Cytokine Removal in Patients with Septic Shock: A Randomized Controlled Trial.",
+      "revista": "Shock",
+      "fecha": "2026 Apr 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42337386",
+      "doi": "10.1097/shk.0000000000002865",
+      "titulo": "Impact of Oxygen Targets on Sepsis Outcome: A Randomized Controlled Trial.",
+      "revista": "Shock",
+      "fecha": "2026 Jul 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41902726",
+      "doi": "10.1097/brs.0000000000005671",
+      "titulo": "Vancomycin Effectiveness in Reducing Surgical Site Infection in Posterior Spinal Fusion Surgery: A Retrospective Data Analysis of the STRIVE Trial.",
+      "revista": "Spine (Phila Pa 1976)",
+      "fecha": "2026 Sep 15",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41384277",
+      "doi": "10.3389/ti.2025.15331",
+      "titulo": "Association Between Cytomegalovirus Viremia Clearance and Post-Solid Organ Transplant Mortality in Patients With Refractory Cytomegalovirus Infection: SOLSTICE Post Hoc Analysis.",
+      "revista": "Transpl Int",
+      "fecha": "2025",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42026686",
+      "doi": "10.1186/s13063-026-09722-3",
+      "titulo": "Failure to rescue the trial: lessons from a randomised antibiotic treatment trial in the acute care setting.",
+      "revista": "Trials",
+      "fecha": "2026 Apr 23",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42485251",
+      "doi": "10.62438/tunismed.v104i04.6328",
+      "titulo": "Fluoroquinolones versus doxycycline in the treatment of rickettsial infection: A Tunisian multicenter prospective study.",
+      "revista": "Tunis Med",
+      "fecha": "2026 Apr 30",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41460253",
+      "doi": "10.1007/s00345-025-06150-x",
+      "titulo": "Enhanced versus extended preoperative antibiotic prophylaxis for retrograde intrarenal surgery in high infectious risk patients: a randomized controlled trial.",
+      "revista": "World J Urol",
+      "fecha": "2025 Dec 29",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42343512",
+      "doi": "10.13703/j.0255-2930.20250324-k0006",
+      "titulo": "[Shengqing Jiangzhuo acupuncture method for sepsis-associated gastrointestinal dysfunction: a randomized controlled trial].",
+      "revista": "Zhongguo Zhen Jiu",
+      "fecha": "2026 Jun 12",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42855756",
+      "doi": "10.3760/cma.j.cn112138-20260508-00278",
+      "titulo": "[A preliminary study on the protective effect of dapagliflozin on multi-organ function in the early stage of sepsis].",
+      "revista": "Zhonghua Nei Ke Za Zhi",
+      "fecha": "2026 Oct 1",
+      "diseno": "ECA",
+      "tier": 3,
+      "prioridad": 2,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41159400",
+      "doi": "10.1111/ans.70373",
+      "titulo": "Management of Perianal Sepsis in Neutropenic Patients With Haematological Malignancies-A Systematic Review.",
+      "revista": "ANZ J Surg",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41998796",
+      "doi": "10.1186/s42358-026-00543-1",
+      "titulo": "Diagnostic accuracy of the leukocyte esterase test for native joint septic arthritis and prosthetic joint infections: a systematic review and meta-analysis.",
+      "revista": "Adv Rheumatol",
+      "fecha": "2026 Apr 18",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41067173",
+      "doi": "10.1016/j.ajem.2025.10.003",
+      "titulo": "Early vasopressin plus norepinephrine versus delayed or no vasopressin in septic shock: A systematic review and meta-analysis.",
+      "revista": "Am J Emerg Med",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41619857",
+      "doi": "10.1016/j.ajic.2026.01.020",
+      "titulo": "Flavonifractor plautii: A rare pathogen in sepsis and critical care---A systematic narrative review of literature.",
+      "revista": "Am J Infect Control",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42661246",
+      "doi": "10.1097/mjt.0000000000002213",
+      "titulo": "Comparing the Safety and Efficacy of Outpatient Parenteral Antibiotic Therapy Versus Hospital-Based Antibiotic Therapy in Patients with Infective Endocarditis: A Systematic Review and Meta-Analysis.",
+      "revista": "Am J Ther",
+      "fecha": "2026 Sep-Oct 01",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41505903",
+      "doi": "10.1111/anae.70109",
+      "titulo": "Clinical effectiveness of procalcitonin- or C-reactive protein-guided antibiotic discontinuation protocols for adult patients who are critically ill with sepsis: a rapid systematic review and meta-analysis.",
+      "revista": "Anaesthesia",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42112603",
+      "doi": "10.1080/07853890.2026.2667672",
+      "titulo": "Ceftriaxone for methicillin-susceptible Staphylococcus aureus bloodstream infections is associated with increased short-term mortality: a systematic review and meta-analysis.",
+      "revista": "Ann Med",
+      "fecha": "2026 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42960561",
+      "doi": "10.1080/07853890.2026.2752656",
+      "titulo": "Endpoint-specific mortality associated with malignancy among adults with sepsis or septic shock: a systematic review and meta-analysis.",
+      "revista": "Ann Med",
+      "fecha": "2026 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40767138",
+      "doi": "10.1080/07853890.2025.2541084",
+      "titulo": "Low eosinophils and their dynamic as a predictor of death in patients with infections: a systematic review and meta-analysis of cohort studies.",
+      "revista": "Ann Med",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41846301",
+      "doi": "10.1080/07853890.2026.2643971",
+      "titulo": "The effect of dexmedetomidine in mechanically ventilated patients with sepsis and septic shock: a meta-analysis of randomized controlled trials.",
+      "revista": "Ann Med",
+      "fecha": "2026 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41452491",
+      "doi": "10.1007/s00402-025-06152-9",
+      "titulo": "Early vs. late definitive fixation of pelvic ring fractures in resuscitated polytraumatized patients: a systematic review and meta-analysis.",
+      "revista": "Arch Orthop Trauma Surg",
+      "fecha": "2025 Dec 26",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42098963",
+      "doi": "10.1002/arj.70173",
+      "titulo": "Arthroscopic Treatment Shows Noninferior Outcomes to Open Treatment for Native Glenohumeral Septic Arthritis: A Systematic Review.",
+      "revista": "Arthroscopy",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41942842",
+      "doi": "10.1186/s12871-026-03797-w",
+      "titulo": "An overview of reviews of Angiotensin II in distributive shock.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2026 Apr 6",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42321635",
+      "doi": "10.1186/s12871-026-03983-w",
+      "titulo": "Diagnostic accuracy of presepsin for sepsis in adult patients according to the criteria of sepsis-3: systematic review and meta-analysis.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2026 Jun 19",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41299283",
+      "doi": "10.1186/s12871-025-03518-9",
+      "titulo": "Fluid balance and mortality in adult ICU patients with sepsis or septic shock: a systematic review and meta-analysis of observational studies.",
+      "revista": "BMC Anesthesiol",
+      "fecha": "2025 Nov 26",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M05",
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41792618",
+      "doi": "10.1186/s12872-026-05677-0",
+      "titulo": "Clinical efficacy and safety of recombinant human brain natriuretic peptide in the treatment of sepsis complicated by heart failure: a systematic review and meta-analysis.",
+      "revista": "BMC Cardiovasc Disord",
+      "fecha": "2026 Mar 7",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41339821",
+      "doi": "10.1186/s12873-025-01433-3",
+      "titulo": "Diagnostic performance of procalcitonin and presepsin in sepsis: a systematic review and meta-analysis.",
+      "revista": "BMC Emerg Med",
+      "fecha": "2025 Dec 4",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41299237",
+      "doi": "10.1186/s12865-025-00783-8",
+      "titulo": "Prognostic value of monocyte chemoattractant protein-1 in sepsis: a systematic review and meta-analysis.",
+      "revista": "BMC Immunol",
+      "fecha": "2025 Nov 26",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42192334",
+      "doi": "10.1186/s12879-026-13068-1",
+      "titulo": "Antimicrobial interventions in multi drug resistance providencia associated infection; a systematic review and meta-analysis of case reports.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 May 26",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42056901",
+      "doi": "10.1186/s12879-026-13458-5",
+      "titulo": "Antimicrobial resistance in bloodstream infections in West Africa: a systematic review and meta-analysis.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Apr 29",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43079304",
+      "doi": "10.1186/s12879-026-14329-9",
+      "titulo": "Diagnostic prediction model for bacteraemia: an updated systematic review and meta-analysis.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Aug 31",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41877090",
+      "doi": "10.1186/s12879-026-13144-6",
+      "titulo": "Impact of molecular rapid diagnostic testing on clinical outcomes in bloodstream infections: a meta-analysis.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Mar 24",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41316021",
+      "doi": "10.1186/s12879-025-12094-9",
+      "titulo": "Prognostic factors of sepsis: a systematic review and meta-analysis.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2025 Nov 28",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42983247",
+      "doi": "10.1186/s12879-026-14108-6",
+      "titulo": "Risk factors for Gram-negative bacterial bloodstream infections: a systematic review and meta-analysis with subgroup analyses for carbapenem-resistant organisms and Acinetobacter baumannii.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Aug 8",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41654709",
+      "doi": "10.1186/s12879-026-12687-y",
+      "titulo": "Risk prediction model for peripherally inserted central catheters related bloodstream infection: a systematic review.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Feb 7",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41840529",
+      "doi": "10.1186/s12879-026-13066-3",
+      "titulo": "Risk prediction models for postoperative complications of urosepsis in patients with upper urinary calculi: a systematic review and meta-analysis.",
+      "revista": "BMC Infect Dis",
+      "fecha": "2026 Mar 16",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41654807",
+      "doi": "10.1186/s12911-026-03356-w",
+      "titulo": "Application of machine learning for the diagnosis and prognosis of sepsis-induced acute respiratory distress syndrome: a systematic review and meta-analysis.",
+      "revista": "BMC Med Inform Decis Mak",
+      "fecha": "2026 Feb 7",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41634648",
+      "doi": "10.1186/s12911-026-03344-0",
+      "titulo": "Explainable AI for critical care: a systematic review of interpretable models for sepsis and ICU mortality prediction.",
+      "revista": "BMC Med Inform Decis Mak",
+      "fecha": "2026 Feb 3",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41372900",
+      "doi": "10.1186/s12911-025-03286-z",
+      "titulo": "Sepsis mortality prediction using machine learning and deep learning - a systematic review.",
+      "revista": "BMC Med Inform Decis Mak",
+      "fecha": "2025 Dec 10",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41555261",
+      "doi": "10.1186/s12882-026-04747-x",
+      "titulo": "Incidence of acute kidney injury and associated mortality in Nigeria: systematic review and meta-analysis.",
+      "revista": "BMC Nephrol",
+      "fecha": "2026 Jan 19",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42316052",
+      "doi": "10.1186/s12882-026-05132-4",
+      "titulo": "Timing of renal-replacement therapy in patients with acute kidney injury and sepsis: a systematic review and meta-analysis.",
+      "revista": "BMC Nephrol",
+      "fecha": "2026 Jun 18",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42983655",
+      "doi": "10.1186/s12882-026-05209-0",
+      "titulo": "Urinary kidney injury molecule-1 as a diagnostic biomarker for persistent severe acute kidney injury: a systematic review and Bayesian meta-analysis.",
+      "revista": "BMC Nephrol",
+      "fecha": "2026 Aug 5",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43069085",
+      "doi": "10.1186/s12887-026-07531-w",
+      "titulo": "Serotype 3 as a challenging phenotype in pneumococcal early-onset sepsis: case report and 25-year literature review.",
+      "revista": "BMC Pediatr",
+      "fecha": "2026 Aug 27",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41765475",
+      "doi": "10.1248/bpb.b25-00565",
+      "titulo": "Efficacy and Safety of Various Antibiotics in Bacteremia Caused by AmpC-Producing Enterobacteriaceae, Comparing Carbapenems: A Systematic Review and Network Meta-analysis.",
+      "revista": "Biol Pharm Bull",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41548931",
+      "doi": "10.1248/bpb.b25-00585",
+      "titulo": "Impact of Chronic Kidney Disease on the Onset of Sepsis: A Systematic Review.",
+      "revista": "Biol Pharm Bull",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42377086",
+      "doi": "10.1080/1354750x.2026.2697747",
+      "titulo": "A study on the prognosis of patients with sepsis or septic shock based on plasma proenkephalin levels: a meta-analysis.",
+      "revista": "Biomarkers",
+      "fecha": "2026 Jul",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42635386",
+      "doi": "10.1080/1354750x.2026.2722073",
+      "titulo": "Diagnostic value of serum neuron-specific enolase and S100 calcium-binding protein B for sepsis-associated encephalopathy: a systematic review and meta-analysis.",
+      "revista": "Biomarkers",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41803677",
+      "doi": "10.1080/1354750x.2026.2641063",
+      "titulo": "The effects of apigenin on immune responses and inflammatory biomarkers in sepsis: a comprehensive systematic review.",
+      "revista": "Biomarkers",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41309435",
+      "doi": "10.1016/j.blre.2025.101352",
+      "titulo": "Adenovirus infection in adult allogeneic hematopoietic stem cell transplant recipients: Systematic review and meta-analysis.",
+      "revista": "Blood Rev",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41619799",
+      "doi": "10.1302/0301-620x.108b2.bjj-2025-0106.r1",
+      "titulo": "Mortality after an infected total knee arthroplasty : a meta-analysis.",
+      "revista": "Bone Joint J",
+      "fecha": "2026 Feb 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41360059",
+      "doi": "10.1002/bcp.70396",
+      "titulo": "Comparative effect of chemoprevention in malaria infection during pregnancy: A network meta-analysis.",
+      "revista": "Br J Clin Pharmacol",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41609161",
+      "doi": "10.31083/bjhm50162",
+      "titulo": "Evidence Maps of Vasopressor Use in Adult Patients With Septic Shock: An Umbrella Review.",
+      "revista": "Br J Hosp Med (Lond)",
+      "fecha": "2026 Jan 26",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41284248",
+      "doi": "10.12968/hmed.2024.0651",
+      "titulo": "The Effect of Extracorporeal Hemopurification Combined With Conventional Anti-Infection on Clinical Prognosis and Immune Function in Sepsis: A Meta-Analysis.",
+      "revista": "Br J Hosp Med (Lond)",
+      "fecha": "2025 Nov 25",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41102950",
+      "doi": "10.1017/s0007114525105436",
+      "titulo": "The effect of n-3 supplementation on clinical outcomes in patients with sepsis: an umbrella review of systematic reviews and meta-analysis.",
+      "revista": "Br J Nutr",
+      "fecha": "2025 Dec 14",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41946294",
+      "doi": "10.1016/j.burns.2026.107965",
+      "titulo": "Modern machine learning techniques used in prediction of sepsis and bloodstream infection in burn patients: A systematic review.",
+      "revista": "Burns",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40886817",
+      "doi": "10.1016/j.cca.2025.120569",
+      "titulo": "Point-of-care testing for early detection of sepsis: a systematic literature review.",
+      "revista": "Clin Chim Acta",
+      "fecha": "2026 Jan 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41251923",
+      "doi": "10.1007/s10157-025-02790-w",
+      "titulo": "A comprehensive review of infection risks and management in hemodialysis access sites.",
+      "revista": "Clin Exp Nephrol",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40712712",
+      "doi": "10.1016/j.cgh.2025.07.014",
+      "titulo": "Global Trends in Antimicrobial Resistance Among Cirrhosis Patients With Bacteremia: A Systematic Review and Meta-analysis.",
+      "revista": "Clin Gastroenterol Hepatol",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41592513",
+      "doi": "10.1016/j.clinimag.2026.110716",
+      "titulo": "Menstrual toxic shock syndrome: A systematic review of imaging findings.",
+      "revista": "Clin Imaging",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40780552",
+      "doi": "10.1016/j.cmi.2025.07.033",
+      "titulo": "Nomenclature, definitions, and methodological approaches to estimate the association between antimicrobial treatment and clinical outcomes of drug-resistant bloodstream infections.",
+      "revista": "Clin Microbiol Infect",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41519266",
+      "doi": "10.1016/j.cmi.2025.12.029",
+      "titulo": "The diagnostic accuracy of procalcitonin for community-acquired bacteraemia: an updated systematic review and meta-analysis.",
+      "revista": "Clin Microbiol Infect",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41610949",
+      "doi": "10.1016/j.cmi.2026.01.014",
+      "titulo": "The effect of GLP-1 receptor agonist and SGLT2 inhibitor on infection risk: network meta-analysis.",
+      "revista": "Clin Microbiol Infect",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42612524",
+      "doi": "10.1016/j.clnu.2026.106755",
+      "titulo": "Nutrition management in critically ill surgical patients: a clinical practice guideline appraisal and synthesis.",
+      "revista": "Clin Nutr",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41356548",
+      "doi": "10.4055/cios25102",
+      "titulo": "Total Hip or Knee Arthroplasty in Patients with a History of Native Joint Septic Arthritis: A Meta-analysis and Systematic Review of Risk Factors of Prosthetic Joint Infection.",
+      "revista": "Clin Orthop Surg",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40828181",
+      "doi": "10.1007/s00392-025-02732-2",
+      "titulo": "Beyond APACHE II: the role of TAPSE in predicting mortality among septic patients and septic shock; a systematic review and metanalysis Right heart, right prognosis: TAPSE, a new tool for predicting mortality among septic patients and septic shock; a systematic review and metanalysis.",
+      "revista": "Clin Res Cardiol",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M07"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42107597",
+      "doi": "10.1016/j.clinre.2026.102839",
+      "titulo": "A systematic review: The effect of early albumin infusion in moderate to severe acute pancreatitis.",
+      "revista": "Clin Res Hepatol Gastroenterol",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42140794",
+      "doi": "10.1016/j.clinthera.2026.04.008",
+      "titulo": "Implications of TLR4 Polymorphisms for Precision Therapeutics in Gram-negative Infections: An Ethnogeographic-Stratified Meta-Analysis.",
+      "revista": "Clin Ther",
+      "fecha": "2026 Jul",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41348160",
+      "doi": "10.1097/cce.0000000000001360",
+      "titulo": "Artificial Intelligence-Based Predictive Modeling for Early Detection of Sepsis in Hospitalized Patients: A Systematic Review and Meta-Analysis.",
+      "revista": "Crit Care Explor",
+      "fecha": "2025 Dec 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42640628",
+      "doi": "10.1097/cce.0000000000001476",
+      "titulo": "Butyrylcholinesterase Activity as a Mortality Marker in ICU Patients: An Individual Participant Data Meta-Analysis.",
+      "revista": "Crit Care Explor",
+      "fecha": "2026 Sep 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42554971",
+      "doi": "10.1097/cce.0000000000001452",
+      "titulo": "High-Flow Nasal Cannula Versus Noninvasive Ventilation for Prevention of Reintubation in High-Risk Critically Ill Patients (HIGH-FLOW OXY): An Informative Systematic Review and Meta-Analysis.",
+      "revista": "Crit Care Explor",
+      "fecha": "2026 Aug 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41711789",
+      "doi": "10.62675/2965-2774.20260197",
+      "titulo": "Effect of norepinephrine versus vasopressin weaning on incidence of hypotension in septic shock patients: a systematic review and meta-analysis.",
+      "revista": "Crit Care Sci",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M11"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43082454",
+      "doi": "10.3390/curroncol33110691",
+      "titulo": "Beyond Febrile Neutropenia: Reframing Neutropenic Infection as a Clinical Spectrum in Oncology-A Narrative Review and Conceptual Framework.",
+      "revista": "Curr Oncol",
+      "fecha": "2026 Nov 9",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41485125",
+      "doi": "10.1002/dmrr.70119",
+      "titulo": "Association Between Blood Glucose Variability and Clinical Outcomes in Patients With Sepsis: A Systematic Review and Meta-Analysis.",
+      "revista": "Diabetes Metab Res Rev",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42070377",
+      "doi": "10.1016/j.diagmicrobio.2026.117440",
+      "titulo": "Septic arthritis due to Corynebacterium striatum in native joints: a systematic review of published cases.",
+      "revista": "Diagn Microbiol Infect Dis",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41134425",
+      "doi": "10.1007/s10620-025-09486-x",
+      "titulo": "Prophylactic Antibiotics Reduce Infectious Complications After ERCP in Patients with Suspected Biliary Obstruction: A Meta-Analysis of Randomized Controlled Trials.",
+      "revista": "Dig Dis Sci",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42967597",
+      "doi": "10.1002/edm2.70381",
+      "titulo": "Severe Infection Outcomes With SGLT2 Versus DPP-4 Inhibitors in Type 2 Diabetes: A Systematic Review and Active-Comparator Meta-Analysis of Real-World Cohorts.",
+      "revista": "Endocrinol Diabetes Metab",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42885351",
+      "doi": "10.1093/epirev/mxag015",
+      "titulo": "Risk factors for bloodstream infection caused by carbapenem-resistant Enterobacterales in patients with hematological malignancies: a systematic review and meta-analysis.",
+      "revista": "Epidemiol Rev",
+      "fecha": "2026 Jan 29",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42593719",
+      "doi": "10.1111/eci.70244",
+      "titulo": "Oral Stepdown Therapy for Gram-Negative Bloodstream Infections: A Systematic Review and Meta-Analysis.",
+      "revista": "Eur J Clin Invest",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41665777",
+      "doi": "10.1007/s00228-026-04010-0",
+      "titulo": "Comparative efficacy of levosimendan and dobutamine in sepsis-related cardiac impairment: a meta-analysis.",
+      "revista": "Eur J Clin Pharmacol",
+      "fecha": "2026 Feb 10",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42479201",
+      "doi": "10.1007/s00228-026-04140-5",
+      "titulo": "Pharmacological thromboprophylaxis in hospitalized patients with acute infectious diseases: a meta-analysis.",
+      "revista": "Eur J Clin Pharmacol",
+      "fecha": "2026 Jul 21",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42103537",
+      "doi": "10.1016/j.ejim.2026.106933",
+      "titulo": "Early vasopressin administration in septic shock: A systematic review, meta-analysis, and multicenter retrospective observational study.",
+      "revista": "Eur J Intern Med",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42115064",
+      "doi": "10.1016/j.ejim.2026.106900",
+      "titulo": "Sex-related disparities in sepsis in western Europe: A systematic review and meta-analysis.",
+      "revista": "Eur J Intern Med",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40774844",
+      "doi": "10.1016/j.euf.2025.07.005",
+      "titulo": "Infectious Complications After Transrectal Versus Transperineal Prostate Biopsy: A Systematic Review and Meta-analysis.",
+      "revista": "Eur Urol Focus",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41611620",
+      "doi": "10.1080/14787210.2026.2625377",
+      "titulo": "Comparative effectiveness of ceftaroline plus vancomycin or daptomycin versus vancomycin or daptomycin monotherapy for MRSA bacteremia: an updated systematic review and meta-analysis.",
+      "revista": "Expert Rev Anti Infect Ther",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41716047",
+      "doi": "10.1080/14787210.2026.2635427",
+      "titulo": "The effect of combination antibiotic therapy on mortality in patients with sepsis or septic shock due to Pseudomonas aeruginosa bloodstream infections: a systematic review.",
+      "revista": "Expert Rev Anti Infect Ther",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42952930",
+      "doi": "10.3389/fcimb.2026.1934020",
+      "titulo": "Circulating calprotectin and S100A8/A9-related biomarkers for diagnosis and prognostic stratification in adult acute infection and sepsis: a systematic review and meta-analysis.",
+      "revista": "Front Cell Infect Microbiol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42718490",
+      "doi": "10.3389/fcimb.2026.1878518",
+      "titulo": "Mitochondrial dysfunction in sepsis: nutritional strategies for restoring bioenergetic homeostasis.",
+      "revista": "Front Cell Infect Microbiol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41674704",
+      "doi": "10.3389/fcimb.2026.1749555",
+      "titulo": "Risk factors for invasive Klebsiella pneumoniae liver abscess syndrome: a meta-analysis.",
+      "revista": "Front Cell Infect Microbiol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42087873",
+      "doi": "10.3389/fendo.2026.1815219",
+      "titulo": "Association of preadmission metformin use and prognosis in patients with sepsis with diabetes: a systematic review and meta-analysis.",
+      "revista": "Front Endocrinol (Lausanne)",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42807230",
+      "doi": "10.3389/fendo.2026.1854549",
+      "titulo": "Prediction models for sepsis-associated acute kidney injury: a systematic review and meta-analysis.",
+      "revista": "Front Endocrinol (Lausanne)",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42597217",
+      "doi": "10.3389/fendo.2026.1875452",
+      "titulo": "Triglyceride-glucose index and short-term mortality of adult patients with sepsis: a meta-analysis.",
+      "revista": "Front Endocrinol (Lausanne)",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43005159",
+      "doi": "10.3389/fimmu.2026.1954033",
+      "titulo": "Global trends and emerging frontiers in neutrophil extracellular trap-related sepsis research: a bibliometric analysis.",
+      "revista": "Front Immunol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42888989",
+      "doi": "10.3389/fimmu.2026.1888250",
+      "titulo": "Immunomodulatory potential of Mongolian medicine in sepsis: current evidence, challenges, and translational perspectives.",
+      "revista": "Front Immunol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42746043",
+      "doi": "10.3389/fimmu.2026.1937759",
+      "titulo": "Peripheral adaptive immune cell counts and mortality in adult sepsis: a systematic review and meta-analysis.",
+      "revista": "Front Immunol",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42953236",
+      "doi": "10.3389/fpubh.2026.1955939",
+      "titulo": "Incidence and risk factors of acute skin failure in patients with sepsis: a systematic review and meta-analysis.",
+      "revista": "Front Public Health",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42433399",
+      "doi": "10.3389/fpubh.2026.1790141",
+      "titulo": "Risk factors for sepsis: a systematic review and meta-analysis.",
+      "revista": "Front Public Health",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42245354",
+      "doi": "10.3389/fpubh.2026.1782420",
+      "titulo": "Sepsis screening tools in resource-limited settings: a systematic review and meta-analysis of diagnostic accuracy in low- and middle-income countries.",
+      "revista": "Front Public Health",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40884710",
+      "doi": "10.1007/s10741-025-10556-5",
+      "titulo": "Infective endocarditis complicated by shock: a systematic review and meta-analysis.",
+      "revista": "Heart Fail Rev",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41385314",
+      "doi": "10.1080/23744235.2025.2599503",
+      "titulo": "Impact of adequacy of empirical antimicrobial therapy on hospital length of stay: a systematic review and meta-analysis.",
+      "revista": "Infect Dis (Lond)",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41372726",
+      "doi": "10.1007/s15010-025-02708-4",
+      "titulo": "Definitional ambiguity and the dual threat of Hypervirulent Klebsiella pneumoniae infections: a systematic review and meta-analysis.",
+      "revista": "Infection",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41998370",
+      "doi": "10.1007/s00011-026-02227-4",
+      "titulo": "The calcium-sensing receptor in sepsis and septic shock, mechanistic pathways and translational perspectives: a systematic review.",
+      "revista": "Inflamm Res",
+      "fecha": "2026 Apr 17",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41837582",
+      "doi": "10.1080/09637486.2026.2644867",
+      "titulo": "Effect of dietary fibre supplementation on metabolic endotoxemia: a systematic review and meta-analysis of randomised clinical trials.",
+      "revista": "Int J Food Sci Nutr",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41369017",
+      "doi": "10.1002/ijgo.70715",
+      "titulo": "Effectiveness of preoperative vaginal preparation in reducing post-operative infection in patients who underwent emergency cesarean delivery: A systemic review and meta-analysis.",
+      "revista": "Int J Gynaecol Obstet",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41864271",
+      "doi": "10.1016/j.ijid.2026.108563",
+      "titulo": "Comparative efficacy and safety of carbapenems vs noncarbapenem antibiotics in AmpC-producing Enterobacterales infections: A systematic review and meta-analysis.",
+      "revista": "Int J Infect Dis",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41273874",
+      "doi": "10.1016/j.ijmedinf.2025.106197",
+      "titulo": "Artificial intelligence for mortality risk stratification in septic shock: A systematic review and meta-analysis.",
+      "revista": "Int J Med Inform",
+      "fecha": "2026 Mar 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42480414",
+      "doi": "10.1016/j.ijmedinf.2026.106629",
+      "titulo": "Early clinical decision support using interpretable artificial intelligence in acute illness (sepsis and infection): A systematic review and meta-analysis.",
+      "revista": "Int J Med Inform",
+      "fecha": "2026 Nov 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41962401",
+      "doi": "10.1016/j.ijmedinf.2026.106420",
+      "titulo": "Machine learning for early detection and prediction of sepsis: explainability and key sepsis biomarkers representation-A systematic review.",
+      "revista": "Int J Med Inform",
+      "fecha": "2026 Jul 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42843287",
+      "doi": "10.1016/j.ijmedinf.2026.106740",
+      "titulo": "Predictive performance of machine learning models for bloodstream infection by validation type: A systematic review and meta-analysis.",
+      "revista": "Int J Med Inform",
+      "fecha": "2027 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40795609",
+      "doi": "10.1016/j.ijmedinf.2025.106081",
+      "titulo": "The value of machine and deep learning in management of critically ill patients: An umbrella review.",
+      "revista": "Int J Med Inform",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41178587",
+      "doi": "10.1111/iju.70276",
+      "titulo": "Antibiotic Prophylaxis in Men Undergoing Transurethral Resection of Prostate: A Systematic Review and Network Meta-Analysis.",
+      "revista": "Int J Urol",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41047309",
+      "doi": "10.1016/j.iccn.2025.104241",
+      "titulo": "Association between 1-h bundle and clinical outcomes in patients with sepsis: A systematic review and meta-analysis.",
+      "revista": "Intensive Crit Care Nurs",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41145017",
+      "doi": "10.1016/j.iccn.2025.104265",
+      "titulo": "Effect of ultrashort-acting β-blocker on the mortality of patients with sepsis or septic shock: A systematic review and trial sequential meta-analysis of randomized controlled trials.",
+      "revista": "Intensive Crit Care Nurs",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40974763",
+      "doi": "10.1016/j.iccn.2025.104228",
+      "titulo": "Effects of omega-3 fatty acids on hyper-inflammatory response and clinical outcomes in critically ill patients: a meta-analysis.",
+      "revista": "Intensive Crit Care Nurs",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42229230",
+      "doi": "10.1016/j.iccn.2026.104462",
+      "titulo": "Incidence and risk factors of sepsis-associated delirium in the intensive care unit: a systematic review and meta-analysis.",
+      "revista": "Intensive Crit Care Nurs",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M11"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41191290",
+      "doi": "10.1007/s11739-025-04179-9",
+      "titulo": "Comparison of non-invasive strategies to drive fluid resuscitation in sepsis or septic shock: a meta-analysis of RCTs.",
+      "revista": "Intern Emerg Med",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42437309",
+      "doi": "",
+      "titulo": "Role of Mannose-binding Lectin-2 Promoter Genetic Variants in Susceptibility to Sepsis: A Meta and Trial Sequential Analysis.",
+      "revista": "Iran J Allergy Asthma Immunol",
+      "fecha": "2026 Jun 3",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41982169",
+      "doi": "10.1093/jac/dkag142",
+      "titulo": "Therapeutic drug monitoring and the role of pharmacokinetics/pharmacodynamics in optimizing beta-lactam antibiotic dosing for deep-seated infections: a systematic review.",
+      "revista": "J Antimicrob Chemother",
+      "fecha": "2026 Apr 3",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41655718",
+      "doi": "10.1016/j.arth.2026.02.007",
+      "titulo": "Intramedullary Arthrodesis for Periprosthetic Joint Infection After Total Knee Arthroplasty: A Systematic Review of Constructs, Fusion Rates, and Clinical Outcomes.",
+      "revista": "J Arthroplasty",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41766198",
+      "doi": "10.1002/jbt.70749",
+      "titulo": "Molecular and Cellular Mechanisms Underlying the Therapeutic Effects of Genistein in Sepsis: A Systematic Review.",
+      "revista": "J Biochem Mol Toxicol",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42275083",
+      "doi": "10.1093/jbcr/irag092",
+      "titulo": "Serum Albumin on Admission: A Prognostic Marker of Morbidity and Mortality in Burns? A Systematic Review and Meta-Analysis.",
+      "revista": "J Burn Care Res",
+      "fecha": "2026 Sep 8",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41168000",
+      "doi": "10.1053/j.jvca.2025.09.237",
+      "titulo": "Venoarterial Extracorporeal MembraneOxygenation in Septic Shock and/or Sepsis-induced Cardiomyopathy: A Systematic Review of Fifteen Studies.",
+      "revista": "J Cardiothorac Vasc Anesth",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40961256",
+      "doi": "10.1097/mcg.0000000000002229",
+      "titulo": "Is Antibiotic Prophylaxis Warranted in All Patients With Biliary Obstruction Undergoing Endoscopic Retrograde Cholangiopancreatography?: A Systematic Review and Meta-Analysis.",
+      "revista": "J Clin Gastroenterol",
+      "fecha": "2026 May-Jun 01",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42048766",
+      "doi": "10.1016/j.jcrc.2026.155600",
+      "titulo": "Artificial intelligence and computerized decision support in adult intensive care: A systematic review of randomized controlled trials.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41237653",
+      "doi": "10.1016/j.jcrc.2025.155330",
+      "titulo": "Effects on mortality of blood purification techniques in severe septic shock patients. An updated Bayesian network meta-analysis of randomized controlled trials.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41412001",
+      "doi": "10.1016/j.jcrc.2025.155405",
+      "titulo": "Low-dose corticosteroids in cirrhotic patients with septic shock or vasopressor-dependent shock: A systematic review and meta-analysis.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41421176",
+      "doi": "10.1016/j.jcrc.2025.155402",
+      "titulo": "The diagnostic accuracy of serum procalcitonin for sepsis in critically ill adults. A systematic review and diagnostic meta-analysis.",
+      "revista": "J Crit Care",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41793628",
+      "doi": "10.1007/s44197-026-00531-0",
+      "titulo": "Prevalence and Causes of Acute Kidney Injury and Chronic Kidney Disease in Ghana: A Systematic Review and Meta-Analysis.",
+      "revista": "J Epidemiol Glob Health",
+      "fecha": "2026 Mar 7",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40962143",
+      "doi": "10.1016/j.jhin.2025.08.006",
+      "titulo": "A systematic review of the cost impact of sepsis care bundles.",
+      "revista": "J Hosp Infect",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42392267",
+      "doi": "10.1016/j.jhin.2026.06.020",
+      "titulo": "Identification of risk factors for hospital-onset bacteraemia to inform a routine data based risk prediction: an umbrella review.",
+      "revista": "J Hosp Infect",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41693215",
+      "doi": "10.1002/jhm.70284",
+      "titulo": "Impact of manual sepsis screening in hospitalized adult patients: A systematic review.",
+      "revista": "J Hosp Med",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42830175",
+      "doi": "10.1016/j.jinf.2026.106871",
+      "titulo": "Comparative efficacy and safety of pharmacological regimens for Mycobacterium avium complex pulmonary disease and bacteremia: A systematic review with separate network meta-analyses.",
+      "revista": "J Infect",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42777833",
+      "doi": "10.1016/j.jinf.2026.106864",
+      "titulo": "Comparative serious infection and sepsis risks with advanced therapies in IMIDs: A Bayesian network meta-analysis.",
+      "revista": "J Infect",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42217670",
+      "doi": "10.1016/j.jiac.2026.103004",
+      "titulo": "Cefmetazole or flomoxef versus carbapenems in treating patients with extended-spectrum β-lactamase-producing Enterobacterales bacteremia: A systematic review and meta-analysis.",
+      "revista": "J Infect Chemother",
+      "fecha": "2026 Jul",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42262992",
+      "doi": "10.3855/jidc.21850",
+      "titulo": "Catheter-related bloodstream infections in hemodialysis: a systematic review and meta-analysis of prevalence and risk.",
+      "revista": "J Infect Dev Ctries",
+      "fecha": "2026 May 31",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42262991",
+      "doi": "10.3855/jidc.21943",
+      "titulo": "Mortality rates among adults with sepsis and septic shock in Indonesia: a systematic review and meta-analysis.",
+      "revista": "J Infect Dev Ctries",
+      "fecha": "2026 May 31",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41894902",
+      "doi": "10.1016/j.jiph.2026.103211",
+      "titulo": "Long-term prognosis of sepsis survivors after hospital discharge: A systematic review and meta-analysis of observational studies.",
+      "revista": "J Infect Public Health",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42341623",
+      "doi": "10.1016/j.jiph.2026.103285",
+      "titulo": "Sepsis-induced neuromuscular dysfunction: A systematic review with meta-analysis.",
+      "revista": "J Infect Public Health",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42059548",
+      "doi": "10.1177/23259582261447166",
+      "titulo": "Self-Care Practices for Puerperal Sepsis Prevention and Associated Factors Among Postnatal Women in Africa: A Systematic Review and Meta-Analysis.",
+      "revista": "J Int Assoc Provid AIDS Care",
+      "fecha": "2026 Jan-Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41568715",
+      "doi": "10.1177/03000605251409939",
+      "titulo": "Efficacy and safety of anticoagulant therapy in sepsis: A systematic review and meta-analysis.",
+      "revista": "J Int Med Res",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M08"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41636321",
+      "doi": "10.1177/27683605251415490",
+      "titulo": "Efficacy and Safety of Xuebijing Injection, an Herbal-Based Injection, in Patients with Sepsis: Evidence from Randomized Controlled Trials of 3007 Subjects.",
+      "revista": "J Integr Complement Med",
+      "fecha": "2026 Jul",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41544064",
+      "doi": "10.1177/08850666251410538",
+      "titulo": "Assessment of Annexin A3 as a Potential Biomarker for Sepsis in Critically Ill Patients: A Meta-analysis and Retrospective Cohort Study.",
+      "revista": "J Intensive Care Med",
+      "fecha": "2026 Aug",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "39574288",
+      "doi": "10.1177/08850666241300312",
+      "titulo": "Methylene Blue for Septic Shock: A Systematic Review and Meta-analysis of Randomized and Prospective Observational Studies.",
+      "revista": "J Intensive Care Med",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41408335",
+      "doi": "10.1186/s13256-025-05747-5",
+      "titulo": "Pulmonary tularemia with antineutrophil-cytoplasmic-antibody-negative pauci-immune crescentic glomerulonephritis causing acute kidney injury: a case report and review of the literature.",
+      "revista": "J Med Case Rep",
+      "fecha": "2025 Dec 17",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42753195",
+      "doi": "10.2196/95665",
+      "titulo": "AI-Based Sepsis Prediction in Hospitalized Adults: Systematic Review, Subgroup Meta-Analysis, and Contextual Analysis of Clinical Burden.",
+      "revista": "J Med Internet Res",
+      "fecha": "2026 Sep 17",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41973329",
+      "doi": "10.1007/s10916-026-02376-3",
+      "titulo": "Evaluating Artificial Intelligence for Sepsis Prediction in Emergency Departments: A Systematic Review and Meta Analysis.",
+      "revista": "J Med Syst",
+      "fecha": "2026 Apr 13",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40849404",
+      "doi": "10.1007/s40477-025-01072-1",
+      "titulo": "Utilization of left ventricular outflow tract velocity time integral in the assessment of fluid responsiveness in adult patients with sepsis or septic shock - a systematic review.",
+      "revista": "J Ultrasound",
+      "fecha": "2025 Dec",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42501530",
+      "doi": "10.1016/j.legalmed.2026.102935",
+      "titulo": "Fatal septic shock due to PVL-positive Staphylococcus aureus necrotizing pneumonia: autopsy findings and systematic review of the literature.",
+      "revista": "Leg Med (Tokyo)",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42044934",
+      "doi": "10.1136/lupus-2026-002004",
+      "titulo": "Systematic review of culture-confirmed septic pericarditis in systemic lupus erythematosus with an index case.",
+      "revista": "Lupus Sci Med",
+      "fecha": "2026 Apr 27",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41620769",
+      "doi": "10.1186/s12936-025-05777-w",
+      "titulo": "Clinical characteristics and outcome of malaria-associated acute kidney injury in adult patients: a systematic review and meta analysis.",
+      "revista": "Malar J",
+      "fecha": "2026 Jan 31",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41498668",
+      "doi": "10.1097/mlr.0000000000002275",
+      "titulo": "Trends and Disparities in Post-acute Care Utilization After Hospitalization for Sepsis in the United States: A Systematic Review.",
+      "revista": "Med Care",
+      "fecha": "2026 Mar 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40090798",
+      "doi": "10.1016/j.medine.2025.502172",
+      "titulo": "Mortality time frame variability in septic shock clinical trials: A systematic review.",
+      "revista": "Med Intensiva (Engl Ed)",
+      "fecha": "2026 Feb",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40518381",
+      "doi": "10.1016/j.medine.2025.502251",
+      "titulo": "Neutrophil CD64 as a prognostic biomarker for mortality in sepsis: A systematic review and meta-analysis.",
+      "revista": "Med Intensiva (Engl Ed)",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42463392",
+      "doi": "10.1016/j.medine.2026.502562",
+      "titulo": "Obesity paradox in sepsis: a systematic review and meta-analysis of short- and long-term mortality risks.",
+      "revista": "Med Intensiva (Engl Ed)",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41838832",
+      "doi": "10.1159/000551475",
+      "titulo": "Efficacy and Safety of Procalcitonin-Guided Antibiotic Therapy versus Standard of Care for Sepsis: A Systematic Review and Meta-Analysis.",
+      "revista": "Med Princ Pract",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42930604",
+      "doi": "10.3390/medsci14060685",
+      "titulo": "Before Sepsis Strikes: Artificial Intelligence for Early Prediction of Postoperative Sepsis and Sepsis-Related Complications After Major Abdominal Surgery-A Systematic Review.",
+      "revista": "Med Sci (Basel)",
+      "fecha": "2026 Oct 19",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42930572",
+      "doi": "10.3390/medsci14060653",
+      "titulo": "Infectious Complications in Adults Receiving Extracorporeal Membrane Oxygenation: A Systematic Review and Meta-Analysis of Nosocomial and Bloodstream Infection, Prevalence, Risk Factors, and Clinical Outcomes.",
+      "revista": "Med Sci (Basel)",
+      "fecha": "2026 Oct 9",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41718140",
+      "doi": "10.3390/medsci14010093",
+      "titulo": "Prevalence of Group B Streptococcus Colonization and Invasive Infection in Nigeria: A Systematic Review and Meta-Analysis.",
+      "revista": "Med Sci (Basel)",
+      "fecha": "2026 Feb 15",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41901546",
+      "doi": "10.3390/medicina62030464",
+      "titulo": "Non-Infectious Causes for Elevated Procalcitonin.",
+      "revista": "Medicina (Kaunas)",
+      "fecha": "2026 Feb 28",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41398837",
+      "doi": "10.1097/md.0000000000046606",
+      "titulo": "Disentangling the genetic relationship between malignant skin neoplasms and sepsis: Evidence from bidirectional Mendelian randomization.",
+      "revista": "Medicine (Baltimore)",
+      "fecha": "2025 Dec 12",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41327715",
+      "doi": "10.1097/md.0000000000043804",
+      "titulo": "Initial management of septic complications in adult oncologic patients in the emergency department: A systematic review and meta-analysis.",
+      "revista": "Medicine (Baltimore)",
+      "fecha": "2025 Nov 28",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42299597",
+      "doi": "10.1097/md.0000000000049261",
+      "titulo": "The prognostic utility of HDL as a biomarker for sepsis or septic shock: A systematic review and meta-analysis.",
+      "revista": "Medicine (Baltimore)",
+      "fecha": "2026 Jun 12",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42417895",
+      "doi": "10.1007/s11306-026-02488-4",
+      "titulo": "Clinical lipidomics in bacterial sepsis: a systematic review of serum and plasma evaluations.",
+      "revista": "Metabolomics",
+      "fecha": "2026 Jul 8",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42068067",
+      "doi": "10.1111/micc.70062",
+      "titulo": "Microvascular Effects of Endocannabinoid Signaling in Sepsis: A Mechanistic and Systematic Review.",
+      "revista": "Microcirculation",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M03",
+        "M04"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42909518",
+      "doi": "10.1007/s11033-026-12889-2",
+      "titulo": "Promising therapeutic interventions for preserving endothelial glycocalyx integrity in sepsis: a systematic review.",
+      "revista": "Mol Biol Rep",
+      "fecha": "2026 Oct 23",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M03"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42507120",
+      "doi": "",
+      "titulo": "Incidence of Severe Infectious Complications in Hemodialysis Patients: A Systematic Review and Meta-Analysis of Sepsis and Bloodstream Infections.",
+      "revista": "New Microbiol",
+      "fecha": "2026 Jul",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42529895",
+      "doi": "10.1111/nicc.70611",
+      "titulo": "Benefits and Risks of Intensive Glucose Control in Intensive Care Units: A Meta-Analysis of Randomized Controlled Trials.",
+      "revista": "Nurs Crit Care",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42847455",
+      "doi": "10.1111/nicc.70731",
+      "titulo": "Disease-Specific Optimal Blood Glucose Control Strategies in Critically Ill Patients: Retrospective Cohort Study and Network Meta-analysis.",
+      "revista": "Nurs Crit Care",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41277404",
+      "doi": "10.1002/ncp.70073",
+      "titulo": "Thiamin supplementation on mitigating kidney injury and mortality in patients with septic shock: A systematic review and meta-analysis of randomized controlled trials.",
+      "revista": "Nutr Clin Pract",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41830039",
+      "doi": "10.3390/nu18050869",
+      "titulo": "Vitamin D Status and Sepsis Outcomes: A PRISMA-Compliant Umbrella Review and Meta-Analysis.",
+      "revista": "Nutrients",
+      "fecha": "2026 Mar 9",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41818269",
+      "doi": "10.1371/journal.pntd.0014086",
+      "titulo": "A systematic review of dengue controlled human infection studies: safety, viral kinetics and immunology.",
+      "revista": "PLoS Negl Trop Dis",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42961991",
+      "doi": "10.1371/journal.pone.0361608",
+      "titulo": "Associated factors for stress ulcers and gastrointestinal bleeding in patients with sepsis or septic shock: A systematic review.",
+      "revista": "PLoS One",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41875179",
+      "doi": "10.1371/journal.pone.0343026",
+      "titulo": "Comparative efficacy and safety of Chinese botanical drug injection in patients with sepsis: A systematic review and Bayesian network meta-analysis of randomized clinical trials.",
+      "revista": "PLoS One",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42970569",
+      "doi": "10.1371/journal.pone.0362057",
+      "titulo": "Machine learning for predicting mortality in patients with sepsis and its associated complications: A systematic review and meta-analysis.",
+      "revista": "PLoS One",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42384633",
+      "doi": "10.1371/journal.pone.0351072",
+      "titulo": "Monotherapy or combinations? Intravenous vitamin C in sepsis and septic shock: An umbrella review of 31 systematic reviews.",
+      "revista": "PLoS One",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42931209",
+      "doi": "10.3390/pathogens15101057",
+      "titulo": "Candidozyma auris Prosthetic Joint Infection: A Case Report and Systematic Case-Based Literature Review of Osteoarticular Infections.",
+      "revista": "Pathogens",
+      "fecha": "2026 Oct 7",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42515013",
+      "doi": "10.3390/pathogens15070686",
+      "titulo": "Clinical Outcomes of Campylobacter Bacteremia: A Systematic Review with Meta-Analysis.",
+      "revista": "Pathogens",
+      "fecha": "2026 Jun 29",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42347238",
+      "doi": "10.3390/pathogens15060626",
+      "titulo": "Enterococcal Infections in Left Ventricular Assist Device Recipients: Two Clinical Cases and Systematic Review.",
+      "revista": "Pathogens",
+      "fecha": "2026 Jun 11",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41599003",
+      "doi": "10.3390/pathogens15010019",
+      "titulo": "When Salmonella Strikes the Brain: A Systematic Review of Non-Typhoidal Salmonella Infections with Central Nervous System Involvement in Immunosuppressed Patients.",
+      "revista": "Pathogens",
+      "fecha": "2025 Dec 23",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41704240",
+      "doi": "10.7717/peerj.20770",
+      "titulo": "Risk prediction models for sepsis-associated encephalopathy: a systematic evaluation and meta-analysis.",
+      "revista": "PeerJ",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42057720",
+      "doi": "10.1098/rstb.2024.0346",
+      "titulo": "Bacterial quantitation in clinical infection: a systematic review.",
+      "revista": "Philos Trans R Soc Lond B Biol Sci",
+      "fecha": "2026 Apr 30",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41477981",
+      "doi": "10.1016/j.phymed.2025.157754",
+      "titulo": "Natural products in treatment and management of sepsis-induced coagulopathy: Pharmacological basis and mechanisms.",
+      "revista": "Phytomedicine",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M08"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42017419",
+      "doi": "10.1093/postmj/qgag053",
+      "titulo": "Syndecan-1 as a biomarker of endothelial glycocalyx injury in sepsis: a meta-analysis of associations with shock, organ complications and mortality.",
+      "revista": "Postgrad Med J",
+      "fecha": "2026 Aug 21",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M03"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41334884",
+      "doi": "10.1080/10903127.2025.2594601",
+      "titulo": "Prehospital Interventions, Early Detection, and Their Impact on Survival Outcomes in Patients with Sepsis: A Systematic Review.",
+      "revista": "Prehosp Emerg Care",
+      "fecha": "2026",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "39741175",
+      "doi": "10.1038/s41391-024-00934-9",
+      "titulo": "Infectious complications following transperineal prostate biopsy with or without periprocedural antibiotic prophylaxis-a systematic review including meta-analysis of all comparative studies.",
+      "revista": "Prostate Cancer Prostatic Dis",
+      "fecha": "2026 Mar",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41873478",
+      "doi": "10.23736/s1824-4785.26.03717-9",
+      "titulo": "[18F]FDG PET/CT in fever and inflammation of unknown origin, bacteremia, and sepsis: an umbrella review of diagnostic accuracy and clinical impact.",
+      "revista": "Q J Nucl Med Mol Imaging",
+      "fecha": "2026 Sep",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41934704",
+      "doi": "10.1016/j.resinv.2026.101410",
+      "titulo": "Utility of risk assessment and identification of risk factors for drug-resistant pathogens in hospital-acquired and ventilator-associated pneumonia: systematic reviews and meta-analyses.",
+      "revista": "Respir Investig",
+      "fecha": "2026 May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42849541",
+      "doi": "10.1016/j.rmed.2026.109200",
+      "titulo": "Association between complement de-escalation and prognosis in sepsis: A systematic review and meta-analysis.",
+      "revista": "Respir Med",
+      "fecha": "2026 Nov",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41865776",
+      "doi": "10.1016/j.rmed.2026.108786",
+      "titulo": "Corticosteroids for treating sepsis: A systematic review and network meta-analysis.",
+      "revista": "Respir Med",
+      "fecha": "2026 Apr-May",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42648651",
+      "doi": "10.1016/j.rmed.2026.109119",
+      "titulo": "Prognostic value of the lactate-to-albumin ratio in adult sepsis: An updated systematic review of prognostic evidence.",
+      "revista": "Respir Med",
+      "fecha": "2026 Oct",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M04"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42055480",
+      "doi": "10.1016/j.rmed.2026.108858",
+      "titulo": "Recombinant human interleukin-7 for patients with infection-associated lymphopenia: a systematic review and meta-analysis.",
+      "revista": "Respir Med",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42527363",
+      "doi": "",
+      "titulo": "Clostridium innocuum Bacteremia: Case Report and Systematic Review.",
+      "revista": "S D Med",
+      "fecha": "2026 Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41940579",
+      "doi": "10.1177/00368504261435291",
+      "titulo": "Biomarkers and clinical factors associated with sepsis-induced coagulopathy: A systematic review and meta-analysis.",
+      "revista": "Sci Prog",
+      "fecha": "2026 Apr",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M08"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41949827",
+      "doi": "10.1097/shk.0000000000002857",
+      "titulo": "A Meta-Analytic Perspective on Echocardiographic Signs of Long-Term Cardiac Dysfunction After Burns, Sepsis, and Trauma.",
+      "revista": "Shock",
+      "fecha": "2026 Nov 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41949603",
+      "doi": "10.1097/shk.0000000000002850",
+      "titulo": "A Systematic Review of Machine Learning Models For Sepsis Prediction: An Appraise-Ai Approach.",
+      "revista": "Shock",
+      "fecha": "2026 Nov 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42258324",
+      "doi": "10.1097/shk.0000000000002885",
+      "titulo": "Meta-Analysis of the Prognostic Value of Skin Perfusion Parameters in Sepsis Patients: Evidence Integration Based on the Mottling Score, Capillary Refill Time, and Peripheral Perfusion Index.",
+      "revista": "Shock",
+      "fecha": "2026 Aug 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M04"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40997273",
+      "doi": "10.1097/shk.0000000000002687",
+      "titulo": "Mortality in the Sepsis-3 Era: A Systematic Review of Multicenter Randomized Controlled Trials.",
+      "revista": "Shock",
+      "fecha": "2026 Oct 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41894663",
+      "doi": "10.1097/shk.0000000000002784",
+      "titulo": "Pulmonary Artery Catheter Monitoring in Cardiogenic Shock: A Systematic Review and Meta-Analysis.",
+      "revista": "Shock",
+      "fecha": "2026 Apr 1",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42444017",
+      "doi": "10.1186/s13643-026-03260-4",
+      "titulo": "Evaluating the efficacy of esmolol in septic shock: a systematic review and meta-analysis.",
+      "revista": "Syst Rev",
+      "fecha": "2026 Jul 14",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M06"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "43000473",
+      "doi": "10.1186/s13643-026-03289-5",
+      "titulo": "Persistent Staphylococcus aureus bacteremia and 30-day mortality: a systematic review and meta-analysis.",
+      "revista": "Syst Rev",
+      "fecha": "2026 Aug 12",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "40603103",
+      "doi": "10.1620/tjem.2025.j085",
+      "titulo": "The Association of High Mobility Group Box-1 with Sepsis Susceptibility and Mortality Risk: A Meta-Analysis.",
+      "revista": "Tohoku J Exp Med",
+      "fecha": "2026 Jun 20",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41914959",
+      "doi": "10.1111/tid.70209",
+      "titulo": "Outcomes of Short Antibiotic Courses for Gram-Negative Bloodstream Infections in Solid Organ Transplant Recipients-A Systematic Review and Meta-Analysis.",
+      "revista": "Transpl Infect Dis",
+      "fecha": "2026 May-Jun",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "41162269",
+      "doi": "10.1016/j.urolonc.2025.09.027",
+      "titulo": "A systematic review and meta-analysis evaluating the incidence, microbiological profile and risk factors associated with urinary tract infection after radical cystectomy.",
+      "revista": "Urol Oncol",
+      "fecha": "2026 Jan",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42287451",
+      "doi": "10.1007/s00240-026-02016-y",
+      "titulo": "Antibiotic prophylaxis before shock wave lithotripsy in patients with sterile urine: a systematic review and meta-analysis.",
+      "revista": "Urolithiasis",
+      "fecha": "2026 Jun 13",
+      "diseno": "metaanálisis/RS",
+      "tier": 3,
+      "prioridad": 1,
+      "modulos": [
+        "M09"
+      ],
+      "fuente": "PubMed"
+    },
+    {
+      "pmid": "42658414",
+      "doi": "10.1007/s15010-026-02898-5",
+      "titulo": "Oral transition therapy versus intravenous therapy for the treatment of uncomplicated Enterococcal bloodstream infections.",
+      "revista": "Infection",
+      "fecha": "2026 Oct",
+      "diseno": "otro",
+      "tier": 3,
+      "prioridad": 0,
+      "modulos": [
+        "M01"
+      ],
+      "fuente": "PubMed"
+    }
+  ],
+  "correo_sin_pmid": []
+}

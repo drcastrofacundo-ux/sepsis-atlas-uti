@@ -1,0 +1,37 @@
+{
+  "baseUrl": "https://uti-tools.netlify.app",
+  "tools": {
+    "dsi": {
+      "nombre": "DSI serial",
+      "path": "dsi.html",
+      "descripcion": "Diastolic Shock Index (FC/PAD) con seguimiento serial descriptivo."
+    },
+    "vasopresores": {
+      "nombre": "Vasopresores",
+      "path": "vasopresores.html",
+      "descripcion": "Peso predicho de Devine, cálculo inverso de dosis a velocidad y lectura de noradrenalina en obesidad."
+    },
+    "sofa2": {
+      "nombre": "SOFA-2 (2025)",
+      "path": "sofa2.html",
+      "descripcion": "Score SOFA-2; no muestra mortalidad si el score está incompleto."
+    },
+    "oxigeno": {
+      "nombre": "CaO₂ y transporte de oxígeno",
+      "path": "oxigeno.html",
+      "descripcion": "Contenido arterial de oxígeno y transporte."
+    },
+    "opioides": {
+      "nombre": "Opioides en infusión",
+      "path": "opioides.html",
+      "descripcion": "Calculadora de opioides en infusión continua."
+    }
+  },
+  "modulos": {
+    "M01": ["sofa2"],
+    "M04": ["oxigeno"],
+    "M05": ["dsi", "vasopresores"],
+    "M06": ["vasopresores"],
+    "M11": ["opioides"]
+  }
+}

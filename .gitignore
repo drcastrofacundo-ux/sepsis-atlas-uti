@@ -1,0 +1,22 @@
+# Dependencias y builds (se regeneran con npm install / npm run build)
+node_modules/
+web/dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+
+# Registros locales de la actualización mensual
+actualizaciones.log
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Notas internas del proyecto (quedan en la carpeta local, no se publican)
+inventario-boveda-para-atlas.md
+correcciones-pendientes.md
+fuentes-drive-gmail.md
+resumen-de-la-noche.md
