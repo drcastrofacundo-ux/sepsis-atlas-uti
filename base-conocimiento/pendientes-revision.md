@@ -1,7 +1,7 @@
 ---
 tags: [sepsis, radar, evidencia-viva, pendientes]
 tipo: cola-revision
-actualizado: 2026-11-25 22:14
+actualizado: 2026-11-26 21:44
 ---
 
 # Cola de Revisión de Evidencia Viva — Sepsis Atlas UTI
@@ -13,7 +13,7 @@ Procesadas **17 entregas** del Radar Bibliográfico. Se indexaron **68 entradas 
 2. Los ítems marcados con **[SEÑAL PRÁCTICA]** o de alta jerarquía (RCT/guía/metaanálisis) se revisan primero para promoverlos al cuerpo del módulo `MXX-*.md`.
 3. Los ítems marcados con **[CAUTELA / ALERTA]** sirven para reforzar la sección *Cómo NO sobreinterpretarlo* sin sobredimensionar observacionales.
 
-## M01 (21 entradas)
+## M01 (20 entradas)
 
 - **2026-11-22** [LECTURA] **Trayectorias de balance desde el día 3 en sepsis** · PMID 43066603 · DOI `10.1177/08850666261509926` *(rel: directa)*
   - *Resultado:* mortalidad cruda 28 días de 20,8% en recuperación rápida. Frente a ella, respuesta tardía: aOR 1,30 (IC95% 1,14–1,49); falla persistente: aOR 1,27 (IC95% 1,09–1,48).
@@ -37,9 +37,6 @@ Procesadas **17 entregas** del Radar Bibliográfico. Se indexaron **68 entradas 
 - **2026-08-23** [LECTURA] **Sepsis despues de trauma severo** · PMID 42628456 · DOI `10.1016/j.jcrc.2026.155719` *(rel: directa)*
   - *Resultado:* sepsis 5,7% (3486 pacientes). Estadia UTI mediana 19 vs 3 dias. MOF 68,7% en septicos vs 14,7% no septicos. Mortalidad asociada a sepsis 31,5%; foco pulmonar 63,6%, abdominal 8,7%; fatalidad abdominal 38,0% y pulmonar 32,3%. Ventilacion temprana al ingreso UTI
   - *No sobreinterpretar:* no asumir que todo ventilado necesita antibiotico precoz por el OR; usarlo para vigilancia, no para sobrediagnostico.
-- **2026-08-23** [LECTURA] **Monitorizacion continua de glucosa en sepsis critica** · PMID 42622665 · DOI `10.1177/03000605261477581` *(rel: directa)*
-  - *Resultado:* correlacion r=0,986; MARD 11,44%; 100% de lecturas en zonas A/B del error grid. Adherencia 73,91% vs 48,16%; tiempo 41,33 vs 63,67 s; mas hipoglucemias detectadas 2,46% vs 0,28%.
-  - *No sobreinterpretar:* no reemplaza control arterial/venoso en shock profundo, vasopresores altos o discordancia clinica.
 - **2026-08-09** [LECTURA] **SOFA-2 y mortalidad a 90/365 dias en sepsis** · PMID 42566422 · DOI `10.1097/SHK.0000000000002918` *(rel: directa)*
   - *Resultado:* por cada punto SOFA-2, OR ajustado 1,17 para mortalidad a 90 dias y 1,16 para 365 dias. Discriminacion individual modesta: AUC 0,65 y 0,64; random forest subio a 0,68 y 0,67.
   - *No sobreinterpretar:* un AUC 0,65 no alcanza para decisiones individuales duras. En sepsis real pesa la tendencia: lactato, diuresis, vasopresores, perfusion, foco, comorbilidad y respuesta inicial.
@@ -409,12 +406,10 @@ Procesadas **17 entregas** del Radar Bibliográfico. Se indexaron **68 entradas 
   - *Resultado:* el RRI post-titulacion fue menor en el grupo guiado por RRI (0,61 vs 0,67; p<0,001), pero la mortalidad a 28 dias no difirio: 25/138 vs 36/136; RR 0,69 (IC95% 0,44-1,08), p=0,11.
   - *No sobreinterpretar:* no subir ni bajar PAM solo por RRI fuera de protocolo; el resultado duro fue negativo.
 
-## M11 (10 entradas)
+## M11 (6 entradas)
 
 - **2026-11-15** [LECTURA] **Fenotipos endoteliales y disfunción hepática asociada a sepsis** · PMID 42805482 · DOI `10.1016/j.lfs.2026.124715` *(rel: directa)*
   - *No sobreinterpretar:* no pedir citometría ni usar esta razón para anticipar, diagnosticar o tratar SALD; tampoco prueba que el fenotipo endotelial sea el mecanismo causal.
-- **2026-09-27** [ALERTA METODOLÓGICA] **CETP/SAA en SDRA asociado a sepsis: biomarcadores en preprint** · PMID 42779867 · DOI `10.64898/2026.09.14.751535` *(rel: directa)*
-  - *Resultado:* mayor actividad CETP se asocio a menor mortalidad; asociaciones variables con SAA y rosuvastatina.
 - **2026-09-20** [SEÑAL PRÁCTICA] **Necrosis distal/gangrena simetrica en shock con vasopresores: ojo con culpar solo a la noradrenalina** · PMID 42760619 · DOI `10.1093/ehjcvp/pvag078` *(rel: directa)*
   - *Resultado:* no aporta efecto numerico aplicable; es sintesis fisiopatologica.
   - *No sobreinterpretar:* no justifica subir o bajar vasopresores por protocolo, ni anticoagular empiricamente a todos, ni negar que dosis altas/prolongadas de vasopresores puedan contribuir al problema. Sirve para ampliar el diagnostico causal y documentar mejor el
@@ -424,18 +419,106 @@ Procesadas **17 entregas** del Radar Bibliográfico. Se indexaron **68 entradas 
 - **2026-08-09** [LECTURA] **Telemedicina intensiva y destete de ventilacion invasiva** · PMID 42568095 · DOI `10.1186/s13054-026-06234-z` *(rel: cardio_sepsis)*
   - *Resultado:* mas SBTs con intervencion, 51% vs 27% de dias-paciente, p<0,001. Sin diferencia en exito de destete: 28% vs 36%, p=0,32. En destetados, menor duracion de ventilacion invasiva: mediana 7 vs 9 dias, p=0,031.
   - *No sobreinterpretar:* no demuestra que tele-UTI aumente supervivencia ni exito de destete por si sola. La senial es de adherencia a proceso y deteccion de oportunidad.
+- **2026-08-09** [LECTURA] **Hipoxemia/hipercapnia temprana y mortalidad en ventilados invasivos** · PMID 42570531 · DOI `10.1016/j.hrtlng.2026.102905` *(rel: cardio_sepsis)*
+  - *Resultado:* mortalidad global 23,0%. Hipoxemia aislada aOR 1,63 (IC95% 1,33-2,00); hipoxemia + hipercapnia aOR 1,67 (IC95% 1,21-2,32); hipercapnia aislada no se asocio a mayor mortalidad, aOR 0,86 (IC95% 0,54-1,39).
+  - *No sobreinterpretar:* no perseguir normocapnia a costa de driving pressure/volutrauma. La hipercapnia aislada leve no equivale automaticamente a peor pronostico.
+- **2026-07-12** [LECTURA] **Infecciones por Klebsiella pneumoniae resistente a carbapenemes en UTI** · PMID 42426650 · DOI `10.1186/s12879-026-13929-9` *(rel: cardio_sepsis)*
+  - *Resultado:* mortalidad 75% (135/180). Predictores independientes: edad OR 1,04; vasopresores OR 13,42; ventilacion mecanica OR 14,19. No se encontro asociacion independiente entre combinaciones antimicrobianas especificas y supervivencia, con subgrupos limitados.
+  - *No sobreinterpretar:* no concluir que el antibiotico no importa; el estudio no tiene potencia ni diseno para comparar estrategias terapeuticas finas.
+
+## M14 (4 entradas)
+
+- **2026-10-18** [SEÑAL PRÁCTICA] **Dobutamina intraoperatoria durante control quirúrgico de foco: menos AKI, sin beneficio demostrado en mortalidad** · DOI `10.1001/jama.2026.21322` *(rel: directa)*
+  - *No sobreinterpretar:* la reducción de AKI no equivale a demostrar mejor supervivencia; no sustituye evaluar gasto cardíaco, perfusión, congestión, respuesta a fluidos ni riesgo arrítmico.
+- **2026-09-27** [SEÑAL PRÁCTICA] **Bacteriemia por Pseudomonas: el control de foco sigue siendo una intervencion critica, no un detalle quirurgico** · PMID 42787356 · DOI `10.1093/ofid/ofag488` *(rel: directa)*
+  - *Resultado:* mortalidad 30 dias 6,5% con control temprano adecuado vs 23,6% sin control temprano adecuado y 28,4% cuando se considero no necesario. En analisis con propensity score, control temprano adecuado se asocio con menor mortalidad: HR ajustado 0,15; p=0,0024.
+  - *No sobreinterpretar:* no justifica procedimientos inseguros ni reemplaza criterio quirurgico/intervencionista; asociacion no es causalidad demostrada.
+- **2026-07-19** [LECTURA] **Diagnosticos rapidos en sepsis: mejoran tiempos, no mortalidad demostrada** · PMID 42468648 · DOI `10.1016/j.ijantimicag.2026.107937` *(rel: directa)*
+  - *Resultado:* 49 registros microbiologicos y 33 clinicos. Sensibilidad agrupada 0,97-0,98; especificidad 0,99-1,00. Tiempo a identificacion -21,43 h; tiempo a tratamiento optimo/ajustado/apropiado -13,78 h. Mortalidad a 30 dias sin diferencia: OR 0,97 (IC95% 0,88-1,07).
+  - *No sobreinterpretar:* test rapido sin circuito de accion no salva tiempo clinico.
+- **2026-07-12** [LECTURA] **Infecciones por Klebsiella pneumoniae resistente a carbapenemes en UTI** · PMID 42426650 · DOI `10.1186/s12879-026-13929-9` *(rel: cardio_sepsis)*
+  - *Resultado:* mortalidad 75% (135/180). Predictores independientes: edad OR 1,04; vasopresores OR 13,42; ventilacion mecanica OR 14,19. No se encontro asociacion independiente entre combinaciones antimicrobianas especificas y supervivencia, con subgrupos limitados.
+  - *No sobreinterpretar:* no concluir que el antibiotico no importa; el estudio no tiene potencia ni diseno para comparar estrategias terapeuticas finas.
+
+## M15 (13 entradas)
+
+- **2026-11-08** [ALERTA METODOLÓGICA] **VASI en sepsis adulta: señal pronóstica, no guía terapéutica** · PMID 42969437 · DOI `10.1097/SHK.0000000000002958` *(rel: directa)*
+  - *Resultado:* - **Cita:** Zhu P, Ou Q, Huang Q, et al. *Vasoactive-Adjusted Shock Index for Risk Stratification in Adult Sepsis.* Shock. Publicado online 02/11/2026. - **Enlace:** [PMID 42969437](https://pubmed.ncbi.nlm.nih.gov/42969437/) · [DOI 10.1097/SHK.0000000000002958
+- **2026-10-04** [LECTURA] **Taquicardia mediada por marcapasos simulando shock septico refractario** · PMID 42828523 · DOI `10.1016/j.jaccas.2026.110616` *(rel: directa)*
+  - *Resultado:* frecuencia estimulada fija alrededor de 109-110/min; PVARP 225 ms y conduccion VA 360 ms; circuito de 550 ms.
+  - *No sobreinterpretar:* no todo shock con marcapasos es PMT; primero sostener ABC, infeccion, eco, ECG, lactato/perfusion y causas mecanicas.
+- **2026-10-04** [LECTURA] **BUN/cistatina C y mortalidad intrahospitalaria en sepsis** · PMID 42825208 · DOI `10.1515/med-2026-1522` *(rel: directa)*
+  - *Resultado:* BCR OR ajustado 1,247 (IC95% 1,165-1,335; p menor a 0,001); BUN OR ajustado 1,047 (IC95% 1,029-1,065; p menor a 0,001). BCR+SOFA AUC 0,717.
+  - *No sobreinterpretar:* no tratar el ratio como gatillo terapeutico ni usarlo aislado para limitar soporte.
+- **2026-09-27** [ALERTA METODOLÓGICA] **CETP/SAA en SDRA asociado a sepsis: biomarcadores en preprint** · PMID 42779867 · DOI `10.64898/2026.09.14.751535` *(rel: directa)*
+  - *Resultado:* mayor actividad CETP se asocio a menor mortalidad; asociaciones variables con SAA y rosuvastatina.
+- **2026-09-13** [LECTURA] **Fenotipos MAP/NEQ y albumina en shock septico** · PMID 42722591 *(rel: directa)*
+  - *Resultado:* cuatro fenotipos: A estable bajo 29,8%, B ascendente 26,1%, C descendente 24,0%, D estable alto 20,1%. El fenotipo A tuvo mayor riesgo de mortalidad en UCI; comparado con A, OR para mortalidad: B 0,303 (IC95% 0,225-0,408), C 0,606 (0,458-0,801), D 0,547 (0,391
+  - *No sobreinterpretar:* no demuestra beneficio de albumina; no define a quien darle albumina; MIMIC/eICU tienen sesgo de indicacion, calidad variable de mediciones y confusores residuales. Sirve para generar hipotesis y disenar dashboard, no para protocolo terapeu
+- **2026-09-06** [LECTURA] **Trayectorias de sodio y diuresis en sepsis** · PMID 42695367 · DOI `10.7189/jogh.16.04308` *(rel: directa)*
+  - *Resultado:* cinco subtipos de trayectoria durante 96 h. Mayor riesgo con sodio levemente creciente y diuresis decreciente (HR 1,85; IC95% 1,56-2,19) y con sodio decreciente mas diuresis que sube y luego se aplana (HR 1,53; IC95% 1,29-1,82).
+  - *No sobreinterpretar:* MIMIC-IV, retrospectivo; no causal ni indicacion automatica de fluidos/diureticos.
 - **2026-08-09** [LECTURA] **Lesion ventricular derecha en SDRA** · PMID 42571495 · DOI `10.1016/j.aicoj.2026.100117` *(rel: cardio_sepsis)*
   - *Resultado:* prevalencia agrupada 30% (IC95% 23-38%). Asociacion con mortalidad UTI: OR no ajustado 2,49 (IC95% 1,81-3,42); aOR 2,37 (IC95% 1,24-4,51); aHR 2,64 (IC95% 1,60-4,37).
   - *No sobreinterpretar:* no todo VD lesionado exige bajar PEEP o agregar inotropico. Integrar oxigenacion, reclutabilidad, driving pressure, CO2, perfusion y congestion venosa.
 - **2026-08-09** [LECTURA] **Hipoxemia/hipercapnia temprana y mortalidad en ventilados invasivos** · PMID 42570531 · DOI `10.1016/j.hrtlng.2026.102905` *(rel: cardio_sepsis)*
   - *Resultado:* mortalidad global 23,0%. Hipoxemia aislada aOR 1,63 (IC95% 1,33-2,00); hipoxemia + hipercapnia aOR 1,67 (IC95% 1,21-2,32); hipercapnia aislada no se asocio a mayor mortalidad, aOR 0,86 (IC95% 0,54-1,39).
   - *No sobreinterpretar:* no perseguir normocapnia a costa de driving pressure/volutrauma. La hipercapnia aislada leve no equivale automaticamente a peor pronostico.
+- **2026-07-26** [LECTURA] **Monitoreo hemodinamico avanzado post-paro extrahospitalario** · PMID 42492620 · DOI `10.1016/j.resuscitation.2026.111218` *(rel: cardio_sepsis)*
+  - *Resultado:* variables mas reportadas: gasto cardiaco 27/28, PAM 25/28, PVC 17/28, SvO2 14/28. Asociaciones pronosticas heterogeneas; bajo SvO2 y presion pulmonar elevada se asociaron a peores outcomes en algunos estudios.
+  - *No sobreinterpretar:* no valida un objetivo universal de GC, PVC, PAM o SvO2 post-paro.
 - **2026-07-12** [LECTURA] **Lactato a 6 horas + PAFI en SDRA asociado a sepsis** · PMID 42434889 · DOI `10.1177/08850666261466237` *(rel: directa)*
   - *Resultado:* mortalidad 34,5%; AUC 0,82 derivacion, 0,80 validacion interna, 0,73 validacion externa; calibracion reportada como adecuada.
   - *No sobreinterpretar:* no usar la formula como "score de corte" para limitar tratamiento o indicar conductas; usarlo como marco de riesgo pendiente de validacion.
 - **2026-07-12** [LECTURA] **Infecciones por Klebsiella pneumoniae resistente a carbapenemes en UTI** · PMID 42426650 · DOI `10.1186/s12879-026-13929-9` *(rel: cardio_sepsis)*
   - *Resultado:* mortalidad 75% (135/180). Predictores independientes: edad OR 1,04; vasopresores OR 13,42; ventilacion mecanica OR 14,19. No se encontro asociacion independiente entre combinaciones antimicrobianas especificas y supervivencia, con subgrupos limitados.
   - *No sobreinterpretar:* no concluir que el antibiotico no importa; el estudio no tiene potencia ni diseno para comparar estrategias terapeuticas finas.
+- **2026-07-12** [LECTURA] **Fenotipado inmune-endotelial en sepsis postoperatoria** · PMID 42435583 · DOI `10.1016/j.ebiom.2026.106372` *(rel: directa)*
+  - *Resultado:* dos subpoblaciones B y un cluster endotelial CD36/CD16 se asociaron independientemente con mortalidad; el score integrado tuvo AUC 0,935 vs SOFA/APACHE II 0,751-0,804.
+  - *No sobreinterpretar:* no reemplaza SOFA, perfusion ni juicio clinico; no define tratamiento inmunomodulador por ahora.
 - **2026-07-12** [LECTURA] **Corticoides en infeccion pulmonar grave** · PMID 42425738 · DOI `10.1136/bmjresp-2025-003934` *(rel: directa)*
   - *Resultado:* 12 RCTs, 4622 pacientes, 1203 eventos. OR de mortalidad de corto plazo 0,83 (IC95% 0,70-0,98), p=0,029, I2 2,0%, NNT 37,84, certeza GRADE baja. En NAC: OR 0,72 (IC95% 0,54-0,98), NNT 28,10. Cursos >7 dias mostraron diferencia; cursos <=7 dias no.
   - *No sobreinterpretar:* no usarlo como licencia para corticoides universales en toda sepsis o toda neumonia; mirar fenotipo, shock, oxigenacion, riesgo de infeccion secundaria/hiperglucemia y duracion.
+
+## M16 (4 entradas)
+
+- **2026-08-02** [LECTURA] **Dispositivos medicos y MDRO en sepsis de guardia** · PMID 42526287 · DOI `10.1016/j.ajem.2026.07.032` *(rel: directa)*
+  - *Resultado:* MDRO en 32,4%. Dispositivos asociados a MDRO: OR 2,33 (IC95% 1,28-4,33); shock septico OR 3,53. Dispositivos no se asociaron independientemente a mortalidad: OR 1,19 (IC95% 0,55-2,58). Shock septico fue fuerte predictor de mortalidad: OR 15,83.
+  - *No sobreinterpretar:* no autoriza cobertura amplia automatica; debe cruzarse con colonizacion previa, internaciones, antibioticos recientes, foco, mapa local y gravedad.
+- **2026-07-19** [LECTURA] **Refractariedad en shock septico como proceso de re-evaluacion** · PMID 42469837 · DOI `10.1186/s13054-026-06197-1` *(rel: directa)*
+  - *No sobreinterpretar:* no es una guia ni algoritmo obligatorio; es una forma ordenada de no saltear causas corregibles.
+- **2026-07-12** [LECTURA] **Infecciones por Klebsiella pneumoniae resistente a carbapenemes en UTI** · PMID 42426650 · DOI `10.1186/s12879-026-13929-9` *(rel: cardio_sepsis)*
+  - *Resultado:* mortalidad 75% (135/180). Predictores independientes: edad OR 1,04; vasopresores OR 13,42; ventilacion mecanica OR 14,19. No se encontro asociacion independiente entre combinaciones antimicrobianas especificas y supervivencia, con subgrupos limitados.
+  - *No sobreinterpretar:* no concluir que el antibiotico no importa; el estudio no tiene potencia ni diseno para comparar estrategias terapeuticas finas.
+- **2026-07-12** [LECTURA] **Corticoides en infeccion pulmonar grave** · PMID 42425738 · DOI `10.1136/bmjresp-2025-003934` *(rel: directa)*
+  - *Resultado:* 12 RCTs, 4622 pacientes, 1203 eventos. OR de mortalidad de corto plazo 0,83 (IC95% 0,70-0,98), p=0,029, I2 2,0%, NNT 37,84, certeza GRADE baja. En NAC: OR 0,72 (IC95% 0,54-0,98), NNT 28,10. Cursos >7 dias mostraron diferencia; cursos <=7 dias no.
+  - *No sobreinterpretar:* no usarlo como licencia para corticoides universales en toda sepsis o toda neumonia; mirar fenotipo, shock, oxigenacion, riesgo de infeccion secundaria/hiperglucemia y duracion.
+
+## M17 (2 entradas)
+
+- **2026-11-22** [LECTURA] **Por qué las revisiones de corticoides en sepsis llegan a conclusiones distintas** · PMID 43058869 · DOI `10.1186/s13054-026-06471-2` *(rel: directa)*
+  - *Resultado:* 15/38 (39%) revisiones con metaanálisis de mortalidad a corto plazo reportaron beneficio y 23/38 (61%) ausencia de efecto; más de la mitad de los pares de revisiones no compartía ECA. Las conclusiones fueron consistentes para hidrocortisona + fludrocortisona (
+  - *No sobreinterpretar:* no equivale a una nueva recomendación a favor o en contra de corticoides.
+- **2026-08-23** [LECTURA] **Monitorizacion continua de glucosa en sepsis critica** · PMID 42622665 · DOI `10.1177/03000605261477581` *(rel: directa)*
+  - *Resultado:* correlacion r=0,986; MARD 11,44%; 100% de lecturas en zonas A/B del error grid. Adherencia 73,91% vs 48,16%; tiempo 41,33 vs 63,67 s; mas hipoglucemias detectadas 2,46% vs 0,28%.
+  - *No sobreinterpretar:* no reemplaza control arterial/venoso en shock profundo, vasopresores altos o discordancia clinica.
+
+## M18 (2 entradas)
+
+- **2026-09-27** [ALERTA METODOLÓGICA] **Albumina hiperoncotica 20% en sepsis/shock: metaanalisis interesante, certeza baja** · PMID 42783423 · DOI `10.3390/medsci14050550` *(rel: directa)*
+  - *Resultado:* mortalidad global RR 0,94; no robusto segun metodos. En subgrupo shock septico: RR 0,90 (IC95% 0,82-0,99; p=0,03). Certeza GRADE baja.
+  - *No sobreinterpretar:* el subgrupo de shock es sugerente, no definitivo; evitar transformar una senal de metaanalisis en protocolo.
+- **2026-08-02** [LECTURA] **Inhibicion terminal del complemento en shock septico: poblacion rara, riesgo clinico relevante** · PMID 42526359 · DOI `10.1016/j.jcrc.2026.155700` *(rel: directa)*
+  - *Resultado:* mas trombocitopenia 20,3% vs 8,9%, IRA 25,0% vs 13,3%, eventos tromboticos 7,8% vs 4,7%, TRR 8,3% vs 5,1% y MACE 13,7% vs 9,2%. Mortalidad a 30 dias sin diferencia significativa.
+  - *No sobreinterpretar:* no indica suspender o continuar automaticamente inhibidor C5 durante shock; eso depende de indicacion, infeccion, riesgo trombotico y equipo tratante.
+
+## M20 (3 entradas)
+
+- **2026-10-04** [LECTURA] **Sepsis guidelines, exceso de confianza y humildad clinica** · PMID 42822214 · DOI `10.1016/j.jcrc.2026.155758` *(rel: directa)*
+  - *Resultado:* no disponible en abstract/metadatos PubMed.
+  - *No sobreinterpretar:* no usarlo como excusa para ignorar guias ni bundles; usarlo para mejorar juicio clinico y trazabilidad de excepciones.
+- **2026-09-06** [ALERTA METODOLÓGICA] **SA-AKI y machine learning para respuesta a RRT** · PMID 42693505 · DOI `10.1177/08850666261483582` *(rel: directa)*
+  - *Resultado:* 21.359 pacientes MIMIC-IV, tres subtipos; C2 tuvo mayor mortalidad 28 dias 30,8% y mayor uso de RRT 19,2%; LightGBM test AUC 0,814; RRT asociada a menor mortalidad global OR 0,810, pero heterogeneidad de efecto no significativa.
+- **2026-07-12** [LECTURA] **Transferencia interhospitalaria rural y bundle de sepsis** · PMID 42430347 · DOI `10.1371/journal.pone.0351133` *(rel: directa)*
+  - *Resultado:* adherencia al bundle similar, diferencia 2,2% (IC95% -2,2 a 6,5). Transferencia se asocio con mayor estadia en guardia: 3,1 h vs 2,6 h, diferencia 0,6 h (IC95% 0,4-0,7).
+  - *No sobreinterpretar:* que la transferencia no haya reducido adherencia en esa red no implica que toda transferencia sea segura; depende de telemedicina, protocolos y tiempos reales.

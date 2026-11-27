@@ -1,5 +1,5 @@
 {
-  "ultima_actualizacion": "2026-11-25T22:14:38-03:00",
+  "ultima_actualizacion": "2026-11-26T21:44:39-03:00",
   "radars_procesados": 17,
   "rango_fechas": {
     "desde": "2026-07-12",
@@ -8,7 +8,7 @@
   "total_entradas": 68,
   "omitidas_solo_cardiologia": 41,
   "conteo_por_modulo": {
-    "M01": 21,
+    "M01": 20,
     "M02": 6,
     "M03": 3,
     "M04": 24,
@@ -18,28 +18,34 @@
     "M08": 5,
     "M09": 12,
     "M10": 12,
-    "M11": 10
+    "M11": 6,
+    "M14": 4,
+    "M15": 13,
+    "M16": 4,
+    "M17": 2,
+    "M18": 2,
+    "M20": 3
   },
   "chequeo_pubmed": {
     "ok": true,
     "ventana_dias": 35,
     "total_encontrados": 25,
     "pmids_nuevos": [
-      "43084440",
-      "43084400",
-      "43084352",
-      "43084338",
-      "43084327",
-      "43084196",
-      "43083888",
-      "43083807",
-      "43083698",
-      "43083675",
-      "43083665",
-      "43082573",
-      "43082545",
-      "43082544",
-      "43082478"
+      "43097703",
+      "43097518",
+      "43097091",
+      "43096655",
+      "43096173",
+      "43096059",
+      "43095920",
+      "43095888",
+      "43095836",
+      "43095680",
+      "43095646",
+      "43095458",
+      "43095335",
+      "43095222",
+      "43095194"
     ]
   },
   "entradas": [
@@ -94,7 +100,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M06"
+        "M06",
+        "M17"
       ]
     },
     {
@@ -224,7 +231,8 @@
       "relevancia_sepsis": "directa",
       "modulos": [
         "M05",
-        "M06"
+        "M06",
+        "M15"
       ]
     },
     {
@@ -380,7 +388,8 @@
       "modulos": [
         "M06",
         "M09",
-        "M10"
+        "M10",
+        "M14"
       ]
     },
     {
@@ -405,7 +414,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M06"
+        "M06",
+        "M15"
       ]
     },
     {
@@ -432,7 +442,8 @@
       "modulos": [
         "M04",
         "M05",
-        "M06"
+        "M06",
+        "M20"
       ]
     },
     {
@@ -457,7 +468,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M10"
+        "M10",
+        "M15"
       ]
     },
     {
@@ -562,7 +574,7 @@
       "es_alerta_metodologica": true,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M11"
+        "M15"
       ]
     },
     {
@@ -587,7 +599,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M09"
+        "M09",
+        "M14"
       ]
     },
     {
@@ -613,7 +626,8 @@
       "relevancia_sepsis": "directa",
       "modulos": [
         "M01",
-        "M05"
+        "M05",
+        "M18"
       ]
     },
     {
@@ -694,7 +708,8 @@
       "modulos": [
         "M04",
         "M05",
-        "M06"
+        "M06",
+        "M15"
       ]
     },
     {
@@ -747,7 +762,8 @@
       "modulos": [
         "M04",
         "M09",
-        "M10"
+        "M10",
+        "M15"
       ]
     },
     {
@@ -822,7 +838,8 @@
       "es_alerta_metodologica": true,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M10"
+        "M10",
+        "M20"
       ]
     },
     {
@@ -1024,7 +1041,7 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M01"
+        "M17"
       ]
     },
     {
@@ -1152,7 +1169,7 @@
       "relevancia_sepsis": "cardio_sepsis",
       "modulos": [
         "M07",
-        "M11"
+        "M15"
       ]
     },
     {
@@ -1178,6 +1195,7 @@
       "relevancia_sepsis": "cardio_sepsis",
       "modulos": [
         "M04",
+        "M15",
         "M11"
       ]
     },
@@ -1391,7 +1409,8 @@
       "relevancia_sepsis": "directa",
       "modulos": [
         "M08",
-        "M10"
+        "M10",
+        "M18"
       ]
     },
     {
@@ -1416,7 +1435,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M09"
+        "M09",
+        "M16"
       ]
     },
     {
@@ -1518,7 +1538,8 @@
       "relevancia_sepsis": "cardio_sepsis",
       "modulos": [
         "M04",
-        "M05"
+        "M05",
+        "M15"
       ]
     },
     {
@@ -1571,7 +1592,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M01"
+        "M01",
+        "M16"
       ]
     },
     {
@@ -1624,7 +1646,8 @@
       "es_alerta_metodologica": false,
       "relevancia_sepsis": "directa",
       "modulos": [
-        "M09"
+        "M09",
+        "M14"
       ]
     },
     {
@@ -1651,7 +1674,8 @@
       "modulos": [
         "M04",
         "M06",
-        "M09"
+        "M09",
+        "M20"
       ]
     },
     {
@@ -1704,7 +1728,7 @@
       "modulos": [
         "M01",
         "M04",
-        "M11"
+        "M15"
       ]
     },
     {
@@ -1731,6 +1755,9 @@
       "modulos": [
         "M06",
         "M09",
+        "M14",
+        "M16",
+        "M15",
         "M11"
       ]
     },
@@ -1785,7 +1812,8 @@
         "M02",
         "M03",
         "M04",
-        "M05"
+        "M05",
+        "M15"
       ]
     },
     {
@@ -1812,7 +1840,8 @@
       "modulos": [
         "M01",
         "M06",
-        "M11"
+        "M16",
+        "M15"
       ]
     }
   ]
