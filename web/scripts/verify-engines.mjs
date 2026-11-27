@@ -5,6 +5,13 @@ import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engine
 import { M15_PRESETS, pesoPredicho, simulateM15 } from '../src/engines/m15Engine.ts';
 import { M14_PRESETS, simulateM14 } from '../src/engines/m14Engine.ts';
 import { RECAPT_AR, simulateM16 } from '../src/engines/m16Engine.ts';
+import {
+  M17_PRESETS,
+  faseNutricional,
+  nivelHipoglucemia,
+  simulateM17,
+  transicionSubcutanea,
+} from '../src/engines/m17Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -371,6 +378,93 @@ assert.ok(
 const sumaRecapt = RECAPT_AR.reduce((s, r) => s + r.pct, 0);
 assert.ok(Math.abs(sumaRecapt - 97.5) < 0.1, `M16 RECAPT-AR suma ~97,5% (got ${sumaRecapt.toFixed(1)})`);
 
+// ---- M17 Verification ----
+
+// Niveles de hipoglucemia de la ADA 2026.
+assert.equal(nivelHipoglucemia(95), 0, 'M17 glucemia 95 no es hipoglucemia');
+assert.equal(nivelHipoglucemia(69), 1, 'M17 glucemia 69 es nivel 1');
+assert.equal(nivelHipoglucemia(54), 1, 'M17 glucemia 54 todavia es nivel 1');
+assert.equal(nivelHipoglucemia(38), 2, 'M17 glucemia 38 es nivel 2');
+
+// Fases nutricionales.
+assert.equal(faseNutricional(1), 'aguda_temprana', 'M17 dia 1 es fase aguda temprana');
+assert.equal(faseNutricional(5), 'aguda_tardia', 'M17 dia 5 es fase aguda tardia');
+assert.equal(faseNutricional(12), 'recuperacion', 'M17 dia 12 es recuperacion');
+
+// Transicion a subcutanea: 50% del requerimiento de 24 h.
+const m17Trans = transicionSubcutanea(4, 80);
+assert.equal(m17Trans.requerimiento24h, 96, 'M17 4 U/h son 96 U en 24 h');
+assert.equal(m17Trans.basalUi, 48, 'M17 la basal es el 50% del requerimiento de 24 h');
+assert.equal(m17Trans.glarginaTempranaUi, 20, 'M17 glargina temprana 0,25 U/kg en 80 kg = 20 U');
+
+// Shock septico dia 2: insulina indicada y restriccion calorica.
+const m17Shock = simulateM17(M17_PRESETS[0].inputs);
+assert.ok(m17Shock.iniciarInsulina, 'M17 glucemia 210 debe indicar insulina');
+assert.equal(m17Shock.metaTexto, '140–180 mg/dL', 'M17 la meta debe ser 140-180');
+assert.ok(m17Shock.restriccionInicial, 'M17 dia 2 en shock debe restringir calorias');
+assert.equal(m17Shock.kcalKgDia, 6, 'M17 NUTRIREA-3: 6 kcal/kg/dia en la fase aguda');
+assert.deepEqual(m17Shock.proteinaGKgDia, [0.2, 0.4], 'M17 proteina 0,2-0,4 g/kg en fase aguda');
+assert.ok(m17Shock.profilaxisIndicada, 'M17 shock es factor de riesgo de sangrado digestivo');
+assert.ok(!m17Shock.transfundirGr, 'M17 Hb 8,2 sin isquemia no se transfunde');
+
+// Se corto la enteral con el goteo activo: la alerta roja del Caso 1.
+const m17Corte = simulateM17(M17_PRESETS[1].inputs);
+assert.ok(
+  m17Corte.alerts.some((a) => a.tono === 'red' && a.titulo.includes('cortó la enteral')),
+  'M17 enteral interrumpida con goteo activo debe alertar en rojo'
+);
+
+// Capilar engañoso: tres motivos a la vez.
+const m17Cap = simulateM17(M17_PRESETS[2].inputs);
+assert.ok(!m17Cap.muestraConfiable, 'M17 capilar con vasopresores/renal/vitamina C no es confiable');
+assert.ok(
+  m17Cap.motivoMuestra.includes('vasopresores') &&
+    m17Cap.motivoMuestra.includes('insuficiencia renal') &&
+    m17Cap.motivoMuestra.includes('vitamina C'),
+  'M17 debe nombrar los tres motivos que invalidan el capilar'
+);
+// La misma muestra en sangre arterial si es confiable.
+const m17Art = simulateM17({ ...M17_PRESETS[2].inputs, muestra: 'arterial' });
+assert.ok(m17Art.muestraConfiable, 'M17 la sangre arterial es confiable aun con vasopresores');
+
+// Ventilado sin factores de riesgo que pasa a sala con profilaxis: el Caso 3.
+const m17Vent = simulateM17(M17_PRESETS[3].inputs);
+assert.ok(!m17Vent.profilaxisIndicada, 'M17 la ventilacion sola no indica profilaxis');
+assert.ok(
+  m17Vent.alerts.some((a) => a.tono === 'red' && a.titulo.includes('sin factor de riesgo')),
+  'M17 profilaxis sin factor firme debe alertar en rojo'
+);
+assert.ok(
+  m17Vent.alerts.some((a) => a.titulo.includes('Pasa a sala')),
+  'M17 debe pedir suspender la profilaxis antes del pase a sala'
+);
+
+// Realimentacion: fosforo bajo al reiniciar la nutricion.
+const m17Real = simulateM17(M17_PRESETS[4].inputs);
+assert.ok(m17Real.realimentacion, 'M17 fosforo 1,4 con nutricion activa es realimentacion');
+assert.ok(
+  m17Real.alerts.some((a) => a.detalle.includes('91% vs 78%')),
+  'M17 realimentacion debe citar la sobrevida de Doig 2015'
+);
+
+// Cateter central con 25.000 plaquetas: PACER.
+const m17Pacer = simulateM17(M17_PRESETS[5].inputs);
+assert.ok(m17Pacer.transfundirPlaquetas, 'M17 PACER: 25.000 plaquetas antes del cateter se transfunden');
+assert.ok(m17Pacer.transfundirGr, 'M17 Hb 6,6 esta por debajo del umbral de 7');
+// Sin procedimiento, las mismas plaquetas no se transfunden.
+const m17SinProc = simulateM17({ ...M17_PRESETS[5].inputs, colocaCateterCentral: false });
+assert.ok(!m17SinProc.transfundirPlaquetas, 'M17 sin procedimiento no se transfunden plaquetas');
+// Por encima de 50.000, PACER no aplica.
+const m17Plaq60 = simulateM17({ ...M17_PRESETS[5].inputs, plaquetas: 60 });
+assert.ok(!m17Plaq60.transfundirPlaquetas, 'M17 con 60.000 plaquetas PACER no indica transfusion');
+
+// Los seis presets deben devolver siempre los cuatro bloques.
+for (const p of M17_PRESETS) {
+  const out = simulateM17(p.inputs);
+  assert.equal(out.bloques.length, 4, `M17 preset ${p.id} debe tener 4 bloques`);
+  assert.equal(out.factoresSangrado.length, 5, `M17 preset ${p.id} debe listar 5 factores`);
+}
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas})`
 );

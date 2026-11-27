@@ -185,7 +185,7 @@ Un metaanálisis de 2026 juntó **155 estudios con 403 modelos**: el 85% de las 
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-26.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16 y M17.
 
 - **Nombre UI:** *El reloj del foco: hemocultivos, biomarcadores y control de foco*
 - **Controles:**

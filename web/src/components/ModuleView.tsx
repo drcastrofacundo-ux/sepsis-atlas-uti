@@ -30,6 +30,7 @@ import { PkPdAntibioticLab } from './simulators/PkPdAntibioticLab';
 import { LungLab } from './simulators/LungLab';
 import { SourceControlLab } from './simulators/SourceControlLab';
 import { ResistanceLab } from './simulators/ResistanceLab';
+import { SupportDashboard } from './simulators/SupportDashboard';
 
 interface ModuleViewProps {
   moduleData: AtlasModule;
@@ -127,6 +128,7 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
     if (moduleData.id === 'M14') return <SourceControlLab />;
     if (moduleData.id === 'M15') return <LungLab />;
     if (moduleData.id === 'M16') return <ResistanceLab />;
+    if (moduleData.id === 'M17') return <SupportDashboard />;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -147,8 +149,8 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
           </div>
           <p style={{ margin: 0, fontSize: 13.5, color: 'var(--ink-2)' }}>
             {isM12
-              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 6 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos), M14 (Control de Foco), M15 (Pulmón Séptico) y M16 (Patógenos Difíciles).'
-              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09, M14, M15 o M16.'}
+              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 7 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos), M14 (Control de Foco), M15 (Pulmón Séptico), M16 (Patógenos Difíciles) y M17 (Tablero de Soporte).'
+              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09, M14, M15, M16 o M17.'}
           </p>
         </div>
 

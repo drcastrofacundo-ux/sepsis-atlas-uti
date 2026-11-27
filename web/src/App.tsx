@@ -10,6 +10,7 @@ import {
   HelpCircle,
   Home,
   KeyRound,
+  LayoutDashboard,
   Menu,
   Radar,
   Search,
@@ -269,6 +270,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M16', 'simulador')}
             >
               <KeyRound size={15} color="#E9B44C" /> M16 · Enzima → antibiótico
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M17' && route.tab === 'simulador'}
+              onClick={() => openModule('M17', 'simulador')}
+            >
+              <LayoutDashboard size={15} color="#3FD8C8" /> M17 · Tablero de soporte
             </button>
           </div>
         </div>

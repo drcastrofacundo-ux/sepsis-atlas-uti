@@ -183,7 +183,7 @@ En el SDRA séptico, la eco del VD (relación VD/VI, septum paradojal) informa a
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-26.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16 y M17.
 
 - **Nombre UI:** *El pulmón chico: ventilador, presión de distensión y ventrículo derecho*
 - **Controles:**

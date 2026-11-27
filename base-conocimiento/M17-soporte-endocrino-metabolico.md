@@ -3,7 +3,7 @@ id: M17
 titulo: "Soporte General y Endocrino-Metabólico"
 subtitulo: "Glucemia, eje suprarrenal, nutrición, transfusión, fiebre y profilaxis de úlcera de estrés: los soportes de todos los días, donde casi siempre ganó la estrategia más prudente"
 ultima_actualizacion: 2026-11-26
-piloto_fase2: false
+piloto_fase2: true
 fuentes_nlm:
   - "PubMed (abstracts verificados con PMID, 2026-11-26)"
 fuentes_vault:
@@ -178,7 +178,7 @@ Regla práctica, según la ADA: dar la basal subcutánea **2 h antes** de cortar
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-27.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16 y M17.
 
 - **Nombre UI:** *El tablero de soporte: glucemia, nutrición, sangre y estómago*
 - **Controles:**

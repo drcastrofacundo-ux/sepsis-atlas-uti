@@ -168,7 +168,7 @@ Hoy, ni el CMV ni el HSV detectados en el ventilado sin inmunosupresión justifi
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-26.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16 y M17.
 
 - **Nombre UI:** *La llave y la cerradura: enzima → antibiótico*
 - **Controles:**
