@@ -4,6 +4,7 @@ import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
 import { M15_PRESETS, pesoPredicho, simulateM15 } from '../src/engines/m15Engine.ts';
 import { M14_PRESETS, simulateM14 } from '../src/engines/m14Engine.ts';
+import { RECAPT_AR, simulateM16 } from '../src/engines/m16Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -314,6 +315,62 @@ assert.ok(
 // Con pancreatitis como contexto, una PCT alta no confirma infeccion.
 assert.ok(m14Panc.pctLectura.detalle.includes('sin infección'), 'M14 la PCT debe leerse con su contexto');
 
+// ---- M16 Verification ----
+// El error mas frecuente: creer que ceftazidima-avibactam cubre las MBL.
+const m16Ndm = simulateM16({ mecanismo: 'ndm', foco: 'bacteriemia', renal: 'normal', shock: true });
+assert.ok(
+  m16Ndm.noActivas.some((o) => o.droga.includes('Ceftazidima-avibactam sola')),
+  'M16 NDM: ceftazidima-avibactam sola debe figurar como NO activa'
+);
+assert.ok(
+  m16Ndm.activas.some((o) => o.droga.includes('Aztreonam-avibactam')),
+  'M16 NDM: aztreonam-avibactam debe figurar como activa'
+);
+assert.ok(
+  m16Ndm.alerts.some((a) => a.titulo.includes('avibactam solo no alcanza')),
+  'M16 NDM debe alertar sobre el avibactam'
+);
+
+// En KPC si es la opcion de primera linea.
+const m16Kpc = simulateM16({ mecanismo: 'kpc', foco: 'bacteriemia', renal: 'normal', shock: false });
+assert.ok(
+  m16Kpc.activas.some((o) => o.droga.includes('Ceftazidima-avibactam')),
+  'M16 KPC: ceftazidima-avibactam debe ser activa'
+);
+
+// BLEE: piperacilina-tazobactam no, aunque el antibiograma la informe sensible.
+const m16Blee = simulateM16({ mecanismo: 'blee', foco: 'bacteriemia', renal: 'normal', shock: false });
+assert.ok(
+  m16Blee.noActivas.some((o) => o.droga.includes('Piperacilina-tazobactam') && o.evidencia.includes('12,3%')),
+  'M16 BLEE debe citar MERINO contra piperacilina-tazobactam'
+);
+
+// CRAB: sumar meropenem a la colistina no suma.
+const m16Crab = simulateM16({ mecanismo: 'crab', foco: 'neumonia', renal: 'lra', shock: true });
+assert.ok(
+  m16Crab.noActivas.some((o) => o.droga.includes('Colistina + meropenem')),
+  'M16 CRAB: la combinacion con meropenem debe figurar como no util'
+);
+assert.ok(m16Crab.toxicidad.length >= 2, 'M16 CRAB con LRA debe advertir toxicidad');
+
+// SAMR en neumonia: la daptomicina no sirve.
+const m16Samr = simulateM16({ mecanismo: 'samr', foco: 'neumonia', renal: 'normal', shock: false });
+assert.ok(
+  m16Samr.alerts.some((a) => a.titulo.includes('Daptomicina no sirve en neumonía')),
+  'M16 SAMR en neumonia debe alertar por daptomicina'
+);
+
+// Candidemia en CKRT: fluconazol a dosis plena.
+const m16Cand = simulateM16({ mecanismo: 'candida', foco: 'bacteriemia', renal: 'ckrt', shock: false });
+assert.ok(
+  m16Cand.alerts.some((a) => a.detalle.includes('800 mg')),
+  'M16 candidemia en CKRT debe pedir fluconazol a dosis plena'
+);
+
+// La epidemiologia argentina debe sumar ~100%.
+const sumaRecapt = RECAPT_AR.reduce((s, r) => s + r.pct, 0);
+assert.ok(Math.abs(sumaRecapt - 97.5) < 0.1, `M16 RECAPT-AR suma ~97,5% (got ${sumaRecapt.toFixed(1)})`);
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas)`
 );

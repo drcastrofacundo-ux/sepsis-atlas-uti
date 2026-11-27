@@ -3800,7 +3800,7 @@
     "titulo": "Patógenos Difíciles: Multirresistentes, Hongos y Virus",
     "subtitulo": "BLEE, AmpC, KPC y metalo-betalactamasas en la Argentina post-COVID, Acinetobacter y Pseudomonas difíciles, SAMR, candidemia, aspergilosis, gripe, COVID y reactivaciones virales: qué droga para qué enzima y qué ensayos lo sostienen",
     "ultimaActualizacion": "2026-11-26",
-    "pilotoFase2": false,
+    "pilotoFase2": true,
     "fuentesNlm": [
       "PubMed (abstracts verificados con PMID, 2026-11-26)"
     ],

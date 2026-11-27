@@ -9,6 +9,7 @@ import {
   HeartPulse,
   HelpCircle,
   Home,
+  KeyRound,
   Menu,
   Radar,
   Search,
@@ -260,6 +261,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M15', 'simulador')}
             >
               <Wind size={15} color="#9A87F5" /> M15 · El pulmón chico
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M16' && route.tab === 'simulador'}
+              onClick={() => openModule('M16', 'simulador')}
+            >
+              <KeyRound size={15} color="#E9B44C" /> M16 · Enzima → antibiótico
             </button>
           </div>
         </div>
