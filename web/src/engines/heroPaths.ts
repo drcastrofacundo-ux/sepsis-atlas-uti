@@ -227,6 +227,82 @@ export function mallaFibrina(n: number): string[] {
   return lineas;
 }
 
+/**
+ * Derivación II del ECG: P, QRS y T. La P es una onda ancha y baja, el QRS un
+ * complejo rápido con Q y S negativas alrededor de una R alta, y la T una onda
+ * ancha del mismo signo que la R. Las proporciones son las del trazado normal,
+ * no un garabato: la P mide alrededor del 15% de la R y la T, un tercio.
+ */
+// `alto` es la amplitud de la R. Con la línea de base en el medio del carril,
+// no puede pasar de ALTO/2 menos un margen, o la punta de la R se recorta.
+export function ecgDerivacionII(ciclos: number, alto = 52): string {
+  const porCiclo = 100;
+  const xs: number[] = [];
+  const ys: number[] = [];
+  const base = ALTO / 2;
+  const g = (t: number, centro: number, ancho: number) =>
+    Math.exp(-Math.pow((t - centro) / ancho, 2));
+
+  for (let c = 0; c < ciclos; c++) {
+    for (let i = 0; i <= porCiclo; i++) {
+      const t = i / porCiclo;
+      const p = 0.15 * g(t, 0.16, 0.035);
+      const q = -0.1 * g(t, 0.3, 0.008);
+      const r = 1.0 * g(t, 0.33, 0.012);
+      const s = -0.22 * g(t, 0.37, 0.012);
+      const onda = 0.33 * g(t, 0.56, 0.055);
+      const v = p + q + r + s + onda;
+      xs.push((c + t) * (ANCHO / ciclos));
+      ys.push(base - v * alto);
+    }
+  }
+  return polilinea(xs, ys);
+}
+
+/** Pletismografía del oxímetro: como la arterial pero redondeada. */
+export function pletismografia(ciclos: number, alto = 34): string {
+  const porCiclo = 70;
+  const xs: number[] = [];
+  const ys: number[] = [];
+  const base = ALTO / 2;
+  for (let c = 0; c < ciclos; c++) {
+    for (let i = 0; i <= porCiclo; i++) {
+      const t = i / porCiclo;
+      const subida = Math.exp(-Math.pow((t - 0.2) / 0.14, 2));
+      const dicrota = 0.33 * Math.exp(-Math.pow((t - 0.52) / 0.12, 2));
+      xs.push((c + t) * (ANCHO / ciclos));
+      ys.push(base - (subida + dicrota) * alto);
+    }
+  }
+  return polilinea(xs, ys);
+}
+
+/**
+ * Presión en la vía aérea en volumen control: rampa inspiratoria hasta el pico,
+ * meseta durante la pausa, y caída a la PEEP en la espiración.
+ */
+export function presionViaAerea(ciclos: number, peep = 10, meseta = 24, pico = 30): string {
+  const porCiclo = 60;
+  const xs: number[] = [];
+  const ys: number[] = [];
+  const escalaY = (p: number) => ALTO - 12 - (p / 40) * (ALTO - 24);
+  for (let c = 0; c < ciclos; c++) {
+    for (let i = 0; i <= porCiclo; i++) {
+      const t = i / porCiclo;
+      let p: number;
+      // Rampa hasta el pico, que se sostiene hasta que termina el flujo. La
+      // caida brusca del pico a la meseta es real: es el componente resistivo,
+      // que desaparece apenas el flujo se detiene.
+      if (t < 0.28) p = peep + (pico - peep) * Math.min(1, t / 0.24);
+      else if (t < 0.42) p = meseta; // pausa inspiratoria
+      else p = peep + (meseta - peep) * Math.exp(-(t - 0.42) / 0.12); // espiración
+      xs.push((c + t) * (ANCHO / ciclos));
+      ys.push(escalaY(p));
+    }
+  }
+  return polilinea(xs, ys);
+}
+
 /** Grilla de monitor, de fondo, como en cualquier cabecera de UTI. */
 export function grillaMonitor(paso: number): string {
   const partes: string[] = [];

@@ -10,8 +10,11 @@ import {
   curvaDosisRespuesta,
   curvaPresionVolumen,
   curvaSobrevida,
+  ecgDerivacionII,
   grillaMonitor,
   ondaArterial,
+  pletismografia,
+  presionViaAerea,
   redCapilar,
 } from '../src/engines/heroPaths.ts';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
@@ -1130,6 +1133,67 @@ assert.ok(pelos[0].intacto && pelos[89].intacto, 'los extremos quedan intactos')
 const grilla = grillaMonitor(30);
 assert.ok(grilla.includes(`L ${ANCHO},`), 'la grilla debe llegar al borde derecho');
 assert.ok(!/NaN/.test(grilla), 'la grilla no puede tener valores inválidos');
+
+// ---- Las cuatro trazas del monitor de la portada ----
+
+// El ECG tiene que parecerse a una derivación II, no a un garabato.
+const ecg = ecgDerivacionII(6);
+const psEcg = dentroDelLienzo(ecg, 'ECG');
+// Un ciclo: la R es el pico más alto (y mínimo), y hay una S por debajo de la línea de base.
+const unCiclo = psEcg.slice(0, 101).map((p) => p[1]);
+const base = ALTO / 2;
+const rIdx = unCiclo.indexOf(Math.min(...unCiclo));
+assert.ok(rIdx > 25 && rIdx < 40, `la R debe caer donde va el QRS (got índice ${rIdx})`);
+assert.ok(base - unCiclo[rIdx] > 50, 'la R tiene que ser la deflexión más grande');
+// La S viene después de la R y cruza por debajo de la línea de base.
+const despuesDeR = unCiclo.slice(rIdx, rIdx + 10);
+assert.ok(Math.max(...despuesDeR) > base, 'después de la R tiene que haber una S negativa');
+// La P (antes del QRS) es chica, y la T (después) es intermedia.
+const pMax = base - Math.min(...unCiclo.slice(8, 25));
+const tMax = base - Math.min(...unCiclo.slice(48, 70));
+const rMax = base - unCiclo[rIdx];
+assert.ok(pMax > 0 && pMax < rMax * 0.3, `la P debe ser mucho menor que la R (P=${pMax.toFixed(1)}, R=${rMax.toFixed(1)})`);
+assert.ok(tMax > pMax && tMax < rMax * 0.6, 'la T va entre la P y la R en amplitud');
+// Seis ciclos, seis complejos.
+let qrs = 0;
+for (let i = 1; i < psEcg.length - 1; i++) {
+  if (psEcg[i][1] < psEcg[i - 1][1] && psEcg[i][1] <= psEcg[i + 1][1] && base - psEcg[i][1] > 50) qrs++;
+}
+assert.equal(qrs, 6, `el ECG de 6 ciclos debe tener 6 QRS (got ${qrs})`);
+
+// La pletismografía no tiene picos tan agudos como el ECG.
+const pleth = pletismografia(6);
+dentroDelLienzo(pleth, 'pletismografía');
+
+// La curva del respirador: pico, meseta y caída a la PEEP.
+const via = presionViaAerea(4, 10, 24, 30);
+const psVia = dentroDelLienzo(via, 'presión en vía aérea');
+const yDe = (p) => ALTO - 12 - (p / 40) * (ALTO - 24);
+const ciclo = psVia.slice(0, 61).map((p) => p[1]);
+assert.ok(Math.abs(Math.min(...ciclo) - yDe(30)) < 1.5, 'la rampa debe llegar al pico de 30');
+// En la pausa inspiratoria la presión se queda quieta en la meseta.
+const pausa = ciclo.slice(18, 25);
+assert.ok(
+  Math.max(...pausa) - Math.min(...pausa) < 1,
+  'durante la pausa inspiratoria la presión tiene que estar plana'
+);
+assert.ok(Math.abs(pausa[3] - yDe(24)) < 1.5, 'la meseta debe quedar en 24');
+// Y al final de la espiración vuelve cerca de la PEEP, nunca por debajo.
+const finEspiracion = ciclo[ciclo.length - 1];
+assert.ok(finEspiracion > yDe(14), 'al final de la espiración la presión baja hacia la PEEP');
+assert.ok(finEspiracion <= yDe(10) + 0.5, 'la presión nunca puede caer por debajo de la PEEP');
+// Una PEEP más alta levanta toda la curva.
+const viaPeepAlta = presionViaAerea(4, 16, 28, 34);
+const minAlta = Math.min(...puntosDe(viaPeepAlta).map((p) => p[1]));
+assert.ok(minAlta < Math.min(...ciclo), 'subir la PEEP y el pico debe dibujar más arriba');
+
+// La portada usa las cuatro trazas, cada una con su color de convención.
+const homeFuente = readFileSync(new URL('../src/components/HomeHero.tsx', import.meta.url), 'utf8');
+for (const fn of ['ecgDerivacionII', 'ondaArterial', 'pletismografia', 'presionViaAerea']) {
+  assert.ok(homeFuente.includes(fn), `la portada debe usar ${fn}`);
+}
+assert.ok(homeFuente.includes("'#34D399'"), 'el ECG va en verde');
+assert.ok(homeFuente.includes("'#FF5C7A'"), 'la presión arterial invasiva va en rojo');
 
 // Cada módulo tiene su motivo asignado, y ninguno queda con el de otro.
 const heroFuente = readFileSync(new URL('../src/components/ModuleHero.tsx', import.meta.url), 'utf8');

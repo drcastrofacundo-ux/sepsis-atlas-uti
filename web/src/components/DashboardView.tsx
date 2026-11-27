@@ -21,6 +21,7 @@ import {
   type ModuleAxis,
   type ModuleTab,
 } from '../types/atlas';
+import { HomeHero } from './HomeHero';
 
 interface DashboardViewProps {
   modules: AtlasModule[];
@@ -98,8 +99,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           background:
             'linear-gradient(135deg, rgba(13, 23, 37, 0.96) 0%, rgba(10, 18, 32, 0.98) 65%, rgba(63, 216, 200, 0.08) 100%)',
           padding: '24px 26px',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        <HomeHero />
         <div
           style={{
             display: 'flex',
@@ -107,6 +111,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             alignItems: 'flex-start',
             gap: 20,
             flexWrap: 'wrap',
+            position: 'relative',
+            zIndex: 1,
           }}
         >
           <div style={{ maxWidth: 720 }}>
