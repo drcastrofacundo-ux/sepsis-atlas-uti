@@ -10,6 +10,7 @@ import {
   type M14Inputs,
   type VolumenSet,
 } from '../../engines/m14Engine';
+import { Glosario } from '../Glosario';
 
 const CONTEXTO_LABEL: Record<ContextoPct, string> = {
   ninguno: 'Ninguno',
@@ -497,6 +498,8 @@ export const SourceControlLab: React.FC = () => {
           )}
         </div>
       </div>
+
+      <Glosario claves={['PCT', 'MIC', 'SSC', 'UTI']} />
     </div>
   );
 };

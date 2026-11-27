@@ -7,6 +7,7 @@ import {
   type ElementosPaquete,
   type M20Inputs,
 } from '../../engines/m20Engine';
+import { Glosario } from '../Glosario';
 
 const TONO_COLOR: Record<'red' | 'amber' | 'cyan', string> = {
   red: '#FF5C7A',
@@ -545,6 +546,8 @@ export const SystemLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['NEWS2', 'SEP-1', 'EGDT', 'VPP', 'AUC', 'OR', 'HR', 'SSC', 'UTI']} />
     </div>
   );
 };

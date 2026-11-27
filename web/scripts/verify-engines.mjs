@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import { readFileSync, readdirSync } from 'node:fs';
+import { GLOSARIO, entradas } from '../src/data/glosario.ts';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
 import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
@@ -914,6 +916,63 @@ for (const p of M20_PRESETS) {
   assert.ok(out.alertasPorDia >= 0, `M20 preset ${p.id}: carga de alertas valida`);
 }
 
+// ---- Glosario: ninguna sigla sin desarrollar, ninguna definicion sin su porque ----
+
+// Toda entrada esta completa: sigla, expansion, que es y por que importa.
+for (const [clave, e] of Object.entries(GLOSARIO)) {
+  assert.equal(e.sigla, clave.replace(/_/g, '_'), `Glosario: la clave ${clave} debe coincidir con su sigla`);
+  assert.ok(e.expansion && e.expansion.length > 5, `Glosario ${clave}: falta el desarrollo de la sigla`);
+  assert.ok(e.que && e.que.length > 20, `Glosario ${clave}: falta decir que es`);
+  assert.ok(e.porque && e.porque.length > 40, `Glosario ${clave}: falta el porque, que es el punto`);
+  // El texto se renderiza plano: nada de markdown que se vea literal en pantalla.
+  for (const campo of ['expansion', 'que', 'porque']) {
+    assert.ok(!e[campo].includes('*'), `Glosario ${clave}: el campo ${campo} tiene markdown sin renderizar`);
+  }
+  // El desarrollo tiene que desarrollar de verdad, no repetir la sigla.
+  assert.notEqual(
+    e.expansion.trim().toLowerCase(),
+    e.sigla.trim().toLowerCase(),
+    `Glosario ${clave}: la expansion no puede ser la misma sigla`
+  );
+}
+
+// Toda sigla que un simulador pide tiene que existir en el glosario.
+const dirSimuladores = new URL('../src/components/simulators/', import.meta.url);
+let clavesPedidas = 0;
+for (const archivo of readdirSync(dirSimuladores)) {
+  if (!archivo.endsWith('.tsx')) continue;
+  const fuente = readFileSync(new URL(archivo, dirSimuladores), 'utf8');
+  const m = fuente.match(/<Glosario\s+claves=\{\[([^\]]*)\]\}/);
+  if (!m) continue;
+  const claves = [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1]);
+  assert.ok(claves.length > 0, `${archivo}: el panel de glosario no pide ninguna sigla`);
+  for (const k of claves) {
+    assert.ok(GLOSARIO[k], `${archivo}: pide la sigla "${k}", que no está en el glosario`);
+  }
+  // Sin repetidas dentro de un mismo panel.
+  assert.equal(
+    new Set(claves).size,
+    claves.length,
+    `${archivo}: hay siglas repetidas en el panel de glosario`
+  );
+  clavesPedidas += claves.length;
+}
+assert.ok(clavesPedidas >= 60, `El glosario debe cubrir los 10 simuladores (got ${clavesPedidas})`);
+
+// entradas() saltea lo que no existe en vez de romper la pantalla.
+assert.equal(entradas(['VNERi', 'no_existe', 'PAD']).length, 2, 'Glosario: entradas() saltea lo inexistente');
+assert.equal(entradas([]).length, 0, 'Glosario: una lista vacia no devuelve nada');
+
+// VNERi, verificado contra el texto completo (PMC11937472) el 2026-11-27.
+assert.ok(
+  GLOSARIO.VNERi.expansion.toLowerCase().includes('vascular norepinephrine responsiveness index'),
+  'Glosario: VNERi es el indice de respuesta vascular a la noradrenalina, no un "vasoactive index"'
+);
+assert.ok(
+  GLOSARIO.VNERi.formula.includes('bitartrato'),
+  'Glosario: la formula del VNERi debe aclarar la sal, porque los cortes se calibraron en bitartrato'
+);
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)}), M19(Caso 1 → ${m19Caso1.subtipo.nombre}, ${activas.length}/5 banderas), M20(codificación 30%→${m20Cod.mortalidadAparente.toFixed(0)}%, Epic ${m20Epic.alertasPorSepsisDetectada.toFixed(1)} alertas/sepsis)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)}), M19(Caso 1 → ${m19Caso1.subtipo.nombre}, ${activas.length}/5 banderas), M20(codificación 30%→${m20Cod.mortalidadAparente.toFixed(0)}%, Epic ${m20Epic.alertasPorSepsisDetectada.toFixed(1)} alertas/sepsis), Glosario(${Object.keys(GLOSARIO).length} siglas, ${clavesPedidas} referencias desde los simuladores)`
 );

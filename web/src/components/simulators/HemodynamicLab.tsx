@@ -8,6 +8,7 @@ import {
   type NaFormulation,
 } from '../../engines/m05Engine';
 import { construirGuyton, crearEscalas } from '../../engines/m05Guyton';
+import { Glosario } from '../Glosario';
 
 export const HemodynamicLab: React.FC = () => {
   const [inputs, setInputs] = useState<M05Inputs>(M05_PRESETS[0].inputs);
@@ -858,6 +859,8 @@ export const HemodynamicLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['PAS', 'PAD', 'PAM', 'PP', 'FC', 'PVC', 'RAP', 'MPP', 'DPP', 'DSI', 'VNERi', 'E_adyn', 'PPV', 'SVV', 'PLR', 'CRT', 'PIA', 'VExUS', 'NA']} />
     </div>
   );
 };

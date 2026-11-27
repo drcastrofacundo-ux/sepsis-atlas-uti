@@ -10,6 +10,7 @@ import {
   type M09Inputs,
   type MeropenemBagPolicy,
 } from '../../engines/m09Engine';
+import { Glosario } from '../Glosario';
 
 export const PkPdAntibioticLab: React.FC = () => {
   const [inputs, setInputs] = useState<M09Inputs>(M09_PRESETS[0].inputs);
@@ -769,6 +770,8 @@ export const PkPdAntibioticLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['PK/PD', 'MIC', 'ARC', 'CKRT', 'PCT']} />
     </div>
   );
 };

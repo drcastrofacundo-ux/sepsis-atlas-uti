@@ -8,6 +8,7 @@ import {
   type Sexo,
   type Soporte,
 } from '../../engines/m15Engine';
+import { Glosario } from '../Glosario';
 
 const SOPORTE_LABEL: Record<Soporte, string> = {
   alto_flujo: 'Cánula de alto flujo',
@@ -576,6 +577,8 @@ export const LungLab: React.FC = () => {
           )}
         </div>
       </div>
+
+      <Glosario claves={['SDRA', 'PCP', 'VT', 'PEEP', 'ΔP', 'PaO₂/FiO₂', 'SpO₂/FiO₂', 'EOLIA']} />
     </div>
   );
 };

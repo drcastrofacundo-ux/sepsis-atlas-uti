@@ -9,6 +9,7 @@ import {
   type Destino,
   type M19Inputs,
 } from '../../engines/m19Engine';
+import { Glosario } from '../Glosario';
 
 const BANDA_COLOR: Record<Banda, string> = {
   bajo: '#34D399',
@@ -501,6 +502,8 @@ export const DischargeLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['PICS', 'PICS-F', 'MRC', 'SDRA', 'SSC', 'HR']} />
     </div>
   );
 };

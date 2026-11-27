@@ -11,6 +11,7 @@ import {
   type PcrUnit,
 } from '../../engines/m03Engine';
 import { GlycocalyxCanvasScene, type ActiveControlHint } from './GlycocalyxCanvasScene';
+import { Glosario } from '../Glosario';
 
 interface SliderMetaItem {
   key: keyof M03Inputs;
@@ -609,6 +610,8 @@ export const GlycocalyxLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['ALI', 'IFC', 'PAM', 'PP']} />
     </div>
   );
 };

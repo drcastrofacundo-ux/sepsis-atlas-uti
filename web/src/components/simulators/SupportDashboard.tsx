@@ -8,6 +8,7 @@ import {
   type Muestra,
   type Tono,
 } from '../../engines/m17Engine';
+import { Glosario } from '../Glosario';
 
 const MUESTRA_LABEL: Record<Muestra, string> = {
   capilar: 'Capilar',
@@ -596,6 +597,8 @@ export const SupportDashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['NICE-SUGAR', 'PACER', 'CKRT', 'SSC', 'UTI']} />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   type FuncionRenal,
   type M16Inputs,
 } from '../../engines/m16Engine';
+import { Glosario } from '../Glosario';
 
 const FOCO_LABEL: Record<Foco, string> = {
   bacteriemia: 'Bacteriemia',
@@ -303,6 +304,8 @@ export const ResistanceLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['BLEE', 'KPC', 'NDM', 'MBL', 'CRAB', 'DTR', 'SAMR', 'RECAPT-AR', 'CKRT']} />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   type Poblacion,
   type Tono,
 } from '../../engines/m18Engine';
+import { Glosario } from '../Glosario';
 
 const TONO_COLOR: Record<Tono, string> = {
   ok: '#34D399',
@@ -615,6 +616,8 @@ export const PopulationLab: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Glosario claves={['qSOFA', 'qSOFA-P', 'CFS', 'ACLF', 'PBE', 'PAM', 'UTI']} />
     </div>
   );
 };
