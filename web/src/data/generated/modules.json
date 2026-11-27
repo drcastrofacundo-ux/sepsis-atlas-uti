@@ -3057,7 +3057,7 @@
     "titulo": "Diagnóstico de la Infección y Control de Foco",
     "subtitulo": "Hemocultivos bien tomados, biomarcadores con sus límites, diagnóstico molecular y metagenómica, y el reloj del control de foco: cuándo drenar ya, cuándo esperar y qué hacer con la fascitis necrotizante",
     "ultimaActualizacion": "2026-11-26",
-    "pilotoFase2": false,
+    "pilotoFase2": true,
     "fuentesNlm": [
       "PubMed (abstracts verificados con PMID, 2026-11-26)"
     ],

@@ -4,6 +4,7 @@ import {
   Beaker,
   BookOpen,
   ChevronRight,
+  Clock,
   Droplets,
   HeartPulse,
   HelpCircle,
@@ -243,6 +244,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M09', 'simulador')}
             >
               <Beaker size={15} color="#4FA9F7" /> M09 · Motor PK/PD 48 h
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M14' && route.tab === 'simulador'}
+              onClick={() => openModule('M14', 'simulador')}
+            >
+              <Clock size={15} color="#E9B44C" /> M14 · El reloj del foco
             </button>
             <button
               type="button"

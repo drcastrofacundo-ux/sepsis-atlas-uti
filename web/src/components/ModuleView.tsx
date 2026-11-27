@@ -28,6 +28,7 @@ import { GlycocalyxLab } from './simulators/GlycocalyxLab';
 import { HemodynamicLab } from './simulators/HemodynamicLab';
 import { PkPdAntibioticLab } from './simulators/PkPdAntibioticLab';
 import { LungLab } from './simulators/LungLab';
+import { SourceControlLab } from './simulators/SourceControlLab';
 
 interface ModuleViewProps {
   moduleData: AtlasModule;
@@ -122,6 +123,7 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
     if (moduleData.id === 'M03') return <GlycocalyxLab />;
     if (moduleData.id === 'M05') return <HemodynamicLab />;
     if (moduleData.id === 'M09') return <PkPdAntibioticLab />;
+    if (moduleData.id === 'M14') return <SourceControlLab />;
     if (moduleData.id === 'M15') return <LungLab />;
 
     return (
@@ -143,8 +145,8 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
           </div>
           <p style={{ margin: 0, fontSize: 13.5, color: 'var(--ink-2)' }}>
             {isM12
-              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 4 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos) y M15 (Pulmón Séptico).'
-              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09 o M15.'}
+              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 5 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos), M14 (Control de Foco) y M15 (Pulmón Séptico).'
+              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09, M14 o M15.'}
           </p>
         </div>
 

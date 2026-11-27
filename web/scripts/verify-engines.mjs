@@ -3,6 +3,7 @@ import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engi
 import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
 import { M15_PRESETS, pesoPredicho, simulateM15 } from '../src/engines/m15Engine.ts';
+import { M14_PRESETS, simulateM14 } from '../src/engines/m14Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -274,6 +275,45 @@ assert.ok(m15Hf.cumpleGlobal, 'M15 la definicion global 2024 si lo toma');
 const m15Sat = simulateM15({ ...M15_PRESETS[0].inputs, spo2: 99 });
 assert.equal(m15Sat.safi, null, 'M15 con SpO2 > 97 el indice SpO2/FiO2 no es valido');
 
+// ---- M14 Verification ----
+// Lee 2007: 1 set 73,1%, 2 sets 89,7%, 3 sets 98,2% con 20 mL por set.
+const m14Ok = simulateM14(M14_PRESETS.find((p) => p.id === 'bien_hecho').inputs);
+assert.ok(Math.abs(m14Ok.rendimientoFinal - 98.2) < 0.01, `M14 3 sets de 20 mL antes del ATB = 98,2% (got ${m14Ok.rendimientoFinal.toFixed(1)})`);
+assert.equal(m14Ok.urgencia, 'alta', 'M14 la perforacion es de urgencia alta');
+assert.ok(m14Ok.dentroDeVentana, 'M14 4 h cae dentro de la ventana de 6 h');
+assert.ok(m14Ok.duracionAtb.includes('STOP-IT'), 'M14 tras control de foco abdominal debe citar STOP-IT');
+
+// El peor escenario: 1 set, 5 mL y despues del antibiotico.
+const m14Mal = simulateM14(M14_PRESETS.find((p) => p.id === 'un_set_tarde').inputs);
+const esperado = 73.1 * 0.6 * 0.529;
+assert.ok(Math.abs(m14Mal.rendimientoFinal - esperado) < 0.01, `M14 1 set/5 mL/post-ATB (got ${m14Mal.rendimientoFinal.toFixed(1)})`);
+assert.ok(m14Mal.rendimientoFinal < 25, 'M14 ese escenario debe quedar por debajo del 25%');
+assert.equal(m14Mal.alerts.length >= 3, true, 'M14 debe alertar por sets, volumen y momento');
+// En shock, una PCT baja no autoriza a no tratar.
+assert.equal(m14Mal.pctLectura.tono, 'red', 'M14 PCT baja en shock: no sirve para no tratar');
+
+// Fascitis fuera de la ventana de 6 h.
+const m14Fasc = simulateM14(M14_PRESETS.find((p) => p.id === 'fascitis').inputs);
+assert.equal(m14Fasc.urgencia, 'maxima', 'M14 la fascitis es de urgencia maxima');
+assert.ok(!m14Fasc.dentroDeVentana, 'M14 10 h queda fuera de la ventana');
+assert.ok(
+  m14Fasc.alerts.some((a) => a.detalle.includes('32%')),
+  'M14 debe citar 19% vs 32% de mortalidad en la fascitis tardia'
+);
+
+// Necrosis pancreatica: el apuro juega en contra.
+const inputsPanc = M14_PRESETS.find((p) => p.id === 'pancreatitis').inputs;
+const m14Panc = simulateM14({ ...inputsPanc, horasHastaControl: 12 });
+assert.equal(m14Panc.urgencia, 'diferido', 'M14 la necrosis pancreatica infectada es diferida');
+assert.ok(m14Panc.focoDetalle.includes('POINTER'), 'M14 debe citar POINTER');
+const m14PancApuro = simulateM14({ ...inputsPanc, horasHastaControl: 6 });
+assert.ok(
+  m14PancApuro.alerts.some((a) => a.titulo.includes('Drenaje inmediato')),
+  'M14 drenar antes de 24 h en necrosis pancreatica debe alertar'
+);
+// Con pancreatitis como contexto, una PCT alta no confirma infeccion.
+assert.ok(m14Panc.pctLectura.detalle.includes('sin infección'), 'M14 la PCT debe leerse con su contexto');
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4)`
 );
