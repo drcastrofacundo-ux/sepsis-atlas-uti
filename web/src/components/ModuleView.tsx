@@ -23,6 +23,7 @@ import {
 import type { ProgressStore } from '../hooks/useProgress';
 import { RichMarkdown } from './RichMarkdown';
 import { Glosario } from './Glosario';
+import { ModuleHero } from './ModuleHero';
 import { siglasEnTexto } from '../data/glosario';
 import { SatiTrainer } from './SatiTrainer';
 import { UtiToolsLinks } from './UtiToolsLinks';
@@ -194,7 +195,10 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
       {/* Header del Módulo */}
-      <div className="panel">
+      <div className="panel" style={{ position: 'relative', overflow: 'hidden' }}>
+        <ModuleHero moduleId={moduleData.id} />
+        {/* El contenido va posicionado para quedar por encima del dibujo. */}
+        <div style={{ position: 'relative', zIndex: 1 }}>
         <div
           style={{
             display: 'flex',
@@ -275,6 +279,7 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
               </button>
             );
           })}
+        </div>
         </div>
       </div>
 

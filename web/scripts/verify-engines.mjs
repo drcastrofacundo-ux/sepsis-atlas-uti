@@ -1,6 +1,19 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { GLOSARIO, entradas, siglasEnTexto } from '../src/data/glosario.ts';
+import {
+  ALTO,
+  ANCHO,
+  barrasSofa,
+  cepilloGlicocalix,
+  curvaConcentracion,
+  curvaDosisRespuesta,
+  curvaPresionVolumen,
+  curvaSobrevida,
+  grillaMonitor,
+  ondaArterial,
+  redCapilar,
+} from '../src/engines/heroPaths.ts';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
 import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
@@ -1006,6 +1019,135 @@ for (const archivo of modulos) {
 // Ningun modulo puede quedar sin siglas explicadas: si uno baja de 8, o el
 // detector se rompio o el modulo usa siglas que nadie definio todavia.
 assert.ok(minimo >= 8, `${peor} solo tiene ${minimo} siglas explicadas; revisar el glosario`);
+
+// ---- Cabeceras ilustradas ----
+
+// Helper: todos los puntos de un path tienen que caer dentro del lienzo,
+// porque si se salen el recorte los come y el dibujo queda mutilado.
+function puntosDe(d) {
+  return [...d.matchAll(/(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g)].map((m) => [
+    Number(m[1]),
+    Number(m[2]),
+  ]);
+}
+function dentroDelLienzo(d, nombre) {
+  const ps = puntosDe(d);
+  assert.ok(ps.length > 2, `${nombre}: el trazado tiene que tener puntos`);
+  for (const [x, y] of ps) {
+    assert.ok(x >= -1 && x <= ANCHO + 1, `${nombre}: x=${x} se sale del lienzo`);
+    assert.ok(y >= -1 && y <= ALTO + 1, `${nombre}: y=${y} se sale del lienzo`);
+  }
+  assert.ok(!/NaN|Infinity|undefined/.test(d), `${nombre}: el trazado tiene valores inválidos`);
+  return ps;
+}
+
+// La onda arterial tiene que comportarse como una onda arterial.
+const arterial = ondaArterial(9);
+const psArt = dentroDelLienzo(arterial, 'onda arterial');
+// En SVG el eje y crece hacia abajo: el pico sistolico es el minimo de y.
+const yMin = Math.min(...psArt.map((p) => p[1]));
+const yMax = Math.max(...psArt.map((p) => p[1]));
+assert.ok(yMax - yMin > 40, 'la onda arterial debe tener amplitud visible');
+// Un ciclo con PAS 95 / PAD 42 tiene que quedar por debajo de uno de 120/60.
+const arterialBaja = ondaArterial(9, 95, 42, { tau: 0.12 });
+const yMinBaja = Math.min(...puntosDe(arterialBaja).map((p) => p[1]));
+assert.ok(yMinBaja > yMin, 'una presión más baja debe dibujarse más abajo');
+// Y tiene que haber tantos picos como ciclos se pidieron.
+let picos = 0;
+for (let i = 1; i < psArt.length - 1; i++) {
+  if (psArt[i][1] < psArt[i - 1][1] && psArt[i][1] <= psArt[i + 1][1]) picos++;
+}
+assert.equal(picos, 9, `la onda de 9 ciclos debe tener 9 picos (got ${picos})`);
+
+// La concentración-tiempo cae de forma monótona entre dosis.
+const conc = curvaConcentracion(5);
+dentroDelLienzo(conc, 'concentración-tiempo');
+const psConc = puntosDe(conc).slice(10, 45); // tramo de eliminación de la 1ª dosis
+for (let i = 1; i < psConc.length; i++) {
+  assert.ok(
+    psConc[i][1] >= psConc[i - 1][1] - 0.01,
+    'la concentración debe caer de forma monótona después del pico'
+  );
+}
+
+// La curva presión-volumen es monótona creciente (más presión, más volumen).
+const pv = curvaPresionVolumen(0);
+const psPv = dentroDelLienzo(pv, 'presión-volumen');
+for (let i = 1; i < psPv.length; i++) {
+  assert.ok(psPv[i][1] <= psPv[i - 1][1] + 0.01, 'el volumen no puede bajar al subir la presión');
+}
+
+// La sobrevida post-alta solo cae.
+const sob = curvaSobrevida([
+  [0, 100],
+  [1, 91.3],
+  [12, 76],
+  [60, 57],
+  [120, 48],
+]);
+const psSob = dentroDelLienzo(sob, 'sobrevida');
+for (let i = 1; i < psSob.length; i++) {
+  assert.ok(psSob[i][1] > psSob[i - 1][1], 'la sobrevida post-alta no puede subir');
+}
+
+// Dosis-respuesta: saturación, no línea recta.
+const dr = curvaDosisRespuesta();
+const psDr = dentroDelLienzo(dr, 'dosis-respuesta');
+const primerTramo = psDr[20][1] - psDr[10][1];
+const ultimoTramo = psDr[79][1] - psDr[69][1];
+assert.ok(
+  Math.abs(primerTramo) > Math.abs(ultimoTramo) * 2,
+  'la curva dosis-respuesta debe aplanarse al final (Emax), no ser lineal'
+);
+
+// Barras del SOFA: una por dominio, ninguna fuera del lienzo.
+const barras = barrasSofa([2, 3, 1, 4, 2, 3]);
+assert.equal(barras.length, 6, 'el SOFA tiene 6 dominios');
+for (const b of barras) {
+  assert.ok(b.h > 0, 'ninguna barra puede tener altura cero');
+  assert.ok(b.y >= 0 && b.y + b.h <= ALTO, 'las barras deben caber en el lienzo');
+  assert.ok(b.x + b.w <= ANCHO + 1, 'las barras no pueden pasarse de ancho');
+}
+// Un dominio con más puntos dibuja más alto.
+assert.ok(barras[3].h > barras[2].h, 'un SOFA de 4 debe dibujarse más alto que uno de 1');
+
+// La red capilar es determinista: dos renders dan el mismo dibujo.
+const red1 = redCapilar(70, 0.38);
+const red2 = redCapilar(70, 0.38);
+assert.deepEqual(red1, red2, 'el dibujo no puede cambiar en cada render');
+assert.equal(red1.length, 70, 'deben dibujarse los 70 segmentos pedidos');
+const apagados = red1.filter((s) => !s.activo).length;
+assert.ok(apagados > 5 && apagados < 50, `la heterogeneidad debe verse (got ${apagados} apagados)`);
+
+// El glicocálix tiene un tramo desprendido, que es el punto del M03.
+const pelos = cepilloGlicocalix(90, 0.42, 0.66);
+assert.equal(pelos.length, 90, 'deben dibujarse los 90 filamentos');
+const rotos = pelos.filter((p) => !p.intacto).length;
+assert.ok(rotos > 10, 'tiene que verse el tramo de glicocálix desprendido');
+assert.ok(pelos[0].intacto && pelos[89].intacto, 'los extremos quedan intactos');
+
+// La grilla cubre todo el lienzo.
+const grilla = grillaMonitor(30);
+assert.ok(grilla.includes(`L ${ANCHO},`), 'la grilla debe llegar al borde derecho');
+assert.ok(!/NaN/.test(grilla), 'la grilla no puede tener valores inválidos');
+
+// Cada módulo tiene su motivo asignado, y ninguno queda con el de otro.
+const heroFuente = readFileSync(new URL('../src/components/ModuleHero.tsx', import.meta.url), 'utf8');
+const mapa = heroFuente.match(/MOTIVO_POR_MODULO[^=]*=\s*\{([^}]*)\}/s)[1];
+const asignados = [...mapa.matchAll(/(M\d\d):\s*'(\w+)'/g)].map((m) => [m[1], m[2]]);
+assert.equal(asignados.length, 19, `los 19 módulos deben tener motivo (got ${asignados.length})`);
+assert.equal(
+  new Set(asignados.map((a) => a[1])).size,
+  19,
+  'cada módulo tiene que tener un motivo propio, no repetido'
+);
+for (const archivo of modulos) {
+  const id = archivo.slice(0, 3);
+  assert.ok(
+    asignados.some((a) => a[0] === id),
+    `${id} no tiene cabecera ilustrada asignada`
+  );
+}
 
 // VNERi, verificado contra el texto completo (PMC11937472) el 2026-11-27.
 assert.ok(
