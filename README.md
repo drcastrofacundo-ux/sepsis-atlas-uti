@@ -59,7 +59,7 @@ Para que la herramienta nunca quede congelada en el tiempo y incorpore automáti
 
 ## Barrido de PubMed y avisos de correo
 
-`python scripts/barrido_pubmed_anual.py --dias 365 [--correo archivo.tsv]` busca ensayos, metaanálisis y guías de sepsis en humanos, descarta lo que ya está en el Atlas, la bóveda o el Radar, filtra pediátricos y artículos donde la sepsis no es el tema, asigna módulo y deja la cola en `base-conocimiento/candidatos-pubmed-correo.md` (+ `.json`). No publica nada. La actualización mensual lo corre con `--dias 35`. Los artículos sacados de los avisos de EvidenceAlerts están en `base-conocimiento/_correo-evidencealerts-2026.tsv`.
+`python scripts/barrido_pubmed_anual.py --dias 365 [--correo archivo.tsv]` busca ensayos, metaanálisis y guías de sepsis en humanos, descarta lo que ya está en el Atlas, la bóveda o el Radar, filtra pediátricos y artículos donde la sepsis no es el tema, asigna módulo y deja la cola en `base-conocimiento/candidatos-pubmed-correo.md` (+ `.json`). No publica nada. **La cola se acumula**: lo que no se revisó en una corrida sigue estando en la siguiente. Un candidato sale de la cola cuando se lo promueve a un módulo (aparece su PMID) o cuando se tilda su casilla en el `.md`. La actualización mensual lo corre con `--dias 35`. Los artículos sacados de los avisos de EvidenceAlerts están en `base-conocimiento/_correo-evidencealerts-2026.tsv`.
 
 ## Publicación
 

@@ -106,6 +106,38 @@ def known_ids() -> tuple[set[str], set[str]]:
     return pmids, dois
 
 
+def leer_cola_previa(ya_pmids: set[str], ya_dois: set[str]) -> list[dict]:
+    """
+    Candidatos de corridas anteriores que siguen sin curar.
+
+    La cola se acumula: si no se revisa un articulo este mes, sigue estando el mes
+    que viene. Sale de la cola por dos caminos, los dos explicitos:
+      - se promovio a un modulo (aparece en known_ids), o
+      - se tildo a mano la casilla en el .md.
+    """
+    ruta = KB / "candidatos-pubmed-correo.json"
+    if not ruta.exists():
+        return []
+    try:
+        previo = json.loads(ruta.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+
+    tildados: set[str] = set()
+    md = KB / "candidatos-pubmed-correo.md"
+    if md.exists():
+        tildados = set(re.findall(r"- \[[xX]\][^\n]*?PMID (\d+)", md.read_text(encoding="utf-8")))
+
+    vivos = []
+    for c in previo.get("candidatos", []):
+        pmid = str(c.get("pmid", ""))
+        doi = (c.get("doi") or "").lower()
+        if pmid in ya_pmids or (doi and doi in ya_dois) or pmid in tildados:
+            continue
+        vivos.append(c)
+    return vivos
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dias", type=int, default=365)
@@ -175,26 +207,38 @@ def main() -> int:
         })
 
     sin_pmid = [v for k, v in correo.items() if k.startswith("sin-pmid:")]
+
+    # La cola acumula: lo que no se curo en corridas anteriores sigue vivo.
+    for c in candidatos:
+        c["visto"] = hasta.isoformat()
+    nuevos = len(candidatos)
+    pmids_nuevos = {c["pmid"] for c in candidatos}
+    arrastrados = [c for c in leer_cola_previa(ya_pmids, ya_dois) if c["pmid"] not in pmids_nuevos]
+    candidatos = candidatos + arrastrados
     candidatos.sort(key=lambda c: (-c["prioridad"], c["revista"], c["titulo"]))
 
     (KB / "candidatos-pubmed-correo.json").write_text(json.dumps({
         "generado": hasta.isoformat(), "rango": [desde.isoformat(), hasta.isoformat()],
         "consulta": termino, "encontrados": len(resumen), "ya_estaban": ya_estaban,
+        "nuevos_de_esta_corrida": nuevos, "arrastrados_sin_curar": len(arrastrados),
         "descartados": descartados, "candidatos": candidatos, "correo_sin_pmid": sin_pmid,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     altos = [c for c in candidatos if c["tier"] <= 2]
     lineas = [
         "---", "tags: [sepsis, evidencia-viva, pendientes]", "tipo: cola-revision", f"creado: {hasta.isoformat()}", "---", "",
-        "# Candidatos del barrido anual (PubMed + avisos de correo)", "",
-        f"Rango {desde:%d/%m/%Y} – {hasta:%d/%m/%Y}. Ensayos, metaanálisis, revisiones sistemáticas y guías de sepsis en humanos.",
+        "# Cola de candidatos (PubMed + avisos de correo)", "",
+        f"Última corrida: {desde:%d/%m/%Y} – {hasta:%d/%m/%Y}. Ensayos, metaanálisis, revisiones sistemáticas y guías de sepsis en humanos.",
         f"PubMed devolvió **{len(resumen)}** artículos; **{ya_estaban}** ya estaban en el Atlas, la bóveda o el Radar; "
         f"se descartaron por título {descartados['pediatrico']} pediátricos, {descartados['no_humano']} no humanos y "
         f"{descartados['titulo_no_pertinente']} donde la sepsis no es el tema (p. ej. evento adverso en un ensayo oncológico).",
-        f"Quedan **{len(candidatos)}** candidatos; **{len(altos)}** en revistas de primera o segunda línea (listados abajo). "
+        f"**{nuevos}** candidatos nuevos de esta corrida y **{len(arrastrados)}** que venían sin revisar: "
+        f"la cola queda en **{len(candidatos)}**, de los cuales **{len(altos)}** son de revistas de primera o segunda línea (listados abajo). "
         "El resto está en `candidatos-pubmed-correo.json`.", "",
-        "> **No están publicados en la web.** Asignación de módulo automática por palabras del título (mismas reglas que el ingestor del Radar): revisar antes de promover. "
-        "Para promover uno: leer el abstract, sumarlo al módulo con su PMID y tildarlo acá.", "",
+        "> **La cola se acumula.** Lo que no llegues a revisar este mes sigue acá el mes que viene. "
+        "Un artículo sale de la cola de dos maneras: cuando lo promovés a un módulo con su PMID, o cuando **tildás la casilla** acá. "
+        "Si no hacés ninguna de las dos, se mantiene.", "",
+        "> **No están publicados en la web.** La asignación de módulo es automática por palabras del título (mismas reglas que el ingestor del Radar): revisar antes de promover.", "",
     ]
     por_mod: dict[str, list[dict]] = {}
     for c in altos:
@@ -211,7 +255,7 @@ def main() -> int:
         lineas += [f"- {v['titulo']} — *{v['revista']}*" for v in sin_pmid]
         lineas.append("")
     (KB / "candidatos-pubmed-correo.md").write_text("\n".join(lineas), encoding="utf-8")
-    print(f"OK barrido: {len(resumen)} encontrados, {ya_estaban} ya estaban, {len(candidatos)} candidatos, {len(altos)} de revistas de 1a/2a linea, {len(sin_pmid)} del correo sin PMID")
+    print(f"OK barrido: {len(resumen)} encontrados, {ya_estaban} ya estaban, {nuevos} nuevos + {len(arrastrados)} arrastrados = {len(candidatos)} en la cola, {len(altos)} de revistas de 1a/2a linea, {len(sin_pmid)} del correo sin PMID")
     return 0
 
 
