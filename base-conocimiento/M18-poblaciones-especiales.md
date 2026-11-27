@@ -3,7 +3,7 @@ id: M18
 titulo: "Poblaciones Especiales: Embarazo, Inmunocompromiso, Anciano Frágil y Cirrosis"
 subtitulo: "Cuando los criterios, los valores normales y los ensayos no fueron pensados para el paciente que tenés adelante: sepsis materna, neutropenia febril, trasplante, fragilidad y cirrosis con ACLF"
 ultima_actualizacion: 2026-11-26
-piloto_fase2: false
+piloto_fase2: true
 fuentes_nlm:
   - "PubMed (abstracts verificados con PMID, 2026-11-26)"
 fuentes_vault:
@@ -126,7 +126,7 @@ En el cirrótico con sepsis y varias fallas orgánicas, el pronóstico depende d
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-27.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16, M17 y M18.
 
 - **Nombre UI:** *Los valores normales de cada paciente*
 - **Controles:**

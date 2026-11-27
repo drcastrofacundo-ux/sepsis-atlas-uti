@@ -12,6 +12,12 @@ import {
   simulateM17,
   transicionSubcutanea,
 } from '../src/engines/m17Engine.ts';
+import {
+  M18_PRESETS,
+  calcularQsofa,
+  calcularQsofaP,
+  simulateM18,
+} from '../src/engines/m18Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -465,6 +471,159 @@ for (const p of M17_PRESETS) {
   assert.equal(out.factoresSangrado.length, 5, `M17 preset ${p.id} debe listar 5 factores`);
 }
 
+// ---- M18 Verification ----
+
+// qSOFA estandar: FR >= 22, PAS <= 100, estado mental.
+assert.equal(calcularQsofa(24, 96, false).puntaje, 2, 'M18 qSOFA FR 24 + PAS 96 = 2');
+assert.equal(calcularQsofa(24, 96, true).puntaje, 3, 'M18 qSOFA con alteracion mental = 3');
+assert.equal(calcularQsofa(18, 120, false).puntaje, 0, 'M18 qSOFA normal = 0');
+assert.equal(calcularQsofa(22, 100, false).puntaje, 2, 'M18 los umbrales 22 y 100 son inclusivos');
+
+// qSOFA-P (Cagino 2022): FR >= 35 y PAS <= 85.
+assert.equal(calcularQsofaP(36, 84).puntaje, 2, 'M18 qSOFA-P FR 36 + PAS 84 = 2');
+assert.equal(calcularQsofaP(35, 85).puntaje, 2, 'M18 los umbrales 35 y 85 son inclusivos');
+assert.equal(calcularQsofaP(30, 88).puntaje, 0, 'M18 FR 30 y PAS 88 no alcanzan el qSOFA-P');
+
+// La divergencia entre los dos puntajes es el punto del modulo.
+const m18Emb = simulateM18({ ...M18_PRESETS[1].inputs, fr: 30, pas: 95 });
+assert.equal(m18Emb.qsofa, 2, 'M18 embarazada: el qSOFA estandar da 2 con FR 30 y PAS 95');
+assert.equal(m18Emb.qsofaP, 0, 'M18 embarazada: el qSOFA-P no se positiviza con esos valores');
+assert.ok(
+  m18Emb.alerts.some((a) => a.titulo.includes('qSOFA da positivo y el qSOFA-P no')),
+  'M18 debe senalar la divergencia entre los dos puntajes'
+);
+
+// Un puntaje negativo con hipoperfusion no descarta: el error del Caso 1.
+assert.ok(
+  m18Emb.alerts.some(
+    (a) => a.tono === 'red' && a.titulo.includes('Puntaje negativo con hipoperfusión')
+  ),
+  'M18 qSOFA-P 0 con lactato alto debe advertir que igual es sepsis materna'
+);
+// Sin hipoperfusion ni taquicardia extrema, esa advertencia no corresponde.
+const m18EmbOk = simulateM18({
+  ...M18_PRESETS[1].inputs,
+  fr: 20,
+  pas: 110,
+  fc: 96,
+  lactato: 1.2,
+  temperatura: 37,
+});
+assert.ok(
+  !m18EmbOk.alerts.some((a) => a.titulo.includes('Puntaje negativo con hipoperfusión')),
+  'M18 sin hipoperfusion no debe forzar la advertencia de sepsis materna'
+);
+
+// El adulto estandar no usa qSOFA-P.
+const m18Std = simulateM18(M18_PRESETS[0].inputs);
+assert.ok(!m18Std.usaQsofaP, 'M18 el adulto estandar no usa qSOFA-P');
+assert.equal(m18Std.qsofaP, null, 'M18 sin poblacion obstetrica el qSOFA-P es null');
+
+// Embarazada del Caso 1: utero sobre la cava.
+const m18Caso1 = simulateM18(M18_PRESETS[1].inputs);
+assert.ok(
+  m18Caso1.alerts.some((a) => a.tono === 'red' && a.titulo.includes('boca arriba')),
+  'M18 decubito supino en el 3er trimestre debe alertar en rojo'
+);
+assert.ok(
+  m18Caso1.recordatorios.some((r) => r.titulo.includes('útero a la izquierda')),
+  'M18 debe recordar desplazar el utero'
+);
+
+// Puerpera: qSOFA-P positivo con los dos componentes.
+const m18Puer = simulateM18(M18_PRESETS[2].inputs);
+assert.equal(m18Puer.qsofaP, 2, 'M18 puerpera con FR 36 y PAS 84: qSOFA-P 2 de 2');
+assert.ok(
+  m18Puer.alerts.some((a) => a.tono === 'red' && a.titulo.includes('qSOFA-P positivo')),
+  'M18 qSOFA-P positivo debe pedir tratarla como sepsis materna'
+);
+
+// Neutropenia febril: antibiotico inmediato y estrategia de escalada.
+const m18Neu = simulateM18(M18_PRESETS[3].inputs);
+assert.ok(
+  m18Neu.alerts.some((a) => a.tono === 'red' && a.titulo.includes('Neutropenia febril')),
+  'M18 fiebre con menos de 500 neutrofilos debe alertar en rojo'
+);
+assert.ok(
+  m18Neu.recordatorios.some((r) => r.titulo.includes('escalada')),
+  'M18 sin colonizacion previa corresponde escalada'
+);
+const m18NeuRes = simulateM18({ ...M18_PRESETS[3].inputs, colonizadoResistentes: true });
+assert.ok(
+  m18NeuRes.recordatorios.some((r) => r.titulo.includes('desescalar')),
+  'M18 con colonizacion por resistentes corresponde empezar amplio y desescalar'
+);
+
+// 72 h afebril: How Long permite cortar sin esperar la aplasia.
+const m18Afeb = simulateM18(M18_PRESETS[4].inputs);
+assert.ok(
+  m18Afeb.alerts.some((a) => a.detalle.includes('16,1 vs 13,6')),
+  'M18 a las 72 h afebril debe citar How Long'
+);
+
+// Anciano fragil: 65 trial y datos de pronostico.
+const m18Anc = simulateM18(M18_PRESETS[5].inputs);
+assert.ok(Math.abs(m18Anc.pam - 62) < 0.5, `M18 PAM de 104/41 es ~62 (got ${m18Anc.pam.toFixed(1)})`);
+assert.equal(m18Anc.presionPulso, 63, 'M18 presion de pulso de 104/41 es 63');
+assert.ok(
+  m18Anc.recordatorios.some((r) => r.titulo.includes('60–65')),
+  'M18 anciano debe traer la meta del 65 trial'
+);
+assert.ok(m18Anc.pronostico.length >= 3, 'M18 anciano fragil debe traer datos de pronostico');
+// Con CFS 7 aparece la mortalidad al año de Dong 2023.
+const m18Anc7 = simulateM18({ ...M18_PRESETS[5].inputs, cfs: 7 });
+assert.ok(
+  m18Anc7.pronostico.some((p) => p.valor === '75,9%'),
+  'M18 con CFS >= 7 debe mostrar la mortalidad al año de los muy fragiles'
+);
+assert.ok(
+  !m18Anc.pronostico.some((p) => p.valor === '75,9%'),
+  'M18 con CFS 5 no corresponde el dato de los muy fragiles'
+);
+
+// Cirrotico con PBE: albumina de Sort 1999.
+const m18Pbe = simulateM18(M18_PRESETS[6].inputs);
+assert.ok(
+  m18Pbe.alerts.some((a) => a.titulo.includes('PBE confirmada') && a.detalle.includes('1,5 g/kg')),
+  'M18 con 900 PMN debe pedir albumina 1,5 g/kg'
+);
+// Por debajo de 250 PMN no es PBE y la albumina pierde respaldo.
+const m18NoPbe = simulateM18({ ...M18_PRESETS[6].inputs, pmnAscitis: 180 });
+assert.ok(
+  m18NoPbe.alerts.some((a) => a.titulo.includes('ya no está respaldada')),
+  'M18 sin PBE la albumina queda con beneficio incierto'
+);
+assert.ok(
+  m18Pbe.recordatorios.some((r) => r.titulo.includes('Paracentesis')),
+  'M18 cirrotico con ascitis debe pedir paracentesis'
+);
+// El umbral de 250 es inclusivo.
+assert.ok(
+  simulateM18({ ...M18_PRESETS[6].inputs, pmnAscitis: 250 }).alerts.some((a) =>
+    a.titulo.includes('PBE confirmada')
+  ),
+  'M18 el umbral de 250 PMN es inclusivo'
+);
+
+// Trasplantado: el dato que rompe el reflejo.
+const m18Tx = simulateM18(M18_PRESETS[7].inputs);
+assert.ok(
+  m18Tx.recordatorios.some((r) => r.detalle.includes('84% vs 66%')),
+  'M18 trasplantado debe traer la cohorte alemana'
+);
+
+// Todos los presets devuelven los 6 signos leidos.
+for (const p of M18_PRESETS) {
+  const out = simulateM18(p.inputs);
+  assert.equal(out.signos.length, 6, `M18 preset ${p.id} debe leer 6 signos`);
+  assert.ok(out.fisiologia.length > 40, `M18 preset ${p.id} debe describir la fisiologia`);
+  // Cada poblacion devuelve algo accionable: una alerta, un recordatorio o los dos.
+  assert.ok(
+    out.alerts.length + out.recordatorios.length >= 1,
+    `M18 preset ${p.id} debe devolver al menos una alerta o un recordatorio`
+  );
+}
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas})`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)})`
 );

@@ -14,6 +14,7 @@ import {
   Menu,
   Radar,
   Search,
+  Users,
   ShieldCheck,
   Sparkles,
   Wind,
@@ -278,6 +279,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M17', 'simulador')}
             >
               <LayoutDashboard size={15} color="#3FD8C8" /> M17 · Tablero de soporte
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M18' && route.tab === 'simulador'}
+              onClick={() => openModule('M18', 'simulador')}
+            >
+              <Users size={15} color="#9A87F5" /> M18 · Valores normales
             </button>
           </div>
         </div>
