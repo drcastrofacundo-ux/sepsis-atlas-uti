@@ -18,6 +18,12 @@ import {
   calcularQsofaP,
   simulateM18,
 } from '../src/engines/m18Engine.ts';
+import {
+  M19_PRESETS,
+  SOBREVIDA_ENGOREN,
+  clasificarSubtipo,
+  simulateM19,
+} from '../src/engines/m19Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -624,6 +630,137 @@ for (const p of M18_PRESETS) {
   );
 }
 
+// ---- M19 Verification ----
+
+// Los dos subtipos que el abstract de Flick 2026 nombra con su OR.
+const m19Grave = clasificarSubtipo(M19_PRESETS[3].inputs);
+assert.equal(m19Grave.id, 'basal_enfermo_enfermedad_grave', 'M19 Charlson alto + larga + institucion');
+assert.equal(m19Grave.banda, 'muy_alto', 'M19 ese subtipo es el de riesgo muy alto');
+assert.ok(m19Grave.orPublicado.includes('9,7'), 'M19 basal enfermo lleva el OR 9,7 publicado');
+
+const m19Func = clasificarSubtipo(M19_PRESETS[2].inputs);
+assert.equal(m19Func.id, 'bajo_estado_funcional', 'M19 no volver a casa define bajo estado funcional');
+assert.ok(m19Func.orPublicado.includes('11,1'), 'M19 bajo estado funcional lleva el OR 11,1');
+
+// El extremo favorable: los tres ejes a favor.
+const m19Sano = clasificarSubtipo(M19_PRESETS[1].inputs);
+assert.equal(m19Sano.id, 'basal_sano_corta', 'M19 los tres ejes a favor dan el extremo bajo');
+assert.equal(m19Sano.banda, 'bajo', 'M19 ese subtipo es el de riesgo bajo');
+assert.equal(m19Sano.orPublicado, null, 'M19 los subtipos intermedios no inventan OR');
+
+// Los subtipos reconstruidos no se atribuyen un OR del paper.
+for (const p of M19_PRESETS) {
+  const s = clasificarSubtipo(p.inputs);
+  if (s.id !== 'basal_enfermo_enfermedad_grave' && s.id !== 'bajo_estado_funcional') {
+    assert.equal(s.orPublicado, null, `M19 ${s.id} no debe declarar un OR publicado`);
+  }
+  assert.ok(s.mortalidadTexto.includes('Flick 2026'), `M19 ${s.id} debe citar la fuente del rango`);
+}
+
+// Un solo eje en contra queda en la banda intermedia.
+assert.equal(
+  clasificarSubtipo({ ...M19_PRESETS[1].inputs, charlson: 4 }).banda,
+  'intermedio',
+  'M19 solo el Charlson alto queda en banda intermedia'
+);
+assert.equal(
+  clasificarSubtipo({ ...M19_PRESETS[1].inputs, diasInternacion: 20 }).banda,
+  'intermedio',
+  'M19 solo la internacion prolongada queda en banda intermedia'
+);
+// Los dos ejes en contra, pero vuelve a casa.
+assert.equal(
+  clasificarSubtipo({ ...M19_PRESETS[1].inputs, charlson: 4, diasInternacion: 20 }).id,
+  'comorbido_internacion_larga',
+  'M19 dos ejes en contra con alta a domicilio'
+);
+
+// El destino manda sobre los otros dos ejes.
+assert.equal(
+  clasificarSubtipo({ ...M19_PRESETS[1].inputs, destino: 'institucion' }).id,
+  'bajo_estado_funcional',
+  'M19 sin comorbilidad ni internacion larga, el destino solo ya define el subtipo'
+);
+
+// Caso 1: las banderas que la epicrisis se olvido.
+const m19Caso1 = simulateM19(M19_PRESETS[0].inputs);
+const activas = m19Caso1.banderas.filter((b) => b.activa).map((b) => b.titulo);
+assert.ok(activas.includes('Rehabilitación física'), 'M19 9 dias de ventilacion piden rehabilitacion');
+assert.ok(activas.includes('Evaluación cognitiva'), 'M19 5 dias de delirium piden evaluacion cognitiva');
+assert.ok(activas.includes('Debilidad adquirida en la UTI'), 'M19 ventilacion >= 7 dias con corticoides');
+assert.ok(activas.includes('Control cardiovascular'), 'M19 42 años entra en el grupo de <= 45');
+assert.ok(activas.includes('Revisar la hemoglobina al alta'), 'M19 Hb 9,2 por debajo de 10');
+assert.equal(activas.length, 5, 'M19 el Caso 1 enciende las cinco banderas');
+
+// El basal sano no enciende ninguna.
+const m19SanoOut = simulateM19(M19_PRESETS[1].inputs);
+assert.equal(
+  m19SanoOut.banderas.filter((b) => b.activa).length,
+  0,
+  'M19 el basal sano sin ventilacion ni delirium no enciende banderas'
+);
+
+// El umbral de 48 h de ventilacion de la SSC 2026.
+assert.ok(
+  !simulateM19({ ...M19_PRESETS[1].inputs, diasVentilacion: 2 }).banderas.find(
+    (b) => b.titulo === 'Rehabilitación física'
+  ).activa,
+  'M19 con 2 dias (48 h) todavia no se cumple el "mas de 48 h"'
+);
+assert.ok(
+  simulateM19({ ...M19_PRESETS[1].inputs, diasVentilacion: 3 }).banderas.find(
+    (b) => b.titulo === 'Rehabilitación física'
+  ).activa,
+  'M19 con 3 dias se pasa de las 48 h'
+);
+
+// El checklist de la SSC 2026 es el mismo para todos: es buena practica.
+for (const p of M19_PRESETS) {
+  const out = simulateM19(p.inputs);
+  assert.equal(out.checklist.length, 5, `M19 preset ${p.id} debe traer los 5 items de epicrisis`);
+  assert.ok(
+    out.checklist.every((i) => i.obligatorio),
+    `M19 preset ${p.id}: los 5 items son buena practica, no opcionales`
+  );
+  assert.equal(out.banderas.length, 5, `M19 preset ${p.id} debe evaluar las 5 banderas`);
+}
+
+// La curva de Engoren: los puntos publicados son los del paper.
+const publicados = SOBREVIDA_ENGOREN.filter((p) => p.publicado);
+// El alta (100%), el mes 1, el año 1, los 5 años y los 10 años.
+assert.equal(publicados.length, 5, 'M19 la curva tiene 5 anclas publicadas');
+assert.equal(
+  SOBREVIDA_ENGOREN.filter((p) => !p.publicado).length,
+  5,
+  'M19 el resto de los puntos son interpolados para dibujar la forma'
+);
+assert.equal(SOBREVIDA_ENGOREN.find((p) => p.meses === 12).sobrevida, 76, 'M19 76% al año');
+assert.equal(SOBREVIDA_ENGOREN.find((p) => p.meses === 60).sobrevida, 57, 'M19 57% a 5 años');
+assert.equal(SOBREVIDA_ENGOREN.find((p) => p.meses === 120).sobrevida, 48, 'M19 48% a 10 años');
+// La curva es monotonamente decreciente.
+for (let i = 1; i < SOBREVIDA_ENGOREN.length; i++) {
+  assert.ok(
+    SOBREVIDA_ENGOREN[i].sobrevida < SOBREVIDA_ENGOREN[i - 1].sobrevida,
+    `M19 la sobrevida debe caer en el mes ${SOBREVIDA_ENGOREN[i].meses}`
+  );
+}
+// La caida del primer mes es la mas pronunciada por mes.
+const pendiente = (a, b) => (a.sobrevida - b.sobrevida) / (b.meses - a.meses);
+for (let i = 2; i < SOBREVIDA_ENGOREN.length; i++) {
+  assert.ok(
+    pendiente(SOBREVIDA_ENGOREN[0], SOBREVIDA_ENGOREN[1]) >
+      pendiente(SOBREVIDA_ENGOREN[i - 1], SOBREVIDA_ENGOREN[i]),
+    'M19 la mortalidad se concentra en el primer mes'
+  );
+}
+
+// El joven previamente sano: riesgo relativo alto.
+const m19Joven = simulateM19(M19_PRESETS[4].inputs);
+assert.ok(
+  m19Joven.alerts.some((a) => a.detalle.includes('HR 17,5')),
+  'M19 el joven previamente sano debe traer el HR 17,5 de Inghammar'
+);
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)})`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)}), M19(Caso 1 → ${m19Caso1.subtipo.nombre}, ${activas.length}/5 banderas)`
 );

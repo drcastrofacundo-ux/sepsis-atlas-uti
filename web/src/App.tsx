@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Clock,
   Droplets,
+  FileText,
   HeartPulse,
   HelpCircle,
   Home,
@@ -287,6 +288,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M18', 'simulador')}
             >
               <Users size={15} color="#9A87F5" /> M18 · Valores normales
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M19' && route.tab === 'simulador'}
+              onClick={() => openModule('M19', 'simulador')}
+            >
+              <FileText size={15} color="#FF5C7A" /> M19 · La epicrisis que sirve
             </button>
           </div>
         </div>

@@ -3,7 +3,7 @@ id: M19
 titulo: "Después de la UTI: Post-Sepsis, PICS y Rehabilitación"
 subtitulo: "Mortalidad tardía, debilidad adquirida, deterioro cognitivo, salud mental y reingresos; qué se previene adentro de la UTI y qué mostraron (y no mostraron) los programas de seguimiento"
 ultima_actualizacion: 2026-11-26
-piloto_fase2: false
+piloto_fase2: true
 fuentes_nlm:
   - "PubMed (abstracts verificados con PMID, 2026-11-26)"
 fuentes_vault:
@@ -146,7 +146,7 @@ Sedación liviana, delirium y midazolam están en [M11](#module-M11).
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-27.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo. Los simuladores ejecutables están en M03, M05, M09, M14, M15, M16, M17, M18 y M19.
 
 - **Nombre UI:** *La epicrisis que sirve: del alta de UTI a los 3 meses*
 - **Controles:**
