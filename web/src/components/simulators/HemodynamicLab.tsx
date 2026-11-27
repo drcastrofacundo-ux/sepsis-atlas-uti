@@ -36,11 +36,33 @@ export const HemodynamicLab: React.FC = () => {
     setInputs(p.inputs);
   };
 
-  // Escala para SVG Windkessel (Y 20..180 mmHg -> SVG 155..18)
-  const mapPressToY = (mmhg: number) => 155 - ((Math.min(180, Math.max(20, mmhg)) - 20) / 160) * 135;
+  // Panel A (Windkessel). Area de trazado: deja margen a la izquierda para el eje
+  // de presiones y a la derecha para las etiquetas, que antes caian encima de la onda.
+  const A_X0 = 44;
+  const A_X1 = 298;
+  const A_Y0 = 150; // 20 mmHg
+  const A_Y1 = 22; // 180 mmHg
+  const mapPressToY = (mmhg: number) =>
+    A_Y0 - ((Math.min(180, Math.max(20, mmhg)) - 20) / 160) * (A_Y0 - A_Y1);
   const waveformPath = out.waveformPoints
-    .map((pt, idx) => `${idx === 0 ? 'M' : 'L'} ${(28 + pt.x * 3.4).toFixed(1)} ${mapPressToY(pt.y).toFixed(1)}`)
+    .map(
+      (pt, idx) =>
+        `${idx === 0 ? 'M' : 'L'} ${(A_X0 + (pt.x / 100) * (A_X1 - A_X0)).toFixed(1)} ${mapPressToY(pt.y).toFixed(1)}`,
+    )
     .join(' ');
+  const presionTicks = [40, 80, 120, 160];
+  // Etiquetas de PAS / PAM / PAD a la derecha, separadas si se pisan entre si.
+  const etiquetasPresion = useMemo(() => {
+    const items = [
+      { txt: `PAS ${inputs.pas}`, y: mapPressToY(inputs.pas), color: '#DEE9F5' },
+      { txt: `PAM ${out.pam.toFixed(0)}`, y: mapPressToY(out.pam), color: '#E9B44C' },
+      { txt: `PAD ${inputs.pad}`, y: mapPressToY(inputs.pad), color: inputs.pad < 50 ? '#FF5C7A' : '#3FD8C8' },
+    ];
+    for (let i = 1; i < items.length; i++) {
+      if (items[i].y - items[i - 1].y < 11) items[i].y = items[i - 1].y + 11;
+    }
+    return items;
+  }, [inputs.pas, inputs.pad, out.pam]);
 
   // Escala curva J invertida VNERi (X: 0..15 -> 30..360)
   const mapVneriToX = (v: number) => 30 + (Math.min(15, Math.max(0, v)) / 15) * 330;
@@ -478,25 +500,55 @@ export const HemodynamicLab: React.FC = () => {
                 A · Osciloscopio Windkessel (2 latidos)
               </div>
               <svg viewBox="0 0 380 180" style={{ width: '100%', height: 'auto' }}>
+                {/* Banda bajo el umbral de PAD 50 */}
                 <rect
-                  x="28"
+                  x={A_X0}
                   y={mapPressToY(50)}
-                  width="342"
-                  height={155 - mapPressToY(50)}
+                  width={A_X1 - A_X0}
+                  height={A_Y0 - mapPressToY(50)}
                   fill="rgba(255, 92, 122, 0.1)"
                 />
+                {/* Ejes */}
+                <line x1={A_X0} y1={A_Y0} x2={A_X1} y2={A_Y0} stroke="#2B4260" />
+                <line x1={A_X0} y1={A_Y1} x2={A_X0} y2={A_Y0} stroke="#2B4260" />
+                {presionTicks.map((v) => (
+                  <g key={v}>
+                    <line x1={A_X0 - 4} y1={mapPressToY(v)} x2={A_X0} y2={mapPressToY(v)} stroke="#2B4260" />
+                    <text
+                      x={A_X0 - 6}
+                      y={mapPressToY(v) + 3}
+                      fill="#6F8BA8"
+                      fontSize="9"
+                      fontFamily="IBM Plex Mono"
+                      textAnchor="end"
+                    >
+                      {v}
+                    </text>
+                  </g>
+                ))}
+                <text
+                  x={A_X0 - 6}
+                  y={A_Y1 + 2}
+                  fill="#6F8BA8"
+                  fontSize="9"
+                  fontFamily="IBM Plex Mono"
+                  textAnchor="end"
+                >
+                  mmHg
+                </text>
+
                 <line
-                  x1="28"
+                  x1={A_X0}
                   y1={mapPressToY(50)}
-                  x2="370"
+                  x2={A_X1}
                   y2={mapPressToY(50)}
                   stroke="#FF5C7A"
                   strokeDasharray="4 4"
                 />
                 <line
-                  x1="28"
+                  x1={A_X0}
                   y1={mapPressToY(out.pam)}
-                  x2="370"
+                  x2={A_X1}
                   y2={mapPressToY(out.pam)}
                   stroke="#E9B44C"
                   strokeDasharray="2 3"
@@ -508,14 +560,23 @@ export const HemodynamicLab: React.FC = () => {
                   stroke={inputs.pad < 50 ? '#FF5C7A' : '#3FD8C8'}
                   strokeWidth="2.6"
                 />
-                <text x="32" y={mapPressToY(50) - 4} fill="#FF5C7A" fontSize="10" fontFamily="IBM Plex Mono">
+
+                {/* Etiquetas fuera del trazado, a la derecha */}
+                {etiquetasPresion.map((e) => (
+                  <text
+                    key={e.txt}
+                    x={A_X1 + 6}
+                    y={e.y + 3}
+                    fill={e.color}
+                    fontSize="10"
+                    fontFamily="IBM Plex Mono"
+                  >
+                    {e.txt}
+                  </text>
+                ))}
+
+                <text x={A_X0} y="172" fill="#FF5C7A" fontSize="10" fontFamily="IBM Plex Mono">
                   Umbral PAD 50 mmHg (Ko 2026)
-                </text>
-                <text x="305" y={mapPressToY(inputs.pas) - 4} fill="#DEE9F5" fontSize="10" fontFamily="IBM Plex Mono">
-                  PAS {inputs.pas}
-                </text>
-                <text x="305" y={mapPressToY(inputs.pad) + 12} fill="#3FD8C8" fontSize="10" fontFamily="IBM Plex Mono">
-                  PAD {inputs.pad}
                 </text>
               </svg>
             </div>
