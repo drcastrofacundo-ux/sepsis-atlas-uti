@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
 import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
+import { M15_PRESETS, pesoPredicho, simulateM15 } from '../src/engines/m15Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -234,6 +235,45 @@ const gananciaReserva = gReserva.curvaCardiaca.at(-1).flujo / gReserva.puntoTrab
 assert.ok(gananciaMeseta < 1.1, `M05 Guyton meseta: ganancia residual < 1.1 (got ${gananciaMeseta.toFixed(2)})`);
 assert.ok(gananciaReserva > 1.2, `M05 Guyton con reserva: ganancia > 1.2 (got ${gananciaReserva.toFixed(2)})`);
 
+// ---- M15 Verification ----
+// Peso predicho (ARDSNet): varon 50 + 0.91*(talla-152.4), mujer 45.5 + 0.91*(...)
+assert.ok(Math.abs(pesoPredicho('varon', 170) - 66.0) < 0.1, `M15 PCP varon 170 cm ~66 kg (got ${pesoPredicho('varon', 170).toFixed(1)})`);
+assert.ok(Math.abs(pesoPredicho('mujer', 155) - 47.9) < 0.1, `M15 PCP mujer 155 cm ~47.9 kg (got ${pesoPredicho('mujer', 155).toFixed(1)})`);
+
+// La trampa del peso real: 6 mL/kg reales en un obeso son ~10 mL/kg de peso predicho.
+const m15Trampa = simulateM15(M15_PRESETS.find((p) => p.id === 'trampa_peso').inputs);
+assert.ok(Math.abs(m15Trampa.vtPorKgReal - 6) < 0.1, 'M15 el preset usa 6 mL/kg de peso real');
+assert.ok(m15Trampa.vtPorKgPcp > 9.5, `M15 eso debe dar > 9.5 mL/kg de PCP (got ${m15Trampa.vtPorKgPcp.toFixed(1)})`);
+assert.ok(
+  m15Trampa.alerts.some((a) => a.titulo.includes('Volumen corriente')),
+  'M15 debe alertar por volumen corriente alto'
+);
+
+// Presion de distension y distensibilidad.
+const m15Prot = simulateM15(M15_PRESETS.find((p) => p.id === 'protegido').inputs);
+assert.equal(m15Prot.driving, 12, 'M15 ΔP = meseta - PEEP = 22 - 10');
+assert.ok(Math.abs(m15Prot.compliance - 330 / 12) < 1e-6, 'M15 Crs = VT / ΔP');
+assert.equal(m15Prot.severidadBerlin, 'moderado', `M15 PaO2/FiO2 190 es moderado (got ${m15Prot.severidadBerlin})`);
+assert.ok(!m15Prot.criterioEolia, 'M15 el caso protegido no cumple EOLIA');
+
+// Cor pulmonale: los 4 factores de Mekontso Dessap.
+const m15Vd = simulateM15(M15_PRESETS.find((p) => p.id === 'grave_vd').inputs);
+assert.equal(m15Vd.corPulmonale.puntaje, 4, `M15 el caso de VD debe tener los 4 factores (got ${m15Vd.corPulmonale.puntaje})`);
+assert.equal(m15Vd.severidadBerlin, 'grave', 'M15 PaO2/FiO2 95 es grave');
+assert.ok(
+  m15Vd.conductas.find((c) => c.titulo === 'Prono').tono === 'red',
+  'M15 con PaO2/FiO2 < 150 el prono debe quedar indicado'
+);
+
+// Definicion global 2024: el alto flujo entra aunque Berlin no lo clasifique.
+const m15Hf = simulateM15(M15_PRESETS.find((p) => p.id === 'alto_flujo').inputs);
+assert.equal(m15Hf.severidadBerlin, 'sin_criterio', 'M15 Berlin no clasifica al paciente en alto flujo');
+assert.ok(m15Hf.cumpleGlobal, 'M15 la definicion global 2024 si lo toma');
+
+// SpO2 > 97 invalida el indice SpO2/FiO2 (no se puede leer en la meseta de la curva).
+const m15Sat = simulateM15({ ...M15_PRESETS[0].inputs, spo2: 99 });
+assert.equal(m15Sat.safi, null, 'M15 con SpO2 > 97 el indice SpO2/FiO2 no es valido');
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4)`
 );

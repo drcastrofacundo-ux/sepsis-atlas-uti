@@ -13,6 +13,7 @@ import {
   Search,
   ShieldCheck,
   Sparkles,
+  Wind,
   X,
 } from 'lucide-react';
 import modulesRaw from './data/generated/modules.json';
@@ -242,6 +243,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M09', 'simulador')}
             >
               <Beaker size={15} color="#4FA9F7" /> M09 · Motor PK/PD 48 h
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M15' && route.tab === 'simulador'}
+              onClick={() => openModule('M15', 'simulador')}
+            >
+              <Wind size={15} color="#9A87F5" /> M15 · El pulmón chico
             </button>
           </div>
         </div>

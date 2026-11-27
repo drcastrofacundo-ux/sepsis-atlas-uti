@@ -3429,7 +3429,7 @@
     "titulo": "Pulmón Séptico: Neumonía como Foco y SDRA",
     "subtitulo": "El pulmón como origen y como víctima de la sepsis: neumonía grave, definición global de SDRA, ventilación protectora, presión de distensión, prono, oxígeno, fluidos, corticoides y ECMO",
     "ultimaActualizacion": "2026-11-26",
-    "pilotoFase2": false,
+    "pilotoFase2": true,
     "fuentesNlm": [
       "PubMed (abstracts verificados con PMID, 2026-11-26)"
     ],
