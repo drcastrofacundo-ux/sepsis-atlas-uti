@@ -33,6 +33,7 @@ import { ResistanceLab } from './simulators/ResistanceLab';
 import { SupportDashboard } from './simulators/SupportDashboard';
 import { PopulationLab } from './simulators/PopulationLab';
 import { DischargeLab } from './simulators/DischargeLab';
+import { SystemLab } from './simulators/SystemLab';
 
 interface ModuleViewProps {
   moduleData: AtlasModule;
@@ -133,6 +134,7 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
     if (moduleData.id === 'M17') return <SupportDashboard />;
     if (moduleData.id === 'M18') return <PopulationLab />;
     if (moduleData.id === 'M19') return <DischargeLab />;
+    if (moduleData.id === 'M20') return <SystemLab />;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -153,8 +155,8 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
           </div>
           <p style={{ margin: 0, fontSize: 13.5, color: 'var(--ink-2)' }}>
             {isM12
-              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 9 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos), M14 (Control de Foco), M15 (Pulmón Séptico), M16 (Patógenos Difíciles), M17 (Tablero de Soporte), M18 (Poblaciones Especiales) y M19 (Después de la UTI).'
-              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09, M14, M15, M16, M17, M18 o M19.'}
+              ? 'Tu avance en MCQs, casos clínicos y flashcards queda guardado en este navegador. Los 10 simuladores ejecutables en vivo están en M03 (Glicocálix), M05 (Hemodinamia), M09 (PK/PD Antibióticos), M14 (Control de Foco), M15 (Pulmón Séptico), M16 (Patógenos Difíciles), M17 (Tablero de Soporte), M18 (Poblaciones Especiales), M19 (Después de la UTI) y M20 (La Sepsis como Sistema).'
+              : 'Este módulo ya cuenta con toda su teoría, práctica SATI y especificación clínica. Si querés probar los simuladores interactivos en vivo hoy, abrí M03, M05, M09, M14, M15, M16, M17, M18, M19 o M20.'}
           </p>
         </div>
 

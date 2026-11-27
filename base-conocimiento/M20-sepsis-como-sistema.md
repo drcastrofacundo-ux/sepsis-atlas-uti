@@ -3,7 +3,7 @@ id: M20
 titulo: "La Sepsis como Sistema: Epidemiología, Calidad, Prevención, IA y Ética"
 subtitulo: "De la carga global y la inequidad argentina a los paquetes obligatorios, el tiempo al antibiótico, la prevención de infecciones, los algoritmos de alerta y las decisiones de fin de vida"
 ultima_actualizacion: 2026-11-26
-piloto_fase2: false
+piloto_fase2: true
 fuentes_nlm:
   - "PubMed (abstracts verificados con PMID, 2026-11-26)"
 fuentes_vault:
@@ -133,7 +133,7 @@ La fragilidad y la ACLF como datos pronósticos están en [M18](#module-M18); el
 
 ## 4. Especificación del Simulador / Atlas Interactivo
 
-> Especificación pendiente de implementar. Hoy los simuladores ejecutables están en M03, M05 y M09.
+> **Implementado el 2026-11-27.** Esta especificación ya corre en la pestaña «Simulador en vivo» del módulo, y con este quedan los 10 simuladores ejecutables: M03, M05, M09, M14, M15, M16, M17, M18, M19 y M20.
 
 - **Nombre UI:** *El tablero del servicio: de la guardia al indicador*
 - **Controles:**

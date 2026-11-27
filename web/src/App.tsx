@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Activity,
+  BarChart3,
   Beaker,
   BookOpen,
   ChevronRight,
@@ -296,6 +297,14 @@ export const App: React.FC = () => {
               onClick={() => openModule('M19', 'simulador')}
             >
               <FileText size={15} color="#FF5C7A" /> M19 · La epicrisis que sirve
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={route.kind === 'module' && route.moduleId === 'M20' && route.tab === 'simulador'}
+              onClick={() => openModule('M20', 'simulador')}
+            >
+              <BarChart3 size={15} color="#34D399" /> M20 · El tablero del servicio
             </button>
           </div>
         </div>

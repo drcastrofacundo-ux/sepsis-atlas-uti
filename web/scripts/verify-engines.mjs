@@ -24,6 +24,13 @@ import {
   clasificarSubtipo,
   simulateM19,
 } from '../src/engines/m19Engine.ts';
+import {
+  M20_PRESETS,
+  cargaDeAlertas,
+  clasificarUrgencia,
+  mortalidadAparente,
+  simulateM20,
+} from '../src/engines/m20Engine.ts';
 import { simulateM09 } from '../src/engines/m09Engine.ts';
 
 // ---- M03 Verification ----
@@ -761,6 +768,152 @@ assert.ok(
   'M19 el joven previamente sano debe traer el HR 17,5 de Inghammar'
 );
 
+// ---- M20 Verification ----
+
+// A quien apurar (Rhee 2026).
+assert.equal(clasificarUrgencia(true, 3), 'primera_hora', 'M20 el shock manda, sin importar el NEWS2');
+assert.equal(clasificarUrgencia(false, 8), 'primera_hora', 'M20 NEWS2 8 sin shock tambien es primera hora');
+assert.equal(clasificarUrgencia(false, 7), 'primera_hora', 'M20 el umbral de NEWS2 7 es inclusivo');
+assert.equal(clasificarUrgencia(false, 6), 'evaluar', 'M20 NEWS2 6 sin shock da margen para evaluar');
+
+// Efecto codificacion: aritmetica pura (Rhee 2017).
+// 300 casos al 30% = 90 muertes; +300 leves al 4% = 12 muertes.
+// (90 + 12) / 600 = 17%.
+assert.ok(
+  Math.abs(mortalidadAparente(300, 30, 300, 4) - 17) < 1e-9,
+  `M20 300@30% + 300@4% debe dar 17% (got ${mortalidadAparente(300, 30, 300, 4)})`
+);
+// Sin casos agregados, el indicador no se mueve.
+assert.equal(mortalidadAparente(300, 30, 0, 4), 30, 'M20 sin casos agregados la mortalidad no cambia');
+// Agregar casos con la misma mortalidad tampoco la mueve.
+assert.ok(
+  Math.abs(mortalidadAparente(300, 30, 300, 30) - 30) < 1e-9,
+  'M20 agregar casos igual de graves no cambia el indicador'
+);
+assert.equal(mortalidadAparente(0, 30, 0, 4), 0, 'M20 sin casos no hay mortalidad que calcular');
+
+// Tabla de 2x2 de un algoritmo.
+// 200 pacientes, 6% prevalencia = 12 sepsis y 188 sin sepsis.
+// Sensibilidad 33% -> VP 3,96 y FN 8,04. Especificidad 83% -> FP 31,96.
+const cargaEpic = cargaDeAlertas(33, 83, 6, 200);
+assert.ok(Math.abs(cargaEpic.verdaderosPositivos - 3.96) < 1e-9, 'M20 VP = 12 * 0,33');
+assert.ok(Math.abs(cargaEpic.falsosNegativos - 8.04) < 1e-9, 'M20 FN = 12 - VP');
+assert.ok(Math.abs(cargaEpic.falsosPositivos - 31.96) < 1e-9, 'M20 FP = 188 * 0,17');
+assert.ok(Math.abs(cargaEpic.alertasPorDia - 35.92) < 1e-9, 'M20 alertas = VP + FP');
+assert.ok(
+  Math.abs(cargaEpic.vpp - (3.96 / 35.92) * 100) < 1e-9,
+  'M20 VPP = VP / (VP + FP)'
+);
+assert.ok(
+  cargaEpic.alertasPorSepsisDetectada > 9,
+  `M20 Epic: mas de 9 alertas por sepsis detectada (got ${cargaEpic.alertasPorSepsisDetectada.toFixed(1)})`
+);
+// Un algoritmo perfecto no genera falsos positivos.
+const cargaPerfecta = cargaDeAlertas(100, 100, 6, 200);
+assert.equal(cargaPerfecta.falsosPositivos, 0, 'M20 especificidad 100% no da falsos positivos');
+assert.equal(cargaPerfecta.falsosNegativos, 0, 'M20 sensibilidad 100% no deja sepsis sin detectar');
+assert.equal(cargaPerfecta.alertasPorSepsisDetectada, 1, 'M20 el ideal es 1 alerta por sepsis');
+// Sensibilidad 0: no hay a quien dividir.
+assert.equal(
+  cargaDeAlertas(0, 83, 6, 200).alertasPorSepsisDetectada,
+  null,
+  'M20 sin verdaderos positivos la razon no se calcula'
+);
+
+// Shock a tiempo: dentro de la ventana.
+const m20Ok = simulateM20(M20_PRESETS[0].inputs);
+assert.equal(m20Ok.urgencia, 'primera_hora', 'M20 shock = primera hora');
+assert.equal(m20Ok.orPorHora, 1.15, 'M20 el OR del shock es 1,15 por hora');
+assert.ok(!m20Ok.fueraDeVentana, 'M20 48 min esta dentro de la primera hora');
+assert.equal(m20Ok.cumplidos, 6, 'M20 el paquete completo son 6 elementos');
+assert.equal(m20Ok.porcentajePaquete, 100, 'M20 6 de 6 es 100%');
+
+// Shock demorado: OR acumulado y exceso absoluto.
+const m20Demora = simulateM20(M20_PRESETS[1].inputs);
+assert.ok(m20Demora.fueraDeVentana, 'M20 4 h esta fuera de la ventana');
+assert.ok(
+  Math.abs(m20Demora.orAcumulado - Math.pow(1.15, 4)) < 1e-9,
+  'M20 el OR acumulado es 1,15 elevado a las horas'
+);
+assert.ok(Math.abs(m20Demora.excesoAbsoluto - 6) < 1e-9, 'M20 1,5 puntos por hora x 4 h = 6');
+assert.ok(
+  m20Demora.alerts.some((a) => a.tono === 'red' && a.titulo.includes('había que apurar')),
+  'M20 la demora en el shock debe alertar en rojo'
+);
+assert.ok(
+  m20Demora.alerts.some((a) => a.titulo.includes('Falta el antibiótico')),
+  'M20 sin antibiotico en un paciente urgente debe avisar'
+);
+
+// Sin shock y NEWS2 bajo: no hay OR por hora y el margen es de 3 h.
+const m20Leve = simulateM20(M20_PRESETS[2].inputs);
+assert.equal(m20Leve.urgencia, 'evaluar', 'M20 NEWS2 4 sin shock da margen');
+assert.equal(m20Leve.orPorHora, null, 'M20 sin asociacion demostrada no se publica un OR');
+assert.equal(m20Leve.orAcumulado, null, 'M20 sin OR por hora no hay OR acumulado');
+assert.equal(m20Leve.excesoAbsoluto, null, 'M20 el exceso absoluto solo esta medido en el shock');
+assert.ok(
+  m20Leve.alerts.some((a) => a.titulo.includes('sin gravedad')),
+  'M20 amplio espectro en 1 h sin gravedad debe advertir'
+);
+// Con 2 h todavia esta en ventana para este paciente.
+assert.ok(
+  !simulateM20({ ...M20_PRESETS[2].inputs, horasHastaAntibiotico: 2 }).fueraDeVentana,
+  'M20 sin gravedad la ventana es de 3 h'
+);
+assert.ok(
+  simulateM20({ ...M20_PRESETS[2].inputs, horasHastaAntibiotico: 3.5 }).fueraDeVentana,
+  'M20 pasadas las 3 h ya se salio de la ventana de la SSC'
+);
+
+// NEWS2 alto sin shock: OR 1,07 y sin exceso absoluto publicado.
+const m20News = simulateM20(M20_PRESETS[3].inputs);
+assert.equal(m20News.orPorHora, 1.07, 'M20 NEWS2 alto sin shock usa el OR 1,07');
+assert.equal(m20News.excesoAbsoluto, null, 'M20 el 1,5% por hora es solo del shock');
+assert.ok(m20News.fueraDeVentana, 'M20 2,5 h en un paciente de primera hora esta fuera');
+
+// El indicador que "mejoro".
+const m20Cod = simulateM20(M20_PRESETS[4].inputs);
+assert.ok(Math.abs(m20Cod.mortalidadAparente - 17) < 1e-9, 'M20 el indicador cae a 17%');
+assert.ok(Math.abs(m20Cod.caidaAparente - 13) < 1e-9, 'M20 la caida aparente es de 13 puntos');
+assert.equal(m20Cod.casosTotales, 600, 'M20 el denominador pasa a 600');
+assert.ok(
+  m20Cod.alerts.some((a) => a.tono === 'red' && a.titulo.includes('Efecto codificación')),
+  'M20 una caida de 13 puntos debe alertar en rojo'
+);
+
+// El algoritmo del folleto frente a uno usable.
+const m20Epic = simulateM20(M20_PRESETS[5].inputs);
+assert.ok(
+  m20Epic.alerts.some((a) => a.titulo.includes('alertas por cada sepsis detectada')),
+  'M20 Epic debe alertar por la carga de alertas'
+);
+assert.ok(
+  m20Epic.alerts.some((a) => a.titulo.includes('Sensibilidad del 33%')),
+  'M20 Epic debe avisar cuantas sepsis se le escapan'
+);
+const m20Usable = simulateM20(M20_PRESETS[6].inputs);
+assert.ok(
+  m20Usable.alertasPorSepsisDetectada < 5,
+  `M20 el algoritmo usable debe dar menos de 5 alertas por sepsis (got ${m20Usable.alertasPorSepsisDetectada.toFixed(1)})`
+);
+assert.ok(
+  m20Usable.alerts.some((a) => a.detalle.includes('TREWS')),
+  'M20 el algoritmo usable todavia necesita que alguien actue'
+);
+assert.ok(
+  !m20Usable.alerts.some((a) => a.titulo.includes('alertas por cada sepsis detectada')),
+  'M20 el algoritmo usable no debe disparar la alerta de carga'
+);
+
+// Los 7 presets devuelven las cuatro cuentas completas.
+for (const p of M20_PRESETS) {
+  const out = simulateM20(p.inputs);
+  assert.equal(out.totalPaquete, 6, `M20 preset ${p.id}: el paquete siempre tiene 6 elementos`);
+  assert.ok(out.urgenciaTitulo.length > 10, `M20 preset ${p.id} debe nombrar la urgencia`);
+  assert.ok(out.mortalidadAparente >= 0, `M20 preset ${p.id}: mortalidad aparente valida`);
+  assert.ok(out.alertasPorDia >= 0, `M20 preset ${p.id}: carga de alertas valida`);
+}
+
 console.log(
-  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)}), M19(Caso 1 → ${m19Caso1.subtipo.nombre}, ${activas.length}/5 banderas)`
+  `OK verify-engines: M03(ALI=${aliA.aliDirecto}/IFC=${aliA.ifcPalacios}), M05(VNERi=${m05Bit.vneri?.toFixed(2)}, PIA block=OK, Guyton punto sobre ambas curvas), M09(ARC ${m09Cont.pctFt4xMic_24_48.toFixed(0)}% vs ${m09Bolus.pctFt4xMic_24_48.toFixed(0)}%, Cefepime trough=${cefLra.troughTotal48h.toFixed(1)} mg/L), M14(hemocultivos ${m14Ok.rendimientoFinal.toFixed(1)}% vs ${m14Mal.rendimientoFinal.toFixed(1)}%), M15(PCP=${m15Trampa.pcpKg.toFixed(0)} kg, VT=${m15Trampa.vtPorKgPcp.toFixed(1)} mL/kg, cor pulmonale ${m15Vd.corPulmonale.puntaje}/4), M16(NDM ${m16Ndm.activas.length} activas / ${m16Ndm.noActivas.length} no activas), M17(${m17Shock.kcalKgDia} kcal/kg en shock, basal ${m17Trans.basalUi} U, PACER plaquetas=${m17Pacer.transfundirPlaquetas}), M18(qSOFA ${m18Emb.qsofa} vs qSOFA-P ${m18Emb.qsofaP} en la embarazada, PAM anciano=${m18Anc.pam.toFixed(0)}), M19(Caso 1 → ${m19Caso1.subtipo.nombre}, ${activas.length}/5 banderas), M20(codificación 30%→${m20Cod.mortalidadAparente.toFixed(0)}%, Epic ${m20Epic.alertasPorSepsisDetectada.toFixed(1)} alertas/sepsis)`
 );
