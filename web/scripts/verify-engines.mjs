@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { GLOSARIO, entradas } from '../src/data/glosario.ts';
+import { GLOSARIO, entradas, siglasEnTexto } from '../src/data/glosario.ts';
 import { calcDualAliIfc, M03_PRESETS, simulateM03 } from '../src/engines/m03Engine.ts';
 import { simulateM05 } from '../src/engines/m05Engine.ts';
 import { construirGuyton, crearEscalas, flujoRetornoVenoso } from '../src/engines/m05Guyton.ts';
@@ -959,9 +959,53 @@ for (const archivo of readdirSync(dirSimuladores)) {
 }
 assert.ok(clavesPedidas >= 60, `El glosario debe cubrir los 10 simuladores (got ${clavesPedidas})`);
 
+// El detector de siglas: lo que tiene que encontrar.
+assert.deepEqual(siglasEnTexto('El VNERi quedó en 1,85'), ['VNERi'], 'detecta una sigla suelta');
+assert.ok(siglasEnTexto('PAD 40 y FC 120').includes('PAD'), 'detecta PAD seguida de un número');
+assert.ok(siglasEnTexto('(VExUS ≥ 2)').includes('VExUS'), 'detecta entre paréntesis');
+assert.ok(siglasEnTexto('la PAM, el lactato').includes('PAM'), 'detecta antes de una coma');
+assert.ok(siglasEnTexto('qSOFA-P positivo').includes('qSOFA-P'), 'detecta una sigla con guión');
+assert.ok(siglasEnTexto('relación PK/PD').includes('PK/PD'), 'detecta una sigla con barra');
+assert.ok(siglasEnTexto('una ΔP de 18').includes('ΔP'), 'detecta una sigla con letra griega');
+assert.ok(siglasEnTexto('PaO₂/FiO₂ 95').includes('PaO₂/FiO₂'), 'detecta una sigla con subíndices');
+
+// Y sobre todo: lo que NO tiene que encontrar.
+assert.ok(!siglasEnTexto('por eso pasa').includes('OR'), 'OR no se enciende dentro de "por"');
+assert.ok(!siglasEnTexto('POR LA NOCHE').includes('OR'), 'OR no se enciende dentro de "POR"');
+assert.ok(!siglasEnTexto('no pasó nada').includes('NA'), 'NA no se enciende dentro de "nada"');
+assert.ok(!siglasEnTexto('el VTI del TSVI').includes('VT'), 'VT no se enciende dentro de "VTI"');
+assert.ok(!siglasEnTexto('la DPP cayó').includes('PP'), 'PP no se enciende dentro de "DPP"');
+assert.ok(!siglasEnTexto('la MPP cayó').includes('PP'), 'PP no se enciende dentro de "MPP"');
+assert.ok(!siglasEnTexto('un HRT raro').includes('HR'), 'HR no se enciende dentro de otra sigla');
+assert.ok(!siglasEnTexto('qSOFA-P').includes('qSOFA'), 'qSOFA no se enciende dentro de qSOFA-P');
+assert.ok(!siglasEnTexto('PaO₂/FiO₂').includes('PP'), 'nada se enciende dentro de un índice');
+assert.equal(siglasEnTexto('').length, 0, 'un texto vacío no devuelve siglas');
+assert.equal(siglasEnTexto('texto sin ninguna sigla conocida').length, 0, 'no inventa siglas');
+
 // entradas() saltea lo que no existe en vez de romper la pantalla.
 assert.equal(entradas(['VNERi', 'no_existe', 'PAD']).length, 2, 'Glosario: entradas() saltea lo inexistente');
 assert.equal(entradas([]).length, 0, 'Glosario: una lista vacia no devuelve nada');
+
+// El glosario tiene que cubrir de verdad el cuerpo de los modulos.
+const dirModulos = new URL('../../base-conocimiento/', import.meta.url);
+const modulos = readdirSync(dirModulos).filter((f) => /^M\d\d-.*\.md$/.test(f));
+assert.equal(modulos.length, 19, `Deben verse los 19 modulos del Atlas (got ${modulos.length})`);
+let minimo = Infinity;
+let peor = null;
+for (const archivo of modulos) {
+  const texto = readFileSync(new URL(archivo, dirModulos), 'utf8');
+  const halladas = siglasEnTexto(texto);
+  for (const k of halladas) {
+    assert.ok(GLOSARIO[k], `${archivo}: detecto "${k}" sin entrada en el glosario`);
+  }
+  if (halladas.length < minimo) {
+    minimo = halladas.length;
+    peor = archivo;
+  }
+}
+// Ningun modulo puede quedar sin siglas explicadas: si uno baja de 8, o el
+// detector se rompio o el modulo usa siglas que nadie definio todavia.
+assert.ok(minimo >= 8, `${peor} solo tiene ${minimo} siglas explicadas; revisar el glosario`);
 
 // VNERi, verificado contra el texto completo (PMC11937472) el 2026-11-27.
 assert.ok(

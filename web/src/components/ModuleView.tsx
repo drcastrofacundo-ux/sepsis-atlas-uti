@@ -22,6 +22,8 @@ import {
 } from '../types/atlas';
 import type { ProgressStore } from '../hooks/useProgress';
 import { RichMarkdown } from './RichMarkdown';
+import { Glosario } from './Glosario';
+import { siglasEnTexto } from '../data/glosario';
 import { SatiTrainer } from './SatiTrainer';
 import { UtiToolsLinks } from './UtiToolsLinks';
 import { GlycocalyxLab } from './simulators/GlycocalyxLab';
@@ -100,6 +102,28 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
     }
     return items;
   }, [isM12, isPilot, moduleData, evidenciaEntries.length, auditEntries.length]);
+
+  // Siglas que realmente aparecen en el texto de este módulo. Se detectan solas,
+  // así que al agregar una entrada al glosario se enciende en todos los módulos
+  // donde esa sigla ya estaba escrita, sin tocar el markdown.
+  const siglasDelModulo = useMemo(
+    () =>
+      siglasEnTexto(
+        [
+          moduleData.titulo,
+          moduleData.subtitulo,
+          moduleData.capaBaseMd,
+          moduleData.capaFronteraMd,
+          moduleData.mitosMd,
+          moduleData.casoTMd,
+          moduleData.monitorMienteMd,
+          moduleData.simuladorSpecMd,
+        ]
+          .filter(Boolean)
+          .join('\n')
+      ),
+    [moduleData]
+  );
 
   const effectiveTab: ModuleTab = tabs.some((t) => t.id === activeTab)
     ? activeTab
@@ -512,6 +536,10 @@ export const ModuleView: React.FC<ModuleViewProps> = ({
           </div>
         </div>
       )}
+
+      {/* Siglas del módulo. En la pestaña del simulador no va, porque cada
+          simulador ya trae el suyo, acotado a lo que muestra esa pantalla. */}
+      {effectiveTab !== 'simulador' && <Glosario claves={siglasDelModulo} />}
 
       {/* Navegación Secuencial entre Módulos */}
       <div

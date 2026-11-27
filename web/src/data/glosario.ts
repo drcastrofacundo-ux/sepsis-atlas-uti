@@ -477,6 +477,227 @@ export const GLOSARIO: Record<string, EntradaGlosario> = {
     porque:
       'Es la referencia común, pero conviene leer la fuerza de cada recomendación: muchas son condicionales con certeza baja, y el Atlas las marca cuando lo son.',
   },
+  VTI: {
+    sigla: 'VTI',
+    expansion: 'Velocity time integral — integral velocidad-tiempo',
+    que: 'El área bajo la curva de velocidad del flujo en el tracto de salida del ventrículo izquierdo, medida con Doppler.',
+    porque:
+      'Es la distancia que recorre la columna de sangre en cada latido, así que es un sustituto del volumen sistólico sin tener que calcular áreas. Por eso su variación con una maniobra es la forma ecográfica de ver respuesta a fluidos.',
+  },
+  VCI: {
+    sigla: 'VCI',
+    expansion: 'Vena cava inferior',
+    que: 'El vaso que devuelve la sangre del abdomen y los miembros inferiores a la aurícula derecha.',
+    porque:
+      'Su diámetro y su colapso se usan como estimación de presión de llenado, pero sola predice mal la respuesta a fluidos. Vale más como pieza del VExUS, es decir, para medir congestión que para medir reserva.',
+  },
+  LVOTO: {
+    sigla: 'LVOTO',
+    expansion: 'Left ventricular outflow tract obstruction — obstrucción del tracto de salida del ventrículo izquierdo',
+    que: 'El colapso dinámico del tracto de salida cuando el ventrículo está hiperdinámico y poco lleno.',
+    porque:
+      'Es la trampa que hace que el paciente empeore con lo que parecía indicado: más inotrópico o más vasodilatación aumentan la obstrucción. Se trata al revés, con volumen y bajando el inotrópico.',
+  },
+  FR: {
+    sigla: 'FR',
+    expansion: 'Frecuencia respiratoria (en algunos textos del Atlas, también fluid responsiveness: respuesta a fluidos)',
+    que: 'Las respiraciones por minuto.',
+    porque:
+      'Es el signo vital que más temprano se altera y el que peor se registra. Está en el qSOFA y en el NEWS2 justamente por eso. Conviene aclarar cuál de los dos sentidos se usa cuando aparece junto a datos de ecografía.',
+  },
+  VM: {
+    sigla: 'VM',
+    expansion: 'Ventilación mecánica',
+    que: 'El soporte ventilatorio con presión positiva, invasivo o no invasivo.',
+    porque:
+      'Invierte el signo de las presiones intratorácicas respecto de la respiración espontánea, y eso es lo que hace posible la PPV y la SVV, pero también lo que reduce el retorno venoso.',
+  },
+  KRT: {
+    sigla: 'KRT',
+    expansion: 'Kidney replacement therapy — terapia de reemplazo renal',
+    que: 'La diálisis en cualquiera de sus formas, continua o intermitente.',
+    porque:
+      'Reemplazó al término «TRR/RRT» en la nomenclatura actual. Su versión continua es la CKRT, y cambia la dosificación de antibióticos en general hacia arriba, no hacia abajo.',
+  },
+  'SA-AKI': {
+    sigla: 'SA-AKI',
+    expansion: 'Sepsis-associated acute kidney injury — lesión renal aguda asociada a sepsis',
+    que: 'La LRA que aparece en el contexto de la sepsis.',
+    porque:
+      'No es una necrosis tubular por isquemia como se creía: hay inflamación, disfunción microcirculatoria y reprogramación metabólica del túbulo con flujo renal conservado. Por eso subir la presión no siempre la revierte.',
+  },
+  GCS: {
+    sigla: 'GCS',
+    expansion: 'Glasgow Coma Scale — escala de coma de Glasgow',
+    que: 'El puntaje de 3 a 15 que suma apertura ocular, respuesta verbal y respuesta motora.',
+    porque:
+      'Entra en el componente neurológico del SOFA. En el paciente sedado o intubado pierde sentido, y por eso el delirium se evalúa con otras herramientas.',
+  },
+  'IL-6': {
+    sigla: 'IL-6',
+    expansion: 'Interleucina 6',
+    que: 'Una citoquina proinflamatoria central en la respuesta a la infección.',
+    porque:
+      'Es el biomarcador con el que se definieron varios de los endotipos hiperinflamatorios, y el blanco de los ensayos de inmunomodulación. Sus valores no son intercambiables entre ensayos: cambian con el método de medición.',
+  },
+  PD: {
+    sigla: 'PD',
+    expansion: 'Farmacodinamia (pharmacodynamics)',
+    que: 'Lo que la droga le hace al organismo y al germen: el efecto en función de la concentración.',
+    porque:
+      'Es la mitad que falta cuando solo se piensa en la dosis. Define si un antibiótico depende del tiempo sobre la CIM o del pico, y por lo tanto si conviene infundirlo prolongado o en bolo.',
+  },
+  SOFA: {
+    sigla: 'SOFA',
+    expansion: 'Sequential Organ Failure Assessment — evaluación secuencial de falla orgánica',
+    que: 'Un puntaje de 0 a 24 que suma la disfunción de seis órganos: respiratorio, coagulación, hígado, cardiovascular, sistema nervioso y riñón.',
+    porque:
+      'Sepsis-3 define la sepsis como infección más un aumento de 2 puntos o más del SOFA: es lo que convirtió a la sepsis en «infección con disfunción orgánica» y dejó atrás los criterios de SIRS.',
+  },
+  'SOFA-2': {
+    sigla: 'SOFA-2',
+    expansion: 'La actualización del SOFA',
+    que: 'La revisión del puntaje con los puntos de corte y las variables recalibrados sobre cohortes contemporáneas.',
+    porque:
+      'El SOFA original se construyó en 1996 con otra práctica: otros objetivos de transfusión, otra sedación, otro soporte renal. Recalibrarlo evita que un mismo paciente puntúe distinto solo por el año en que se lo atiende.',
+  },
+  LRA: {
+    sigla: 'LRA',
+    expansion: 'Lesión renal aguda (en inglés, AKI: acute kidney injury)',
+    que: 'La caída aguda del filtrado, definida por el aumento de la creatinina o la caída del ritmo diurético.',
+    porque:
+      'Cambia la dosis de casi todos los antibióticos y es el desenlace que más se usa para juzgar una estrategia de fluidos. Ojo: la creatinina tarda en moverse, así que una LRA temprana puede estar en curso con creatinina normal.',
+  },
+  SIC: {
+    sigla: 'SIC',
+    expansion: 'Sepsis-induced coagulopathy — coagulopatía inducida por sepsis',
+    que: 'Un puntaje que combina plaquetas, INR y SOFA para detectar la coagulopatía de la sepsis antes de que llegue a CID.',
+    porque:
+      'Identifica una ventana más temprana que los criterios clásicos de coagulación intravascular diseminada, que llegan tarde. Es el estadio donde todavía se puede actuar.',
+  },
+  CID: {
+    sigla: 'CID',
+    expansion: 'Coagulación intravascular diseminada',
+    que: 'El consumo simultáneo de plaquetas y factores con activación difusa de la coagulación y de la fibrinólisis.',
+    porque:
+      'Sangra y trombosa a la vez, por eso no se trata con una sola lógica. Sus criterios clásicos se cumplen tarde, que es el motivo por el que existe el puntaje SIC.',
+  },
+  INR: {
+    sigla: 'INR',
+    expansion: 'International normalized ratio — razón internacional normalizada',
+    que: 'El tiempo de protrombina estandarizado entre laboratorios.',
+    porque:
+      'Se diseñó para controlar anticoagulación oral, no para predecir sangrado. En el cirrótico está prolongado y aun así el paciente puede trombosar: ahí el INR no mide riesgo de sangrado.',
+  },
+  VD: {
+    sigla: 'VD',
+    expansion: 'Ventrículo derecho',
+    que: 'La cámara que bombea contra la circulación pulmonar.',
+    porque:
+      'Es una bomba de volumen, no de presión: tolera mal la poscarga. Por eso subir la PEEP o dar fluidos en un SDRA grave puede empeorarlo, y por eso hay que mirarlo con eco antes de hacer cualquiera de las dos cosas.',
+  },
+  FEVI: {
+    sigla: 'FEVI',
+    expansion: 'Fracción de eyección del ventrículo izquierdo',
+    que: 'La proporción del volumen de fin de diástole que el ventrículo izquierdo eyecta en cada latido.',
+    porque:
+      'Depende de la poscarga, así que en el shock séptico vasodilatado puede verse falsamente normal o alta. Una FEVI «normal» con presión baja no descarta disfunción miocárdica séptica.',
+  },
+  ECMO: {
+    sigla: 'ECMO',
+    expansion: 'Extracorporeal membrane oxygenation — oxigenación por membrana extracorpórea',
+    que: 'Un circuito que oxigena y remueve CO₂ fuera del cuerpo, en su versión venovenosa para el pulmón.',
+    porque:
+      'No trata la causa: compra tiempo para que el pulmón descanse con ventilación ultraprotectora. Por eso se indica después de haber hecho bien lo básico, no en lugar de hacerlo.',
+  },
+  LUS: {
+    sigla: 'LUS',
+    expansion: 'Lung ultrasound — ecografía pulmonar',
+    que: 'La evaluación del pulmón con ecógrafo, basada en artefactos: líneas A, líneas B, consolidación y derrame.',
+    porque:
+      'El pulmón normal no se «ve»: lo que se interpreta son artefactos del aire. Las líneas B aparecen cuando el intersticio se llena, antes de que la radiografía lo muestre.',
+  },
+  PCR: {
+    sigla: 'PCR',
+    expansion: 'Proteína C reactiva (ojo: también se usa para paro cardiorrespiratorio y para reacción en cadena de la polimerasa)',
+    que: 'Un reactante de fase aguda que sube con la inflamación.',
+    porque:
+      'Es muy sensible y nada específica: sube con infección, cirugía, trauma o inflamación estéril. Sirve como tendencia, no para decidir si hay infección. Y conviene escribir cuál de las tres PCR se está nombrando.',
+  },
+  ECA: {
+    sigla: 'ECA',
+    expansion: 'Ensayo clínico aleatorizado (en inglés, RCT)',
+    que: 'El diseño en el que la asignación al tratamiento se sortea.',
+    porque:
+      'Al sortear, los grupos quedan parecidos también en lo que no se midió, que es lo que permite hablar de causa y no solo de asociación. Es la diferencia entre «se asoció a» y «redujo».',
+  },
+  RR: {
+    sigla: 'RR',
+    expansion: 'Riesgo relativo (en inglés, risk ratio)',
+    que: 'El riesgo en el grupo expuesto dividido por el riesgo en el grupo control.',
+    porque:
+      'Es más interpretable que el OR y no lo exagera con desenlaces frecuentes. Pero un RR impresionante sobre un riesgo basal mínimo sigue siendo un beneficio absoluto chico: hay que mirar las dos cosas.',
+  },
+  IC95: {
+    sigla: 'IC95',
+    expansion: 'Intervalo de confianza del 95%',
+    que: 'El rango de valores compatibles con los datos observados.',
+    porque:
+      'Dice más que el valor de p: si el intervalo incluye el 1 (o el 0), el resultado no es significativo, pero su ancho muestra si eso es porque no hay efecto o porque el estudio era chico. Un intervalo ancho no descarta daño.',
+  },
+  AUROC: {
+    sigla: 'AUROC',
+    expansion: 'Area under the receiver operating characteristic curve',
+    que: 'Lo mismo que el AUC: la probabilidad de que el modelo puntúe más alto a un enfermo que a un sano.',
+    porque:
+      'Mide discriminación, no calibración. Un modelo puede ordenar bien a los pacientes y aun así equivocarse sistemáticamente en la probabilidad que informa.',
+  },
+  SIRS: {
+    sigla: 'SIRS',
+    expansion: 'Systemic inflammatory response syndrome — síndrome de respuesta inflamatoria sistémica',
+    que: 'Los cuatro criterios clásicos: temperatura, frecuencia cardíaca, frecuencia respiratoria y leucocitos.',
+    porque:
+      'Sepsis-3 los sacó de la definición porque son demasiado inespecíficos: los cumple casi cualquier internado, y había pacientes con sepsis grave que no los cumplían. Siguen sirviendo como alerta, no como definición.',
+  },
+  ICU: {
+    sigla: 'ICU',
+    expansion: 'Intensive care unit',
+    que: 'Lo mismo que UTI, en la bibliografía en inglés.',
+    porque: 'Aparece así en todos los ensayos originales: UTI, UCI e ICU son la misma unidad.',
+  },
+  UCI: {
+    sigla: 'UCI',
+    expansion: 'Unidad de cuidados intensivos',
+    que: 'Lo mismo que UTI, como se la nombra en España y en parte de la bibliografía en español.',
+    porque: 'Conviven las tres formas en un mismo texto; no hay diferencia de contenido entre ellas.',
+  },
+  SCCM: {
+    sigla: 'SCCM',
+    expansion: 'Society of Critical Care Medicine',
+    que: 'La sociedad científica estadounidense de terapia intensiva.',
+    porque:
+      'Firma varias de las guías que el Atlas cita (glucemia, corticoides, profilaxis de úlcera de estrés, ICU Liberation) y coedita la Surviving Sepsis Campaign.',
+  },
+  SATI: {
+    sigla: 'SATI',
+    expansion: 'Sociedad Argentina de Terapia Intensiva',
+    que: 'La sociedad científica local de terapia intensiva.',
+    porque:
+      'Es el marco del examen integrador al que apuntan las actividades de entrenamiento de cada módulo, por eso las preguntas tienen cinco opciones.',
+  },
+  IV: {
+    sigla: 'IV',
+    expansion: 'Intravenoso',
+    que: 'La vía de administración directa al torrente sanguíneo.',
+    porque:
+      'En el crítico no es intercambiable con la vía oral ni con la enteral: la absorción digestiva es impredecible con hipoperfusión esplácnica, y eso cambia la biodisponibilidad real de la droga.',
+  },
+  ARDS: {
+    sigla: 'ARDS',
+    expansion: 'Acute respiratory distress syndrome',
+    que: 'Lo mismo que SDRA, en la bibliografía en inglés.',
+    porque: 'Todos los ensayos grandes del tema están publicados con esta sigla.',
+  },
   UTI: {
     sigla: 'UTI',
     expansion: 'Unidad de terapia intensiva',
@@ -489,4 +710,32 @@ export const GLOSARIO: Record<string, EntradaGlosario> = {
 /** Devuelve las entradas pedidas, en el orden en que se piden, salteando las que no existen. */
 export function entradas(claves: string[]): EntradaGlosario[] {
   return claves.map((k) => GLOSARIO[k]).filter((e): e is EntradaGlosario => Boolean(e));
+}
+
+/**
+ * Siglas que de verdad aparecen en un texto.
+ *
+ * Lo delicado acá es no matchear adentro de otra palabra: "OR" no puede
+ * encenderse dentro de "POR", ni "NA" dentro de "NADA", ni "VT" dentro de
+ * "VTI". Por eso cada sigla se busca con limites propios en vez de con \b,
+ * que en JavaScript no entiende ni los acentos ni los subindices ni los
+ * caracteres como Δ, / o _ que varias siglas llevan adentro.
+ */
+const LETRA = 'A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9₀₁₂₃₄₅₆₇₈₉';
+
+function escapar(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+const PATRONES: Array<{ clave: string; re: RegExp }> = Object.keys(GLOSARIO).map((clave) => ({
+  clave,
+  // Ni letra/numero pegado antes, ni pegado despues. Tampoco un guion o una
+  // barra pegados, para que "SEP-1" no encienda dentro de "SEP-1-like" y para
+  // que "PP" no encienda dentro de "DPP" o "MPP".
+  re: new RegExp(`(^|[^${LETRA}\\-/_])${escapar(clave)}($|[^${LETRA}\\-/_])`),
+}));
+
+export function siglasEnTexto(texto: string): string[] {
+  if (!texto) return [];
+  return PATRONES.filter(({ re }) => re.test(texto)).map(({ clave }) => clave);
 }
